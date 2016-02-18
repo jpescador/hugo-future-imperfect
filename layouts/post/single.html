@@ -1,0 +1,14 @@
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        <!-- Post -->
+        <article class="post">
+            {{ .Render "header" }}
+                {{ .Content }}
+        </article>
+
+        {{ .Render "prev-next" }}
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}

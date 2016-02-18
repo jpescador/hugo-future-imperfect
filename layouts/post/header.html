@@ -1,0 +1,10 @@
+<header>
+    <div class="title">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    </div>
+    <div class="meta">
+        <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format "January 2, 2006" }}</time>
+        <span class="author">{{ .Params.author }}</span>
+        <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
+    </div>
+</header>

@@ -1,0 +1,108 @@
+<!-- Header -->
+<header id="header">
+    <h1><a href="#">Future Imperfect</a></h1>
+    <nav class="links">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tag</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Stuff</a></li>
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            <li id="back-to-top" style="display:none;">
+                <!-- Put class reference for top icon using font awesome -->
+                <a class="fa-arrow-up" href="#">Top</a>
+            </li>
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Menu -->
+<section id="menu">
+
+    <!-- Search -->
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
+            </form>
+        </section>
+
+    <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="#">
+                        <h3>Home</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Tag</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Categories</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Stuff</h3>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                <li>
+                    <a href="#">
+                        <h3>Lorem ipsum</h3>
+                        <p>Feugiat tempus veroeros dolor</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Dolor sit amet</h3>
+                        <p>Sed vitae justo condimentum</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Feugiat veroeros</h3>
+                        <p>Phasellus sed ultricies mi congue</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Etiam sed consequat</h3>
+                        <p>Porta lectus amet ultricies</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    <!-- Actions -->
+        <section>
+            <ul class="actions vertical">
+                <li><a href="#" class="button big fit">Log In</a></li>
+            </ul>
+        </section>
+
+</section>

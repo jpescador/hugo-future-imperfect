@@ -1,0 +1,17 @@
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+        {{ range $paginator.Pages }}
+            <article class="post">
+                {{ .Render "header" }}
+                    <p>{{ printf "%s" .Summary | markdownify }}</p>
+                {{ .Render "footer" }}
+            </article>
+        {{ end }}
+
+        {{ partial "pagination" . }}
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}
