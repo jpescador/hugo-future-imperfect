@@ -1,6 +1,6 @@
 <!-- Header -->
 <header id="header">
-    <h1><a href="/">Future Imperfect</a></h1>
+    <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
     <nav class="links">
         <ul>
             {{ range .Site.Menus.main }}
@@ -53,30 +53,11 @@
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
-                <li>
-                    <a href="#">
-                        <h3>Lorem ipsum</h3>
-                        <p>Feugiat tempus veroeros dolor</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Dolor sit amet</h3>
-                        <p>Sed vitae justo condimentum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Feugiat veroeros</h3>
-                        <p>Phasellus sed ultricies mi congue</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Etiam sed consequat</h3>
-                        <p>Porta lectus amet ultricies</p>
-                    </a>
-                </li>
+                {{ range first 5 (where .Site.Pages "Type" "post") }}
+                    <li>
+                        <a href="{{ .Permalink }}"><p>{{ .Title }}</p></a>
+                    </li>
+                {{ end }}
             </ul>
         </section>
 
