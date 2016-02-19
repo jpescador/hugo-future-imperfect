@@ -1,0 +1,10 @@
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        <article class="post">
+            {{ .Content }}
+        </article>
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}
