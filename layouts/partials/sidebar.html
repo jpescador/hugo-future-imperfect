@@ -25,46 +25,17 @@
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
-                <li>
-                    <article>
-                        <header>
-                            <h3><a href="#">Lorem ipsum fermentum ut nisl vitae</a></h3>
-                            <!--<p><a href="#">stuff and things</a></p>-->
-                            <time class="published" datetime="2015-10-20">October 20, 2015</time>
-                        </header>
-                        <!--<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>-->
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <header>
-                            <h3><a href="#">Blog Post 3</a></h3>
-                            <!--<p><a href="#">stuff and things</a></p>-->
-                            <time class="published" datetime="2015-10-15">October 15, 2015</time>
-                        </header>
-                        <!--<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>-->
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <header>
-                            <h3><a href="#">Blog Post 2</a></h3>
-                            <!--<p><a href="#">stuff and things</a></p>-->
-                            <time class="published" datetime="2015-10-10">October 10, 2015</time>
-                        </header>
-                        <!--<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>-->
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <header>
-                            <h3><a href="#">Blog Post 1</a></h3>
-                            <!--<p><a href="#">stuff and things</a></p>-->
-                            <time class="published" datetime="2015-10-05">October 5, 2015</time>
-                        </header>
-                        <!--<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>-->
-                    </article>
-                </li>
+                {{ range first 5 (where .Site.Pages "Type" "post") }}
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                <time class="published" datetime='{{ .Date.Format "2006-01-02" }}'>
+                                    {{ .Date.Format "January 2, 2006" }}</time>
+                            </header>
+                        </article>
+                    </li>
+                {{ end }}
             </ul>
         </section>
 
