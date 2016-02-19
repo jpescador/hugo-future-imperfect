@@ -6,7 +6,11 @@
 -->
 <html>
     <head>
-        <title>Future Imperfect by HTML5 UP</title>
+        {{ with .Title }}
+            <title>{{ . }}</title>
+        {{ else }}
+            <title>{{ .Site.Title }}</title>
+        {{ end }}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
