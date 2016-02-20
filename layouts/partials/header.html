@@ -6,10 +6,14 @@
 -->
 <html>
     <head>
-        {{ with .Title }}
+        {{ with $.Scratch.Get "customTitle" }}
             <title>{{ . }}</title>
         {{ else }}
-            <title>{{ .Site.Title }}</title>
+            {{ with .Title }}
+                <title>{{ . }}</title>
+            {{ else }}
+                <title>{{ .Site.Title }}</title>
+            {{ end }}
         {{ end }}
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

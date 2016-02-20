@@ -1,12 +1,13 @@
 {{ $.Scratch.Set "customTitle" .Title }}
-{{ $.Scratch.Add "customTitle" " - " }}
+{{ $.Scratch.Add "customTitle" " Posts - " }}
 {{ $.Scratch.Add "customTitle" .Site.Title }}
 
 {{ partial "header" . }}
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
-        {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+        <h1>{{ .Title }}</h1>
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
             <article class="post">
                 {{ .Render "header" }}

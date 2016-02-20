@@ -8,7 +8,7 @@
             <!--<img src="images/pic04.jpg" alt="" />-->
             <header>
                 <h2>{{ .Site.Params.introHeader }}</h2>
-                <p>{{ .Site.Params.introParagraph }}</p>
+                <p>{{ .Site.Params.introParagraph | safeHTML }}</p>
             </header>
             <ul class="icons">
                 <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
@@ -39,38 +39,35 @@
             </ul>
         </section>
 
+    <!-- This if statement only applies if someone goes to the /categories url -->
+    <!-- Otherwise this section is shown for all other links -->
+    {{ if ne ($.Scratch.Get "showCategories") false }}
     <!-- Categories List -->
         <section>
             <ul class="posts">
                 <header>
                     <h3>Categories</h3>
                 </header>
-                <li>
-                    <article>
-                        <header>
-                            <a href="#">Salesforce</a>
-                            <span style="float:right;">30</span>
-                        </header>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <header>
-                            <a href="#">golang</a>
-                            <span style="float:right;">10</span>
-                        </header>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <header>
-                            <a href="#">javascript</a>
-                            <span style="float:right;">5</span>
-                        </header>
-                    </article>
-                </li>
+
+                {{ if .Site.Params.categoriesByCount }}
+                    {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
+                {{ else }}
+                    {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
+                {{ end }}
+
+                {{ range $key, $value := $.Scratch.Get "categories" }}
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                                <span style="float:right;">{{ $value.Count }}</span>
+                            </header>
+                        </article>
+                    </li>
+                {{ end }}
             </ul>
         </section>
+    {{ end }}
 
     <!-- About -->
         <section class="blurb">
