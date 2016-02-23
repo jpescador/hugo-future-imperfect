@@ -1,10 +1,15 @@
 <!-- Header -->
 <header id="header">
-    <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
+    <h1><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h1>
     <nav class="links">
         <ul>
             {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                <li>
+                    <a href="{{ .URL }}">
+                        {{ with .Identifier }}
+                            <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+                    </a>
+                </li>
             {{ end }}
         </ul>
     </nav>
@@ -14,6 +19,11 @@
                 <!-- Put class reference for top icon using font awesome -->
                 <a class="fa-arrow-up" href="#">Top</a>
             </li>
+            {{ if $.Scratch.Get "shareNav" }}
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            {{ end }}
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
@@ -43,17 +53,33 @@
         <section>
             <ul class="links">
                 {{ range .Site.Menus.main }}
-                    <li><a href="{{ .URL }}"><h3>{{ .Name }}</h3></a></li>
+                    <li>
+                        <a href="{{ .URL }}">
+                            <h3>
+                                {{ with .Identifier }}
+                                    <i class="{{ . }}">&nbsp;</i>
+                                {{ end }}
+                                {{ .Name }}
+                            </h3>
+                        </a>
+                    </li>
                 {{ end }}
             </ul>
         </section>
 
+    <!-- Recent Posts -->
         <section>
             <ul class="links">
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
-                {{ range first 5 (where .Site.Pages "Type" "post") }}
+                {{ with .Site.Params.postAmount.sidebar }}
+                    {{ $.Scratch.Set "postLimit" . }}
+                {{ else }}
+                    {{ $.Scratch.Set "postLimit" 5 }}
+                {{ end }}
+
+                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "post") }}
                     <li>
                         <a href="{{ .Permalink }}"><p>{{ .Title }}</p></a>
                     </li>

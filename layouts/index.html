@@ -1,13 +1,30 @@
 {{ partial "header" . }}
+    {{ $.Scratch.Set "shareNav" true }}
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
         {{ range first 1 (where .Site.Pages "Type" "post") }}
             <article class="post">
                 {{ .Render "header" }}
+                    <section id="social-share">
+                        <ul class="icons">
+                            {{ partial "share-links" . }}
+                        </ul>
+                    </section>
                     {{ .Content }}
             </article>
             {{ .Render "prev-next" }}
+
+            <section id="share-menu">
+                <section id="social-share-nav">
+                    <ul class="links">
+                        <header>
+                            <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+                        </header>
+                        {{ partial "share-links" . }}
+                    </ul>
+                </section>
+            </section>
         {{ end }}
     </div>
     {{ partial "sidebar" . }}

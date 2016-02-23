@@ -10,13 +10,11 @@
                 <h2>{{ .Site.Params.introHeader }}</h2>
                 <p>{{ .Site.Params.introParagraph | safeHTML }}</p>
             </header>
-            <ul class="icons">
-                <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-                <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
+            {{ if .Site.Params.socialAppearAtTop }}
+                <ul class="icons">
+                    {{ partial "social" . }}
+                </ul>
+            {{ end }}
         </section>
 
     <!-- Posts List -->
@@ -25,7 +23,13 @@
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
-                {{ range first 5 (where .Site.Pages "Type" "post") }}
+                {{ with .Site.Params.postAmount.sidebar }}
+                    {{ $.Scratch.Set "postLimit" . }}
+                {{ else }}
+                    {{ $.Scratch.Set "postLimit" 5 }}
+                {{ end }}
+
+                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "post") }}
                     <li>
                         <article>
                             <header>
@@ -34,6 +38,14 @@
                                     {{ .Date.Format "January 2, 2006" }}</time>
                             </header>
                         </article>
+                    </li>
+                {{ end }}
+
+                {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+                    <li>
+                        <ul class="actions">
+                            <li><a href="/post" class="button">View more posts</a></li>
+                        </ul>
                     </li>
                 {{ end }}
             </ul>
@@ -46,7 +58,7 @@
         <section>
             <ul class="posts">
                 <header>
-                    <h3>Categories</h3>
+                    <h3><a href="/categories">Categories</a></h3>
                 </header>
 
                 {{ if .Site.Params.categoriesByCount }}
@@ -73,9 +85,10 @@
         <section class="blurb">
             <h2>About</h2>
             <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
-            <!--<ul class="actions">
-                <li><a href="#" class="button">Learn More</a></li>
-            </ul>-->
+
+            <ul class="actions">
+                <li><a href="/about" class="button">Learn More</a></li>
+            </ul>
         </section>
 
     <!-- Footer -->
@@ -87,6 +100,13 @@
                 <li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
                 <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
             </ul>-->
+
+            {{ if .Site.Params.socialAppearAtBottom }}
+                <ul class="icons">
+                    {{ partial "social" . }}
+                </ul>
+            {{ end }}
+
             <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
         </section>
 

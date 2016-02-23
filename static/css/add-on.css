@@ -1,0 +1,173 @@
+.pagination .button {
+    background: white;
+}
+
+/** Social Share Button CSS **/
+#social-share {
+    position: relative;
+    top: -0.5em;
+}
+
+#social-share ul {
+    margin: 0;
+}
+
+#social-share .icons li {
+    padding: 0 !important;
+    padding-bottom: 10px !important;
+}
+
+#social-share ul li p {
+    display: none;
+}
+
+#social-share .share-btn {
+    padding: 0.5em;
+    width: 4em;
+}
+
+#social-share-nav .share-btn h3{
+    color: #ffffff;
+}
+
+.share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.share-btn:hover {
+    color: #ffffff !important;
+}
+
+.share-btn:active {
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+    color: #e2e2e2;
+    outline: none;
+}
+
+.share-btn.twitter     { background: #55acee; }
+.share-btn.google-plus { background: #dd4b39; }
+.share-btn.facebook    { background: #3B5998; }
+.share-btn.linkedin    { background: #4875B4; }
+.share-btn.stumbleupon { background: #EB4823; }
+.share-btn.reddit      { background: #ff5700; }
+.share-btn.email       { background: #444444; }
+
+.share-btn.twitter:hover     { background: #4c9ad6 }
+.share-btn.google-plus:hover { background: #c64333; }
+.share-btn.facebook:hover    { background: #2f4779; }
+.share-btn.linkedin:hover    { background: #4069a2; }
+.share-btn.stumbleupon:hover { background: #d3401f; }
+.share-btn.reddit:hover      { background: #e54e00; }
+.share-btn.email:hover       { background: #363636; }
+
+/* Share Menu */
+body.is-share-visible #wrapper {
+    opacity: 0.15;
+}
+
+	#share-menu {
+		-moz-transform: translateX(25em);
+		-webkit-transform: translateX(25em);
+		-ms-transform: translateX(25em);
+		transform: translateX(25em);
+		-moz-transition: -moz-transform 0.5s ease, visibility 0.5s;
+		-webkit-transition: -webkit-transform 0.5s ease, visibility 0.5s;
+		-ms-transition: -ms-transform 0.5s ease, visibility 0.5s;
+		transition: transform 0.5s ease, visibility 0.5s;
+		-webkit-overflow-scrolling: touch;
+		background: #ffffff;
+		border-left: solid 1px rgba(160, 160, 160, 0.3);
+		box-shadow: none;
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 25em;
+		z-index: 10002;
+	}
+
+		#share-menu > * {
+			border-top: solid 1px rgba(160, 160, 160, 0.3);
+			padding: 3em;
+		}
+
+			#share-menu > * > :last-child {
+				margin-bottom: 0;
+			}
+
+		#share-menu > :first-child {
+			border-top: 0;
+		}
+
+		#share-menu .links {
+			list-style: none;
+			padding: 0;
+		}
+
+			#share-menu .links > li {
+				border: 0;
+				border-top: dotted 1px rgba(160, 160, 160, 0.3);
+				margin: 0.7em 0 0 0;
+				padding: 1em 0 0 0;
+			}
+
+				#share-menu .links > li a {
+					display: block;
+					border-bottom: 0;
+				}
+
+					#share-menu .links > li a h3 {
+						-moz-transition: color 0.2s ease;
+						-webkit-transition: color 0.2s ease;
+						-ms-transition: color 0.2s ease;
+						transition: color 0.2s ease;
+						font-size: 0.7em;
+					}
+
+					#share-menu .links > li a p {
+						font-family: "Raleway", Helvetica, sans-serif;
+						font-size: 0.6em;
+						font-weight: 400;
+						letter-spacing: 0.25em;
+						margin-bottom: 0;
+						text-decoration: none;
+						text-transform: uppercase;
+					}
+
+					#share-menu .links > li a:hover h3 {
+						color: #ffffff;
+					}
+
+				#share-menu .links > li:first-child {
+					border-top: 0;
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+		body.is-share-visible #share-menu {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			visibility: visible;
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#share-menu > * {
+				padding: 1.5em;
+			}
+
+		}

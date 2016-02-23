@@ -19,6 +19,7 @@
 		var	$window = $(window),
 			$body = $('body'),
 			$menu = $('#menu'),
+			$shareMenu = $('#share-menu'),
 			$sidebar = $('#sidebar'),
 			$main = $('#main');
 
@@ -46,8 +47,35 @@
 			if (skel.vars.IEVersion <= 9)
 				$main.insertAfter($sidebar);
 
+		$menu.appendTo($body);
+		$shareMenu.appendTo($body);
+
+		$menu.panel({
+			delay: 500,
+			hideOnClick: true,
+			hideOnEscape: true,
+			hideOnSwipe: true,
+			resetScroll: true,
+			resetForms: true,
+			side: 'right',
+			target: $body,
+			visibleClass: 'is-menu-visible'
+		});
+
+		$shareMenu.panel({
+			delay: 500,
+			hideOnClick: true,
+			hideOnEscape: true,
+			hideOnSwipe: true,
+			resetScroll: true,
+			resetForms: true,
+			side: 'right',
+			target: $body,
+			visibleClass: 'is-share-visible'
+		});
+
 		// Menu.
-			$menu
+			/*$menu
 				.appendTo($body)
 				.panel({
 					delay: 500,
@@ -58,7 +86,7 @@
 					side: 'right',
 					target: $body,
 					visibleClass: 'is-menu-visible'
-				});
+				});*/
 
 		// Search (header).
 			var $search = $('#search'),
