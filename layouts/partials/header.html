@@ -15,8 +15,16 @@
                 <title>{{ .Site.Title }}</title>
             {{ end }}
         {{ end }}
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {{ with .Description }}
+            <meta name="description" content="{{ . }}">
+        {{ else }}
+            {{ with .Site.Params.description }}
+                <meta name="description" content="{{ . }}">
+            {{ end }}
+        {{ end }}
 
         <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="/css/main.css" />

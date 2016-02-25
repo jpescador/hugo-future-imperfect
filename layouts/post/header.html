@@ -1,6 +1,9 @@
 <header>
     <div class="title">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ with .Description }}
+            <p>{{ . }}</p>
+        {{ end }}
     </div>
     <div class="meta">
         {{ if ne (.PublishDate.Format "2006-01-02") "0001-01-01" }}
