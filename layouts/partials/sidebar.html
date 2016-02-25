@@ -3,12 +3,17 @@
 
     <!-- Intro -->
         <section id="intro">
-            <!--<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>-->
-            <img style="border-radius:100%" width="320px" src="images/profile1.jpg" alt="" />
-            <!--<img src="images/pic04.jpg" alt="" />-->
+            {{ $pic := .Site.Params.intro.pic }}
+            {{ with $pic.src }}
+                {{ if $pic.circle }}
+                    <img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="" />
+                {{ else }}
+                    <img src="{{ . }}" width="{{ $pic.width }}" alt="" />
+                {{ end }}
+            {{ end }}
             <header>
-                <h2>{{ .Site.Params.introHeader }}</h2>
-                <p>{{ .Site.Params.introParagraph | safeHTML }}</p>
+                <h2>{{ .Site.Params.intro.header }}</h2>
+                <p>{{ .Site.Params.intro.paragraph | safeHTML }}</p>
             </header>
             {{ if .Site.Params.socialAppearAtTop }}
                 <ul class="icons">
@@ -93,14 +98,6 @@
 
     <!-- Footer -->
         <section id="footer">
-            <!--<ul class="icons">
-                <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-                <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-            </ul>-->
-
             {{ if .Site.Params.socialAppearAtBottom }}
                 <ul class="icons">
                     {{ partial "social" . }}

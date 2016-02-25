@@ -1,3 +1,13 @@
+#intro .intro-circle {
+    border-radius: 50%;
+}
+
+.center-image {
+    display: block;
+    margin: auto;
+    clear: both;
+}
+
 .pagination .button {
     background: white;
 }
