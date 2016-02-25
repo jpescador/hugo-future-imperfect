@@ -1,6 +1,12 @@
 <!-- Header -->
 <header id="header">
-    <h1><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h1>
+    {{ if $.Scratch.Get "h1" }}
+        <h1><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h1>
+        {{ $.Scratch.Set "h1" false }}
+    {{ else }}
+        <h2><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h2>
+    {{ end }}
+
     <nav class="links">
         <ul>
             {{ range .Site.Menus.main }}
