@@ -23,7 +23,7 @@
         </section>
 
     <!-- Posts List -->
-        <section>
+        <section id="recent-posts">
             <ul class="posts">
                 <header>
                     <h3>Recent Posts</h3>
@@ -66,7 +66,7 @@
     <!-- Otherwise this section is shown for all other links -->
     {{ if ne ($.Scratch.Get "showCategories") false }}
     <!-- Categories List -->
-        <section>
+        <section id="categories">
             <ul class="posts">
                 <header>
                     <h3><a href="/categories">Categories</a></h3>

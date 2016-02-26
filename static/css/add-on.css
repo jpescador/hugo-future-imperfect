@@ -1,3 +1,102 @@
+body, input, select, textarea {
+    color: #000000;
+}
+
+#header .links a {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=65);
+
+    /* Modern Browsers */
+    opacity: 0.65;
+}
+
+    #header .main ul li > a {
+        color: #000000;
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=35);
+
+        /* Modern Browsers */
+        opacity: 0.35;
+    }
+
+        #header .main .search input {
+            color: #000000;
+        }
+
+#intro p,
+#intro .icons a {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=60);
+
+    /* Modern Browsers */
+    opacity: 0.6;
+}
+
+    #sidebar #recent-posts ul.posts time,
+    #sidebar #categories ul.posts li header,
+    #sidebar .blurb p {
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=65);
+
+        /* Modern Browsers */
+        opacity: 0.65;
+    }
+
+article.post header .title p,
+article.post header .meta p,
+article.post header .meta span,
+article.post footer .stats {
+    /* Theoretically for IE 8 & 9 (more valid) */
+    /* ...but not required as filter works too */
+    /* should come BEFORE filter */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+    /* This works in IE 8 & 9 too */
+    /* ... but also 5, 6, 7 */
+    filter: alpha(opacity=70);
+
+    /* Modern Browsers */
+    opacity: 0.70;
+}
+
+    article.post p {
+        /* Theoretically for IE 8 & 9 (more valid) */
+        /* ...but not required as filter works too */
+        /* should come BEFORE filter */
+        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
+
+        /* This works in IE 8 & 9 too */
+        /* ... but also 5, 6, 7 */
+        filter: alpha(opacity=87);
+
+        /* Modern Browsers */
+        opacity: 0.87;
+    }
+
 #header h2 {
     font-size: inherit;
     height: inherit;
