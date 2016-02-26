@@ -1,6 +1,4 @@
-{{ $.Scratch.Set "customTitle" .Title }}
-{{ $.Scratch.Add "customTitle" " - " }}
-{{ $.Scratch.Add "customTitle" .Site.Title }}
+{{ partial "general-title" . }}
 
 {{ partial "header" . }}
     {{ partial "navbar" . }}
