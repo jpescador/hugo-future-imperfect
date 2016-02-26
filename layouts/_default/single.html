@@ -3,6 +3,8 @@
     <!-- Main -->
     <div id="main">
         <article class="post">
+            {{ $.Scratch.Set "h1" true }}
+            {{ .Render "header" }}
             {{ .Content }}
         </article>
     </div>
