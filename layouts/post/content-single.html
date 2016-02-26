@@ -14,3 +14,9 @@
     </footer>
 </article>
 {{ .Render "prev-next" }}
+
+{{ if ne .Site.DisqusShortname "" }}
+    <article class="post">
+        {{ template "_internal/disqus.html" . }}
+    </article>
+{{ end }}
