@@ -1,6 +1,6 @@
 <!-- params 2-3
      Can be positional or named
-     
+
      position 0, name: path
         Can pass in the following values:
             title: will use /img/LinkTitle as the path
@@ -15,50 +15,52 @@
             post: places the image centered
             left: places the image to the left
             right: places the image to the right
+
+     position 3, name: alt
+        Name of the alternate text for the image
 -->
 {{ $numOfParams := len .Params }}
-{{ if and (ge $numOfParams 2) (le $numOfParams 3) }}
+{{ if and (ge $numOfParams 2) (le $numOfParams 4) }}
     <!-- Check if the Parameter is positional or named
          which can handle both. If the third parameter is
          not set then the default value will be post -->
     {{ if .IsNamedParams }}
         {{ $.Scratch.Set "path" (.Get "path") }}
         {{ $.Scratch.Set "file" (.Get "file") }}
-
-        {{ if eq $numOfParams 2 }}
-            {{ $.Scratch.Set "type" "post" }}
-        {{ else }}
-            {{ $.Scratch.Set "type" (.Get "type") }}
-        {{ end }}
+        {{ $.Scratch.Set "type" (.Get "type") }}
+        {{ $.Scratch.Set "alt"  (.Get "alt") }}
     {{ else }}
-        {{ $.Scratch.Set "path" (.Get 0) }}
-        {{ $.Scratch.Set "file" (.Get 1) }}
-
-        {{ if eq $numOfParams 2 }}
-            {{ $.Scratch.Set "type" "post" }}
-        {{ else }}
-            {{ $.Scratch.Set "type" (.Get 2) }}
+        {{ if ge $numOfParams 2 }}
+            {{ $.Scratch.Set "path" (.Get 0) }}
+            {{ $.Scratch.Set "file" (.Get 1) }}
+            {{ if ge $numOfParams 3 }}
+                {{ $.Scratch.Set "type" (.Get 2) }}
+            {{ end }}
+            {{ if ge $numOfParams 4 }}
+                {{ $.Scratch.Set "alt"  (.Get 3) }}
+            {{ end }}
         {{ end }}
     {{ end }}
 
     {{ $file := $.Scratch.Get "file" }}
     {{ $type := $.Scratch.Get "type" }}
+    {{ $alt  := $.Scratch.Get "alt" }}
 
     {{ $.Scratch.Set "structType" "shortcode" }}
     {{ partial "img-path" . }}
     {{ $path := $.Scratch.Get "path" }}
 
-    {{ if eq $type "post" }}
-        <div class="box alt">
-            <img class="center-image" src="{{ $path }}/{{ $file }}" alt="" />
-        </div>
-    {{ else if eq $type "left" }}
+    {{ if eq $type "left" }}
         <span class="image left">
-            <img src="{{ $path }}/{{ $file }}" alt="" />
+            <img src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
         </span>
     {{ else if eq $type "right" }}
         <span class="image right">
-            <img src="{{ $path }}/{{ $file }}" alt="" />
+            <img src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
         </span>
+    {{ else }}
+        <div class="box alt">
+            <img class="center-image" src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
+        </div>
     {{ end }}
 {{ end }}
