@@ -1,12 +1,19 @@
             </div>
 
         <!-- Scripts -->
+        {{ $minFiles := .Site.Params.minifiedFilesJS }}
+
+        {{ if and (isset .Site.Params "minifiedFilesJS") (ge (len $minFiles) 1) }}
+            {{ range .Site.Params.minifiedFilesJS }}
+                <script src="{{ . }}"></script>
+            {{ end }}
+        {{ else }}
             <script src="/js/jquery.min.js"></script>
             <script src="/js/skel.min.js"></script>
             <script src="/js/util.js"></script>
-            <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
             <script src="/js/main.js"></script>
             <script src="/js/backToTop.js"></script>
-
+        {{ end }}
+            <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     </body>
 </html>

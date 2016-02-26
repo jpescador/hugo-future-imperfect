@@ -28,8 +28,16 @@
         {{ end }}
 
         <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/add-on.css" />
+        {{ $minFiles := .Site.Params.minifiedFilesCSS }}
+
+        {{ if and (isset .Site.Params "minifiedFilesCSS") (ge (len $minFiles) 1) }}
+            {{ range .Site.Params.minifiedFilesCSS }}
+                <link rel="stylesheet" href="{{ . }}" />
+            {{ end }}
+        {{ else }}
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+        {{ end }}
         <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
         {{ template "_internal/google_analytics.html" . }}
