@@ -5,4 +5,5 @@ description = ""
 linktitle = ""
 featured = ""
 featuredpath = ""
+featuredalt = ""
 +++

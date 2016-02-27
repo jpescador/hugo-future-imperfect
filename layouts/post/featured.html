@@ -8,7 +8,7 @@
 
         <div>
             <a href="{{ .Permalink }}" class="image featured">
-                <img src="{{ $path }}/{{ .Params.featured }}" alt="" />
+                <img src="{{ $path }}/{{ .Params.featured }}" alt="{{ .Params.featuredalt }}" />
             </a>
         </div>
     {{ end }}
