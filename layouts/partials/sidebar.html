@@ -107,14 +107,16 @@
     {{ end }}
 
     <!-- About -->
+        {{ with .Site.Params.intro.about }}
         <section class="blurb">
             <h2>About</h2>
-            <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+            <p>{{ . }}</p>
 
             <ul class="actions">
                 <li><a href="/about" class="button">Learn More</a></li>
             </ul>
         </section>
+        {{ end }}
 
     <!-- Footer -->
         <section id="footer">
