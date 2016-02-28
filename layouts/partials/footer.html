@@ -3,9 +3,11 @@
         <!-- Scripts -->
         {{ $minFiles := .Site.Params.minifiedFilesJS }}
 
-        {{ if and (isset .Site.Params "minifiedFilesJS") (ge (len $minFiles) 1) }}
-            {{ range .Site.Params.minifiedFilesJS }}
-                <script src="{{ . }}"></script>
+        {{ if isset .Site.Params "minifiedFilesJS" }}
+            {{ if ge (len $minFiles) 1 }}
+                {{ range .Site.Params.minifiedFilesJS }}
+                    <script src="{{ . }}"></script>
+                {{ end }}
             {{ end }}
         {{ else }}
             <script src="/js/jquery.min.js"></script>
