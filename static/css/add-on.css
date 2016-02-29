@@ -124,6 +124,12 @@ article.post footer .stats {
     font-size: 1.5em;
 }
 
+@media screen and (max-width: 480px) {
+    .post > .image.featured {
+        margin-top: 0;
+    }
+}
+
 .center-image {
     display: block;
     margin: auto;
