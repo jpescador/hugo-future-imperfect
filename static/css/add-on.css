@@ -303,3 +303,36 @@ body.is-share-visible #wrapper {
 			}
 
 		}
+
+.post {
+    margin: 0 0 2em 0;
+}
+
+ul.pagination li {
+    padding-top: 1em;
+}
+
+    ul.pagination .button {
+        line-height: 2.5em;
+        height: auto;
+        white-space: normal;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+#back-to-top {
+    background-color: white;
+    bottom: 5px;
+    color: #aaaaaa;
+    display: none;
+    position: fixed;
+    right: 5px;
+}
+
+    #back-to-top.btt-fade-out {
+        /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s;
+        opacity: .5;
+    }

@@ -1,6 +1,8 @@
 $(function(){
     // browser window scroll (in pixels) after which the "back to top" link is shown
     var offset = 300,
+        //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+        offset_opacity = 1200,
         //duration of the top scrolling animation (in ms)
         scroll_top_duration = 700,
         //grab the "back to top" link
@@ -14,8 +16,13 @@ $(function(){
             $shareNav.fadeIn();
         } else {
             $backToTop.fadeOut();
+            $backToTop.removeClass('btt-fade-out');
             $shareNav.fadeOut();
         }
+
+        if($(this).scrollTop() > offset_opacity) {
+			$backToTop.addClass('btt-fade-out');
+		}
     });
 
     //smooth scroll to top
