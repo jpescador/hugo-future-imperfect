@@ -145,11 +145,17 @@ pre {
         font-size: inherit;
     }
 
-.center-image {
-    display: block;
-    margin: auto;
-    clear: both;
+.image.center-image {
+    max-width: 50%;
 }
+    .image.center-image img {
+        width: 100%;
+    }
+        .image.center-image {
+            display: block;
+            margin: auto;
+            clear: both;
+        }
 
 .pagination .button {
     background: white;

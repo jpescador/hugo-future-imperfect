@@ -59,8 +59,8 @@
             <img src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
         </span>
     {{ else }}
-        <div class="box alt">
-            <img class="center-image" src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
-        </div>
+        <span class="image center-image">
+            <img src="{{ $path }}/{{ $file }}" alt="{{ $alt }}" />
+        </span>
     {{ end }}
 {{ end }}
