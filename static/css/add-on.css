@@ -1,4 +1,4 @@
-body, input, select, textarea {
+body, input, select, textarea, b, strong {
     color: #000000;
 }
 
@@ -83,7 +83,11 @@ article.post footer .stats {
     opacity: 0.70;
 }
 
-    article.post p {
+    article.post p,
+    article.post h2,
+    article.post h3,
+    article.post h4 {
+        color: #000000;
         /* Theoretically for IE 8 & 9 (more valid) */
         /* ...but not required as filter works too */
         /* should come BEFORE filter */
