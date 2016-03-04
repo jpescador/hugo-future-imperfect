@@ -134,6 +134,10 @@ article.post footer .stats {
     }
 }
 
+blockquote p {
+    margin-bottom: 0;
+}
+
 .image.center-image {
     max-width: 50%;
 }
