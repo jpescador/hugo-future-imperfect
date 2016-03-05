@@ -53,7 +53,9 @@
         {{ end }}
         <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
-        {{ template "_internal/google_analytics.html" . }}
+        {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+            {{ template "_internal/google_analytics.html" . }}
+        {{ end }}
     </head>
     <body>
 
