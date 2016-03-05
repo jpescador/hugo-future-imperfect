@@ -1,0 +1,18 @@
+{{ if .Site.Params.loadFavicon }}
+    {{ with .Site.Params.faviconVersion }}
+        {{ $.Scratch.Set "favVer" "-" }}
+        {{ $.Scratch.Add "favVer" . }}
+    {{ else }}
+        {{ $.Scratch.Set "favVer" "" }}
+    {{ end }}
+
+    {{ $favVer := $.Scratch.Get "favVer" }}
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon-precomposed{{ $favVer }}.png'>
+    <link rel="icon" href='/favicon/favicon{{ $favVer }}.png'>
+    <!--[if IE]><link rel="shortcut icon" href='/favicon{{ $favVer }}.ico'><![endif]-->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile{{ $favVer }}.png'>
+{{ end }}
