@@ -127,6 +127,11 @@ article.post footer .stats {
     font-weight: 900;
     font-size: 1.5em;
 }
+    @media screen and (max-width: 736px) {
+        .post > header .title h1 {
+            font-size: 1.1em;
+        }
+    }
 
 @media screen and (max-width: 480px) {
     .post > .image.featured {
