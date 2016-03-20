@@ -2,6 +2,8 @@
 
 Future Imperfect is a responsive theme tailored for blogging. The name is no coincidence which is a port of [HTML5 UP's theme](http://html5up.net/future-imperfect). Some extra features have also been implemented to assist you.
 
+![Hugo Future Imperfect Screenshot](https://raw.githubusercontent.com/jpescador/hugo-future-imperfect/master/images/screenshot.png)
+
 Check out this [site](https://jpescador.com) if you are interested in seeing a live example.
 
 ## Getting Started
