@@ -13,10 +13,12 @@
                     <img src="{{ . }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
                 {{ end }}
             {{ end }}
-            <header>
-                <h2>{{ .Site.Params.intro.header }}</h2>
-                <p>{{ .Site.Params.intro.paragraph | safeHTML }}</p>
-            </header>
+            {{ with .Site.Params.intro }}
+                <header>
+                    <h2>{{ .header }}</h2>
+                    <p>{{ .paragraph | safeHTML }}</p>
+                </header>
+            {{ end }}
             {{ if .Site.Params.socialAppearAtTop }}
                 <ul class="icons">
                     {{ partial "social" . }}
@@ -67,7 +69,7 @@
                             {{ with .Site.Params.viewMorePostLink }}
                                 {{ . }}
                             {{ else }}
-                                "/post"
+                                "/post/"
                             {{ end }}
                             class="button">View more posts</a></li>
                         </ul>
@@ -83,7 +85,7 @@
         <section id="categories">
             <ul class="posts">
                 <header>
-                    <h3><a href="/categories">Categories</a></h3>
+                    <h3><a href="/categories/">Categories</a></h3>
                 </header>
 
                 {{ if .Site.Params.categoriesByCount }}
@@ -96,7 +98,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             </header>
                         </article>
@@ -113,7 +115,7 @@
             <p>{{ . }}</p>
 
             <ul class="actions">
-                <li><a href="/about" class="button">Learn More</a></li>
+                <li><a href="/about/" class="button">Learn More</a></li>
             </ul>
         </section>
         {{ end }}
