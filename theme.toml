@@ -3,19 +3,19 @@
 
 name = "Hugo Future Imperfect"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
-features = ["", ""]
-min_version = 0.14
+licenselink = "https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md"
+description = "Ported theme of HTML5 UP, future imperfect, with some extra goodies"
+homepage = "https://github.com/jpescador/hugo-future-imperfect"
+tags = ["blog", "responsive", "font awesome", "highlight.js"]
+features = ["html5", "css3", "responsive"]
+min_version = 0.15
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Julio Pescador"
+  homepage = "https://jpescador.com"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
+  name = "Future Imperfect"
+  homepage = "http://html5up.net/future-imperfect"
   repo = ""
