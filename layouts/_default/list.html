@@ -5,12 +5,12 @@
     <!-- Main -->
     <div id="main">
         {{ if .Site.Params.orderByPublishDate }}
-            {{ $.Scratch.Set "paginator" (.Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post")) }}
+            {{ $.Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
         {{ else }}
-            {{ $.Scratch.Set "paginator" (.Paginate (where .Site.Pages "Type" "post")) }}
+            {{ $.Paginate (where .Site.Pages "Type" "post") }}
         {{ end }}
 
-        {{ range ($.Scratch.Get "paginator").Pages }}
+        {{ range $.Paginator.Pages }}
             {{ .Render "content-list" }}
         {{ end }}
 
