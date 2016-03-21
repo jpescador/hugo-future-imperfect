@@ -38,27 +38,28 @@ Copy the config file from exampleSite to the root directory of your Hugo site.
 The file contains comments on the functionality for each param. Please see the file for more information.
 
 ## Shortcodes
-The theme also contains the following shortcodes that I hope you find useful: img-post, img-fit, and url-link.
+The theme also contains the following [shortcodes](https://gohugo.io/extras/shortcodes/) that I hope you find useful: img-post, img-fit, and url-link.  
+Note: You may see an enclosed multi line comment in the commands shown below, `/*...*/`. Please ignore and do not include when calling the shortcode.
 
 ### Image post
 img-post: allows the user to add an image which can be placed in the center, to the left, or the right. The commands are shown below:
 
     - Named
-    {{< img-post path="date" file="filename.jpg" alt="Alt Text" type="left" >}}
+    {{</* img-post path="date" file="filename.jpg" alt="Alt Text" type="left" */>}}
 
     - Positional
-    {{< img-post "title" "filename.jpg" "Alt Text" "left" >}}
+    {{</* img-post "title" "filename.jpg" "Alt Text" "left" */>}}
 
 Please refer to the img-post shortcode file for more information on the parameters
 
 ### Multiple Image Post
 img-fit: allows user to insert multiple images with the ability to create a gallery if needed. The command is shown below and is positional only:
 
-    {{< img-fit
+    {{</* img-fit
         "4u" "pic04.jpg" "Alt text"
         "4u" "pic05.jpg" "Alt text"
         "4u$" "pic06.jpg" "Alt text"
-        "date" >}}
+        "date" */>}}
 
 Please refer to the img-fist shortcode file for more information on the parameters
 
@@ -66,7 +67,7 @@ Please refer to the img-fist shortcode file for more information on the paramete
 ### URL link
 url-link: create a hyperlink and add a target value to the link. _blank will be used by default if a target value is not set. The shortcode is positional only.
 
-    {{< url-link "Hugo" "http://gohugo.io/" >}}
+    {{</* url-link "Hugo" "http://gohugo.io/" */>}}
 
 Position 0 will be the link text. 1 will be the url and the last position will be value of the target attribute.
 
