@@ -32,6 +32,8 @@ googleAnalytics = ""
     # This is just an additional option if you wish to use this
     minifiedFilesCSS     = ["/css/main.min.css"]
     minifiedFilesJS      = ["/js/main.min.js"]
+    # Custom CSS file in case you'd like to override certain classes
+    customCSS            = ""
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
