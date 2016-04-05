@@ -19,11 +19,15 @@
                     <p>{{ .paragraph | safeHTML }}</p>
                 </header>
             {{ end }}
-            {{ if .Site.Params.socialAppearAtTop }}
-                <ul class="icons">
+            <ul class="icons">
+                {{ if .RSSLink }}
+                    <li><a href="{{ .RSSLink }}" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                {{ end }}
+                {{ if .Site.Params.socialAppearAtTop }}
                     {{ partial "social" . }}
-                </ul>
-            {{ end }}
+                {{ end }}
+            </ul>
         </section>
 
     <!-- Posts List -->
@@ -122,11 +126,15 @@
 
     <!-- Footer -->
         <section id="footer">
-            {{ if .Site.Params.socialAppearAtBottom }}
-                <ul class="icons">
+            <ul class="icons">
+                {{ if .RSSLink }}
+                    <li><a href="{{ .RSSLink }}" type="application/rss+xml"
+                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
+                {{ end }}
+                {{ if .Site.Params.socialAppearAtBottom }}
                     {{ partial "social" . }}
-                </ul>
-            {{ end }}
+                {{ end }}
+            </ul>
 
             <p class="copyright">&copy; {{ .Site.Title }}. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
         </section>
