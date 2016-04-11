@@ -4,13 +4,15 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
+        <!-- Please note that the param orderByPublishDate is no longer being used
+             since the pagination is not what is expected. Use at your own risk! -->
         {{ if .Site.Params.orderByPublishDate }}
-            {{ $.Scratch.Set "paginator" (.Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post")) }}
+            {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "post") }}
         {{ else }}
-            {{ $.Scratch.Set "paginator" (.Paginate (where .Site.Pages "Type" "post")) }}
+            {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
         {{ end }}
 
-        {{ range ($.Scratch.Get "paginator").Pages }}
+        {{ range .Paginator.Pages }}
             {{ .Render "content-list" }}
         {{ end }}
 
