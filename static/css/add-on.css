@@ -2,6 +2,12 @@ body, input, select, textarea, b, strong {
     color: #000000;
 }
 
+pre {
+    display: table;
+    table-layout: fixed;
+    width: 100%
+}
+
 #header .links a {
     /* Theoretically for IE 8 & 9 (more valid) */
     /* ...but not required as filter works too */
@@ -331,6 +337,10 @@ body.is-share-visible #wrapper {
 
 .post {
     margin: 0 0 2em 0;
+}
+
+article.post img {
+    max-width: 100%;
 }
 
 ul.pagination li {
