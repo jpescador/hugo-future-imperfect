@@ -1,15 +1,21 @@
             </div>
         <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
         <!-- Scripts -->
-        {{ $minFiles := .Site.Params.minifiedFilesJS }}
 
+        <!-- Keeping the deprecated param, minifiedFilesJS, for now. The new param
+             that replaces this is customJS. Utilizing a scratch variable jsFiles
+             to keep the deprecated param. -->
         {{ if isset .Site.Params "minifiedFilesJS" }}
-            {{ if ge (len $minFiles) 1 }}
-                {{ range .Site.Params.minifiedFilesJS }}
-                    <script src="{{ . }}"></script>
-                {{ end }}
-            {{ end }}
+            {{ $.Scratch.Set "jsFiles" .Site.Params.minifiedFilesJS }}
+        {{ else if isset .Site.Params "customJS" }}
+            {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
         {{ else }}
+            {{ $.Scratch.Set "jsFiles" false }}
+        {{ end }}
+
+        <!-- If the value "default" is passed into the param then we will first
+             load the standard js files associated with the theme -->
+        {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
             <script src="/js/jquery.min.js"></script>
             <script src="/js/skel.min.js"></script>
             <script src="/js/util.js"></script>
@@ -17,6 +23,15 @@
             <script src="/js/backToTop.js"></script>
             <script src="/js/highlight.pack.js"></script>
         {{ end }}
+
+        {{ if ne ($.Scratch.Get "jsFiles") false }}
+            {{ range $.Scratch.Get "jsFiles" }}
+                {{ if ne . "default" }}
+                    <script src="{{ . }}"></script>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
             <!-- This is called by default since this theme uses highlight.js -->
             <script>hljs.initHighlightingOnLoad();</script>
             <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->

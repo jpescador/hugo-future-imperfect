@@ -26,12 +26,17 @@ googleAnalytics = ""
     # Please see the favicon partial template for more information
     loadFavicon          = false
     faviconVersion       = ""
-    # Load minified files instead of the non minified files. The variable
-    # is an array so that you can load multiple min files if necessary
-    # Note: There are other ways to approach minification
-    # This is just an additional option if you wish to use this
-    minifiedFilesCSS     = ["/css/main.min.css"]
-    minifiedFilesJS      = ["/js/main.min.js"]
+
+    # Load custom CSS or JavaScript files. This replaces the deprecated params
+    # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
+    # can load multiple files if necessary. You can also load the standard theme
+    # files by adding the value, "default".
+    # customCSS            = ["default", "/path/to/file"]
+    # customJS             = ["default", "/path/to/file"]
+
+    # Loading min files for exampleSite
+    customCSS            = ["/css/main.min.css"]
+    customJS             = ["/js/main.min.js"]
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
