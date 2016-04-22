@@ -7,7 +7,9 @@
         </ul>
     </section>
     {{ .Render "featured" }}
-    {{ .Content }}
+    <div id="content">
+        {{ .Content }}
+    </div>
 
     <footer>
         {{ .Render "footer-category" }}

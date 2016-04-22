@@ -7,7 +7,9 @@
         <article class="post">
             {{ $.Scratch.Set "h1" true }}
             {{ .Render "header" }}
-            {{ .Content }}
+            <div id="content">
+                {{ .Content }}
+            </div>
         </article>
     </div>
     {{ partial "sidebar" . }}
