@@ -11,11 +11,7 @@
         {{ end }}
     </div>
     <div class="meta">
-        {{ if .Site.Params.orderByPublishDate }}
-            {{ $.Scratch.Set "dateType" .PublishDate }}
-        {{ else }}
-            {{ $.Scratch.Set "dateType" .Date }}
-        {{ end }}
+        {{ $.Scratch.Set "dateType" .Date }}
 
         <time class="published"
             datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
