@@ -1,11 +1,14 @@
 <article class="post">
     {{ .Render "header" }}
 
+    {{ if not .Site.Params.socialShareDisabled }}
     <section id="social-share">
         <ul class="icons">
             {{ partial "share-links" . }}
         </ul>
     </section>
+    {{ end }}
+
     {{ .Render "featured" }}
     <div id="content">
         {{ .Content }}
