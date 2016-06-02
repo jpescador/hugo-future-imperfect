@@ -10,22 +10,45 @@
             {{ $.Scratch.Set "categories" .Data.Terms.Alphabetical }}
         {{ end }}
 
-        <ul class="posts">
+        <article class="list">
+
             <header>
-                <h1>{{ .Data.Plural }}</h1>
+                <div class="title">
+                    <h1>{{ .Data.Plural }}</h1>
+                </div>
             </header>
-            {{ $data := .Data }}
-            {{ range $key, $value := $.Scratch.Get "categories" }}
-                <li>
-                    <article>
-                        <header>
-                            <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
-                            <span style="float:right;">{{ $value.Count }}</span>
-                        </header>
-                    </article>
-                </li>
-            {{ end }}
-        </ul>
+
+            <div id="content">
+
+                <ul class="taxonomies">
+                {{ $data := .Data }}
+                {{ range $key, $value := $.Scratch.Get "categories" }}
+                    {{ $.Scratch.Set "identifier" "" }}
+                    {{ if (isset (index $.Site.Data.sections $value.Name) "identifier") }}
+                        {{ $.Scratch.Set "identifier" (index $.Site.Data.sections $value.Name "identifier") }}
+                    {{ end }}
+                    <li>
+                        <article class="taxonomy">
+                            <header>
+                                <div class="title">
+                                    <h2><a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">
+                                        {{ with $.Scratch.Get "identifier" }}<i class="{{ . }}">&nbsp;</i>{{ end }}{{ $value.Name }}</a>:</h2>
+                                </div>
+                                <div class="meta">
+                                    {{ $value.Count }} posts
+                                </div>
+                            </header>
+                            {{ if (isset (index $.Site.Data.sections $value.Name) "description") }}
+                            <p>{{ index $.Site.Data.sections $value.Name "description" | markdownify }}</p>
+                            {{ end }}
+                        </article>
+                    </li>
+                {{ end }}
+                </ul>
+
+            </div>
+            <footer><!-- blank but still needed for proper CSS look/feel --></footer>
+        </article>
     </div>
 
     {{ $.Scratch.Set "showCategories" false }}

@@ -69,7 +69,7 @@
         </section>
 
     <!-- Recent Posts -->
-    {{ if ge .Site.Params.postAmount.sidebar 0 }}
+    {{ if or (gt .Site.Params.postAmount.sidebar 0) (eq .Site.Params.postAmount.sidebar nil) }}
         <section>
             <ul class="links">
                 <header>
@@ -81,7 +81,7 @@
                     {{ $.Scratch.Set "postLimit" 5 }}
                 {{ end }}
 
-                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "post") }}
+                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "!=" "page") }}
                     <li>
                         <a href="{{ .Permalink }}"><p>{{ .Title }}</p></a>
                     </li>

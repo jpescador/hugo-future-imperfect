@@ -59,11 +59,11 @@ googleAnalytics = ""
     width     = ""
     alt       = "Hugo Future Imperfect"
 
-# Adjust the number of recent posts on the sidebar.
-# Set to -1 to disable recent posts.
-# This is optional. The default value 5 will be used.
-[params.postAmount]
-    sidebar = 2
+# Optional setting to adjust the number of recent posts on the sidebar.
+# Set to 0 or false to disable recent posts.
+# If left unset, the default value 5 will be used.
+# [params.postAmount]
+#     sidebar = 2
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text

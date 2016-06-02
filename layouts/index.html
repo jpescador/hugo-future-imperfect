@@ -3,7 +3,7 @@
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
-        {{ range first 1 (where .Site.Pages "Type" "post") }}
+        {{ range first 1 (where .Site.Pages "Type" "!=" "page") }}
             {{ .Render "content-single" }}
 
             {{ partial "share-menu" . }}

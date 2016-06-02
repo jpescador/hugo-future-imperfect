@@ -31,7 +31,7 @@
         </section>
 
     <!-- Posts List -->
-    {{ if ge .Site.Params.postAmount.sidebar 0 }}
+    {{ if or (gt .Site.Params.postAmount.sidebar 0) (eq .Site.Params.postAmount.sidebar nil) }}
         <section id="recent-posts">
             <ul class="posts">
                 <header>
@@ -45,7 +45,7 @@
                     {{ $.Scratch.Set "postLimit" 5 }}
                 {{ end }}
 
-                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "!=" "page") }}
                     <li>
                         <article>
                             <header>
@@ -59,7 +59,7 @@
                     </li>
                 {{ end }}
 
-                {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+                {{ if ge (len (where .Site.Pages "Type" "!=" "page")) ($.Scratch.Get "postLimit") }}
                     <li>
                         <ul class="actions">
                             <li><a href=
@@ -96,7 +96,11 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                                <a href="/categories/{{ $value.Name | urlize }}/">
+                                {{ if (isset (index $.Site.Data.sections $value.Name) "identifier") }}
+                                    <i class="{{ index $.Site.Data.sections $value.Name "identifier" }}">&nbsp;</i>
+                                {{ end }}
+                                {{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             </header>
                         </article>

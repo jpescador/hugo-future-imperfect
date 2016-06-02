@@ -6,5 +6,4 @@ linktitle = ""
 featured = ""
 featuredpath = ""
 featuredalt = ""
-type = "post"
 +++
