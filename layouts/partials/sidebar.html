@@ -5,13 +5,13 @@
         <section id="intro">
             {{ $pic := .Site.Params.intro.pic }}
             {{ with $pic.src }}
-                {{ if $pic.circle }}
+                <a href="/">{{ if $pic.circle }}
                     <img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
                 {{ else if $pic.imperfect }}
                     <a href="/" class="logo"><img src="{{ . }}" alt="{{ $pic.alt }}" /></a>
                 {{ else }}
                     <img src="{{ . }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
-                {{ end }}
+                {{ end }}</a>
             {{ end }}
             {{ with .Site.Params.intro }}
                 <header>
