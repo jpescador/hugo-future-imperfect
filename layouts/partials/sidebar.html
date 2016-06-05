@@ -31,16 +31,13 @@
         </section>
 
     <!-- Posts List -->
+    {{ if or (gt .Site.Params.postAmount.sidebar 0) (eq .Site.Params.postAmount.sidebar nil) }}
         <section id="recent-posts">
             <ul class="posts">
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
-                {{ if .Site.Params.orderByPublishDate }}
-                    {{ $.Scratch.Set "recentPosts" .Site.Pages.ByPublishDate.Reverse }}
-                {{ else }}
-                    {{ $.Scratch.Set "recentPosts" .Site.Pages }}
-                {{ end }}
+                {{ $.Scratch.Set "recentPosts" .Site.Pages }}
 
                 {{ with .Site.Params.postAmount.sidebar }}
                     {{ $.Scratch.Set "postLimit" . }}
@@ -48,16 +45,12 @@
                     {{ $.Scratch.Set "postLimit" 5 }}
                 {{ end }}
 
-                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "!=" "page") }}
                     <li>
                         <article>
                             <header>
                                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                                {{ if .Site.Params.orderByPublishDate }}
-                                    {{ $.Scratch.Set "dateType" .PublishDate }}
-                                {{ else }}
-                                    {{ $.Scratch.Set "dateType" .Date }}
-                                {{ end }}
+                                {{ $.Scratch.Set "dateType" .Date }}
                                 <time class="published" datetime=
                                     '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
                                     {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
@@ -66,7 +59,7 @@
                     </li>
                 {{ end }}
 
-                {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+                {{ if ge (len (where .Site.Pages "Type" "!=" "page")) ($.Scratch.Get "postLimit") }}
                     <li>
                         <ul class="actions">
                             <li><a href=
@@ -81,6 +74,7 @@
                 {{ end }}
             </ul>
         </section>
+    {{ end }}
 
     <!-- This if statement only applies if someone goes to the /categories url -->
     <!-- Otherwise this section is shown for all other links -->
@@ -102,7 +96,11 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                                <a href="/categories/{{ $value.Name | urlize }}/">
+                                {{ if (isset (index $.Site.Data.sections $value.Name) "identifier") }}
+                                    <i class="{{ index $.Site.Data.sections $value.Name "identifier" }}">&nbsp;</i>
+                                {{ end }}
+                                {{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             </header>
                         </article>

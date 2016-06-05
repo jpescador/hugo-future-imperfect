@@ -1,8 +1,7 @@
-<article class="post">
+<article class="summary">
     {{ .Render "header" }}
     {{ .Render "featured" }}
     <p>{{ printf "%s" .Summary | markdownify }}</p>
-
     <footer>
         <ul class="actions">
             <li><a href="{{ .Permalink }}" class="button big">Continue Reading</a></li>
