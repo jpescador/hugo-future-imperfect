@@ -136,7 +136,7 @@
                 {{ end }}
             </ul>
 
-            <p class="copyright">&copy; {{ .Site.Title }}. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author}}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
         </section>
 
 </section>
