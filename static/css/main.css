@@ -1960,7 +1960,6 @@
 		padding: 0.75em 1em;
 	}
 
-	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -1974,7 +1973,6 @@
 		z-index: -1;
 	}
 
-		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
 			color: #646464;
@@ -1987,7 +1985,6 @@
 			position: relative;
 		}
 
-			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
@@ -1997,7 +1994,6 @@
 				text-transform: none !important;
 			}
 
-			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				background: rgba(160, 160, 160, 0.075);
 				border: solid 1px rgba(160, 160, 160, 0.3);
@@ -2012,7 +2008,6 @@
 				width: 1.65em;
 			}
 
-		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
 			background: #3c3b3b;
 			border-color: #3c3b3b;
@@ -2020,7 +2015,6 @@
 			content: '\f00c';
 		}
 
-		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
 			border-color: #2ebaae;
 			box-shadow: 0 0 0 1px #2ebaae;
@@ -2151,6 +2145,15 @@
 			}
 
 /* List */
+
+	ul.task-list {
+		list-style: none;
+	}
+
+	.task-list-item {
+		position: relative;
+		top: -1px;
+	}
 
 	ol {
 		list-style: decimal;
