@@ -19,7 +19,7 @@
                 <li>
                     <article>
                         <header>
-                            <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                            <a href="{{ printf "/%s/%s" $data.Plural ($value.Name | urlize) | relURL }}">{{ $value.Name }}</a>
                             <span style="float:right;">{{ $value.Count }}</span>
                         </header>
                     </article>

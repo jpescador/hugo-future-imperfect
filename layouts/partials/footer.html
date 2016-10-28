@@ -16,18 +16,18 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
-            <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
+            <script src="{{ "/js/jquery.min.js" | relURL }}"></script>
+            <script src="{{ "/js/skel.min.js" | relURL }}"></script>
+            <script src="{{ "/js/util.js" | relURL }}"></script>
+            <script src="{{ "/js/main.js" | relURL }}"></script>
+            <script src="{{ "/js/backToTop.js" | relURL }}"></script>
+            <script src="{{ "/js/highlight.pack.js" | relURL }}"></script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}
             {{ range $.Scratch.Get "jsFiles" }}
                 {{ if ne . "default" }}
-                    <script src="{{ . }}"></script>
+                    <script src="{{ . | relURL }}"></script>
                 {{ end }}
             {{ end }}
         {{ end }}
