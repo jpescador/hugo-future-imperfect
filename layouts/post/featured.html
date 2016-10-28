@@ -7,7 +7,7 @@
         {{ $path := $.Scratch.Get "path" }}
 
         <a href="{{ .Permalink }}" class="image featured">
-            <img src="{{ $path }}/{{ .Params.featured }}" alt="{{ .Params.featuredalt }}" />
+            <img src="{{ printf "%s/%s" $path .Params.featured | relURL }}" alt="{{ .Params.featuredalt }}" />
         </a>
     {{ end }}
 {{ end }}

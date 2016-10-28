@@ -6,11 +6,11 @@
             {{ $pic := .Site.Params.intro.pic }}
             {{ with $pic.src }}
                 {{ if $pic.circle }}
-                    <img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+                    <img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
                 {{ else if $pic.imperfect }}
-                    <a href="/" class="logo"><img src="{{ . }}" alt="{{ $pic.alt }}" /></a>
+                    <a href="{{ "/" | relURL }}" class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
                 {{ else }}
-                    <img src="{{ . }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+                    <img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
                 {{ end }}
             {{ end }}
             {{ with .Site.Params.intro }}
@@ -102,7 +102,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                                <a href="{{ printf "/categories/%s" ( $value.Name | urlize ) | relURL }}">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             </header>
                         </article>
@@ -119,7 +119,7 @@
             <p>{{ . }}</p>
 
             <ul class="actions">
-                <li><a href="/about/" class="button">Learn More</a></li>
+                <li><a href="{{ "/about/" | relURL }}" class="button">Learn More</a></li>
             </ul>
         </section>
         {{ end }}
