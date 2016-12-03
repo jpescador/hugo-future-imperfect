@@ -6,12 +6,20 @@
 <li><a href="//bitbucket.com/{{.}}" target="_blank" title="Bitbucket" class="fa fa-bitbucket"></a></li>
 {{ end }}
 
+{{ with .Site.Social.gitlab }}
+<li><a href="//gitlab.com/{{.}}" target="_blank" title="GitLab" class="fa fa-gitlab"></a></li>
+{{ end }}
+
 {{ with .Site.Social.jsfiddle }}
 <li><a href="//jsfiddle.com/{{.}}" target="_blank" title="JSFiddle" class="fa fa-jsfiddle"></a></li>
 {{ end }}
 
 {{ with .Site.Social.codepen }}
 <li><a href="//codepen.io/{{.}}" target="_blank" title="CodePen" class="fa fa-codepen"></a></li>
+{{ end }}
+
+{{ with .Site.Social.freecodecamp }}
+<li><a href="//freecodecamp.com/{{.}}" target="_blank" title="freeCodeCamp" class="fa fa-free-code-camp"></a></li>
 {{ end }}
 
 {{ with .Site.Social.foursquare }}
