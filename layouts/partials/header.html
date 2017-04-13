@@ -44,7 +44,7 @@
              to keep the deprecated param. -->
         {{ if isset .Site.Params "minifiedFilesCSS" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
-        {{ else if isset .Site.Params "customCSS" }}
+        {{ else if isset .Site.Params "customcss" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
         {{ else }}
             {{ $.Scratch.Set "cssFiles" false }}
