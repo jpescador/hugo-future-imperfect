@@ -128,7 +128,7 @@
                 {{ end }}
             </ul>
 
-            <p class="copyright">&copy; 2017 {{ .Site.Title }}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author}}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
         </section>
 
 </section>
