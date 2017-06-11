@@ -37,10 +37,6 @@
         {{ template "_internal/schema.html" . }}
         {{ template "_internal/google_news.html" . }}
 
-        <!--[if lte IE 8]>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <![endif]-->
-
         <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
              that replaces this is customCSS. Utilizing a scratch variable cssFiles
              to keep the deprecated param. -->
@@ -71,8 +67,6 @@
             {{ end }}
         {{ end }}
 
-        <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
         {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
             {{ template "_internal/google_analytics.html" . }}
         {{ end }}
