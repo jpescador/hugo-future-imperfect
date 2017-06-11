@@ -15,6 +15,11 @@
 
                     {{ $.Scratch.Set "categoryUrl" $categoryMenu.URL }}
 
+                    <!-- Ensure that there is a trailing '/' in the category Url -->
+                    {{ if ne (substr ($.Scratch.Get "categoryUrl") (sub (len ($.Scratch.Get "categoryUrl")) 1)) "/" }}
+                        {{ $.Scratch.Set "categoryUrl" (add ($.Scratch.Get "categoryUrl") "/") }}
+                    {{ end }}
+
                     {{ with $categoryMenu.Identifier }}
                         <i class="{{ . }}">&nbsp;</i>
                     {{ end }}
