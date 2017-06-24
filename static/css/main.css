@@ -1836,12 +1836,12 @@
 		margin: 0 0 2em 0;
 	}
 
-		form.search {
+		form.search, form.contact {
 			text-decoration: none;
 			position: relative;
 		}
 
-			form.search:before {
+			form.search:before, form.contact:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
 				font-family: FontAwesome;
@@ -1850,7 +1850,7 @@
 				text-transform: none !important;
 			}
 
-			form.search:before {
+			form.search:before, form.contact:before {
 				color: #aaaaaa;
 				content: '\f002';
 				display: block;
@@ -1863,7 +1863,7 @@
 				width: 2.5em;
 			}
 
-			form.search > input:first-child {
+			form.search > input:first-child, form.contact  > input:first-child {
 				padding-left: 2.5em;
 			}
 
@@ -1904,6 +1904,18 @@
 		select:invalid,
 		textarea:invalid {
 			box-shadow: none;
+		}
+
+		input[type="text"]:hover,
+		input[type="password"]:hover,
+		input[type="email"]:hover,
+		input[type="tel"]:hover,
+		select:hover,
+		textarea:hover {
+			-webkit-transition:border-color 0.3s ease-in-out;
+			moz-transition:border-color 0.3s ease-in-out;
+			transition:border-color 0.3s ease-in-out;
+			border-color: #2ebaae;
 		}
 
 		input[type="text"]:focus,

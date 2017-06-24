@@ -1,0 +1,34 @@
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        <article class="post">
+            {{ $.Scratch.Set "h1" true }}
+            {{ .Render "header" }}
+            <div id="content">
+                {{ .Content }}
+                <div class="contact-container">
+                <form id="contact" action="//formspree.io/{{ .Site.Social.email }}" method="post" center width="300px">
+                  <h3>Contact Me</h3>
+                  <h4>Replies Typically Within 24 Hours.</h4>
+                  <fieldset>
+                   <input placeholder="Your name" type="text" name="name" tabindex="1" required autofocus>
+                  </fieldset>
+                  <fieldset>
+                   <input placeholder="Your Email Address" type="email" name="email" tabindex="2" required>
+                  </fieldset>
+                  <fieldset>
+                   <textarea placeholder="Type your Message Here...." name="message" tabindex="4" required></textarea>
+                  </fieldset>
+                  <fieldset>
+                   <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                  </fieldset>
+              </form>
+            </div>
+            </div>
+        </article>
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}

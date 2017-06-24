@@ -37,8 +37,6 @@
         {{ template "_internal/schema.html" . }}
         {{ template "_internal/google_news.html" . }}
 
-        <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
-
         <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
              that replaces this is customCSS. Utilizing a scratch variable cssFiles
              to keep the deprecated param. -->
@@ -53,23 +51,22 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="/css/google-font.css" />
-            <link rel="stylesheet" href="/css/font-awesome.min.css" />
-            <link rel="stylesheet" href="/css/main.css" />
-            <link rel="stylesheet" href="/css/add-on.css" />
-            <link rel="stylesheet" href="/css/monokai-sublime.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+
         {{ end }}
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
-                    <link rel="stylesheet" href="{{ . }}" />
+                    <link rel="stylesheet" href="{{ . }}">
                 {{ end }}
             {{ end }}
         {{ end }}
 
-        <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
         {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
             {{ template "_internal/google_analytics.html" . }}
         {{ end }}

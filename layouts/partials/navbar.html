@@ -29,7 +29,7 @@
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
+                    <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
                 </form>
             </li>
             <li class="menu">

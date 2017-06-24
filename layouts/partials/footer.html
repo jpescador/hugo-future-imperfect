@@ -16,12 +16,12 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard js files associated with the theme -->
         {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
             <script src="/js/util.js"></script>
             <script src="/js/main.js"></script>
             <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
         {{ end }}
 
         {{ if ne ($.Scratch.Get "jsFiles") false }}
@@ -34,6 +34,5 @@
 
             <!-- This is called by default since this theme uses highlight.js -->
             <script>hljs.initHighlightingOnLoad();</script>
-            <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
     </body>
 </html>
