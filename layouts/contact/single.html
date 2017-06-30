@@ -10,20 +10,20 @@
             <div id="content">
                 {{ .Content }}
                 <div class="contact-container">
-                <form id="contact" action="//formspree.io/{{ .Site.Social.email }}" method="post" center width="300px">
+                <form id="contact" action="//{{ Params.emailservice }}" method="post" center width="300px">
                   <h3>Contact Me</h3>
                   <h4>Replies Typically Within 24 Hours.</h4>
                   <fieldset>
-                   <input placeholder="Your name" type="text" name="name" tabindex="1" required autofocus>
+                   <input placeholder="{{ .Params.contactname }}" type="text" name="name" tabindex="1" required autofocus>
                   </fieldset>
                   <fieldset>
-                   <input placeholder="Your Email Address" type="email" name="email" tabindex="2" required>
+                   <input placeholder="{{ .Params.contactemail}}" type="email" name="email" tabindex="2" required>
                   </fieldset>
                   <fieldset>
-                   <textarea placeholder="Type your Message Here...." name="message" tabindex="4" required></textarea>
+                   <textarea placeholder="{{ .Params.contactmessage}}" name="message" tabindex="3" required></textarea>
                   </fieldset>
                   <fieldset>
-                   <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                   <button name="submit" type="submit" id="contact-submit" tabindex="4">Submit</button>
                   </fieldset>
               </form>
             </div>
