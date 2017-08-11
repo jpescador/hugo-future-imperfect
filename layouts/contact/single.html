@@ -1,0 +1,34 @@
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        <article class="post">
+            {{ $.Scratch.Set "h1" true }}
+            {{ .Render "header" }}
+            <div id="content">
+                {{ .Content }}
+                <div class="contact-container">
+                <form id="contact" action="//{{ Params.emailservice }}" method="post" center width="300px">
+                  <h3>Contact Me</h3>
+                  <h4>Replies Typically Within 24 Hours.</h4>
+                  <fieldset>
+                   <input placeholder="{{ .Params.contactname }}" type="text" name="name" tabindex="1" required autofocus>
+                  </fieldset>
+                  <fieldset>
+                   <input placeholder="{{ .Params.contactemail}}" type="email" name="email" tabindex="2" required>
+                  </fieldset>
+                  <fieldset>
+                   <textarea placeholder="{{ .Params.contactmessage}}" name="message" tabindex="3" required></textarea>
+                  </fieldset>
+                  <fieldset>
+                   <button name="submit" type="submit" id="contact-submit" tabindex="4">Submit</button>
+                  </fieldset>
+              </form>
+            </div>
+            </div>
+        </article>
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}
