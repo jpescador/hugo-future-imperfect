@@ -108,7 +108,7 @@
         {{ with .Site.Params.intro.about }}
         <section class="blurb">
             <h2>About</h2>
-            <p>{{ . }}</p>
+            <p>{{ . | safeHTML }}</p>
 
             <ul class="actions">
                 <li><a href="/about/" class="button">Learn More</a></li>
