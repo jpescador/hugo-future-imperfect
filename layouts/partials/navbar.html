@@ -1,9 +1,9 @@
 <!-- Header -->
 <header id="header">
-    {{ if and (.IsNode) (or (.IsHome) (eq .Title "Posts")) }}
-        <h1><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h1>
+    {{ if .IsHome }}
+        <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
     {{ else }}
-        <h2><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h2>
+        <h1><a href="/">{{ .Section }}</a></h1>
     {{ end }}
 
     <nav class="links">
@@ -11,8 +11,7 @@
             {{ range .Site.Menus.main }}
                 <li>
                     <a href="{{ .URL }}">
-                        {{ with .Identifier }}
-                            <i class="{{ . }}">&nbsp;</i>{{ end }}{{ .Name }}
+                            <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
                     </a>
                 </li>
             {{ end }}
@@ -57,10 +56,7 @@
                     <li>
                         <a href="{{ .URL }}">
                             <h3>
-                                {{ with .Identifier }}
-                                    <i class="{{ . }}">&nbsp;</i>
-                                {{ end }}
-                                {{ .Name }}
+                                <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
                             </h3>
                         </a>
                     </li>
