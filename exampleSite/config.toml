@@ -30,16 +30,15 @@ googleAnalytics = ""
     # Disable showing the social sharing links on blog posts
     # socialShareDisabled = true
 
-    # Load custom CSS or JavaScript files. This replaces the deprecated params
-    # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
+    # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
     # customCSS            = ["default", "/path/to/file"]
     # customJS             = ["default", "/path/to/file"]
 
     # Loading min files for exampleSite
-    customCSS            = ["/css/main.min.css"]
-    customJS             = ["/js/main.min.js"]
+    customCSS            = ["default"]
+    customJS             = ["default"]
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
