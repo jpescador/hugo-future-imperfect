@@ -1,38 +1,33 @@
-            </div>
-        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-        <!-- Scripts -->
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      <!-- Scripts -->
 
-        <!-- Keeping the deprecated param, minifiedFilesJS, for now. The new param
-             that replaces this is customJS. Utilizing a scratch variable jsFiles
-             to keep the deprecated param. -->
-        {{ if isset .Site.Params "minifiedFilesJS" }}
-            {{ $.Scratch.Set "jsFiles" .Site.Params.minifiedFilesJS }}
-        {{ else if isset .Site.Params "customJS" }}
-            {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
-        {{ else }}
-            {{ $.Scratch.Set "jsFiles" false }}
-        {{ end }}
+      {{ if isset .Site.Params "customJS" }}
+        {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
+      {{ else }}
+        {{ $.Scratch.Set "jsFiles" false }}
+      {{ end }}
 
-        <!-- If the value "default" is passed into the param then we will first
-             load the standard js files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
-            <script src="/js/backToTop.js"></script>
-        {{ end }}
+      <!-- If the value "default" is passed into the param then we will first
+       load the standard js files associated with the theme -->
+      {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      {{ end }}
 
-        {{ if ne ($.Scratch.Get "jsFiles") false }}
-            {{ range $.Scratch.Get "jsFiles" }}
-                {{ if ne . "default" }}
-                    <script src="{{ . }}"></script>
-                {{ end }}
+      {{ if ne ($.Scratch.Get "jsFiles") false }}
+      {{ range $.Scratch.Get "jsFiles" }}
+            {{ if ne . "default" }}
+                <script src="{{ . }}"></script>
             {{ end }}
         {{ end }}
+      {{ end }}
 
-            <!-- This is called by default since this theme uses highlight.js -->
-            <script>hljs.initHighlightingOnLoad();</script>
+      <!-- This is called by default since this theme uses highlight.js -->
+      <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>

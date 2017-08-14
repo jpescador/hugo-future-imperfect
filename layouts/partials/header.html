@@ -37,12 +37,7 @@
         {{ template "_internal/schema.html" . }}
         {{ template "_internal/google_news.html" . }}
 
-        <!-- Keeping the deprecated param, minifiedFilesCSS, for now. The new param
-             that replaces this is customCSS. Utilizing a scratch variable cssFiles
-             to keep the deprecated param. -->
-        {{ if isset .Site.Params "minifiedFilesCSS" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.minifiedFilesCSS }}
-        {{ else if isset .Site.Params "customcss" }}
+        {{ if isset .Site.Params "customCSS" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
         {{ else }}
             {{ $.Scratch.Set "cssFiles" false }}
@@ -56,7 +51,6 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="/css/main.css">
             <link rel="stylesheet" href="/css/add-on.css">
-
         {{ end }}
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
@@ -73,5 +67,5 @@
     </head>
     <body>
 
-        <!-- Wrapper -->
-        <div id="wrapper">
+      <!-- Wrapper -->
+      <div id="wrapper">

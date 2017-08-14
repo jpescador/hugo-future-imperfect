@@ -23,12 +23,18 @@ There will be a folder in this theme called exampleSite. The structure of the fo
     exampleSite
     ├── config.toml
     ├── content
+        └── about
+        |   └── _index.md
         └── blog
         │   ├── creating-a-new-theme.md
         │   ├── goisforlovers.md
         │   ├── hugoisforlovers.md
         │   └── migrate-from-jekyll.md
-        └── about.md
+        └── contact
+        │   └── _index.md
+        └── itemized
+            └── item1.md
+            └── item2.md
     ...
 
 Copy the config file from exampleSite to the root directory of your Hugo site.

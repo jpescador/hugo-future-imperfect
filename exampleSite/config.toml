@@ -12,6 +12,8 @@ googleAnalytics = ""
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
     navbarTitle          = "Future Imperfect"
+    # This will match the navbarTitle to the section of the website
+    dynamicTitles        = true
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
@@ -30,16 +32,14 @@ googleAnalytics = ""
     # Disable showing the social sharing links on blog posts
     # socialShareDisabled = true
 
-    # Load custom CSS or JavaScript files. This replaces the deprecated params
-    # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
+    # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
     # customCSS            = ["default", "/path/to/file"]
     # customJS             = ["default", "/path/to/file"]
 
-    # Loading min files for exampleSite
-    customCSS            = ["/css/main.min.css"]
-    customJS             = ["/js/main.min.js"]
+    customCSS            = [""]
+    customJS             = [""]
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -78,27 +78,33 @@ googleAnalytics = ""
 
 [[menu.main]]
     name = "About"
-    url = "/about"
+    url = "/about/"
     identifier = "fa fa-id-card-o"
     weight = 2
 
 [[menu.main]]
     name = "Blog"
-    url = "/blog"
+    url = "/blog/"
     identifier = "fa fa-newspaper-o"
     weight = 3
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories"
-    identifier = "fa fa-sitemap"
+    name = "Itemized"
+    url = "/itemized/"
+    identifier = "fa fa-list"
     weight = 4
 
 [[menu.main]]
-    name = "Contact"
-    url = "/contact"
-    identifier = "fa fa-envelope-o"
+    name = "Categories"
+    url = "/categories/"
+    identifier = "fa fa-sitemap"
     weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    identifier = "fa fa-envelope-o"
+    weight = 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
