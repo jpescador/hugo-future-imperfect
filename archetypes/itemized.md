@@ -10,6 +10,6 @@ link = ""
 linktitle = ""
 platform = ""
 title = ""
-type = "applications"
+type = "itemized"
 
 +++
