@@ -12,6 +12,8 @@ googleAnalytics = ""
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
     navbarTitle          = "Future Imperfect"
+    # This will match the navbarTitle to the section of the website
+    dynamicTitles        = true
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
