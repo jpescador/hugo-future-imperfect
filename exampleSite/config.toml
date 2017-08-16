@@ -6,6 +6,7 @@ preserveTaxonomyNames = true
 paginate = 3
 disqusShortname = "shortname"
 googleAnalytics = ""
+pluralizeListTitles = false
 
 [params]
     # Sets the meta tag description, usually reserved for the main page
@@ -14,6 +15,8 @@ googleAnalytics = ""
     navbarTitle          = "Future Imperfect"
     # This will match the navbarTitle to the section of the website
     dynamicTitles        = true
+    # RSS icon that appear on the sidebar, next to the social media buttons
+    rssAppearAtBottom    = true
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
@@ -30,7 +33,7 @@ googleAnalytics = ""
     faviconVersion       = ""
 
     # Disable showing the social sharing links on blog posts
-    # socialShareDisabled = true
+    socialShareDisabled = false
 
     # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
