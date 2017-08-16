@@ -20,7 +20,7 @@
                 </header>
             {{ end }}
             <ul class="icons">
-                {{ if .RSSLink }}
+                {{ if and (.RSSLink) (.Site.Params.rssAppearAtTop) }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 {{ end }}
@@ -119,7 +119,7 @@
     <!-- Footer -->
         <section id="footer">
             <ul class="icons">
-                {{ if .RSSLink }}
+                {{ if and (.RSSLink) (.Site.Params.rssAppearAtBottom) }}
                     <li><a href="{{ .RSSLink }}" type="application/rss+xml"
                         target="_blank" title="RSS" class="fa fa-rss"></a></li>
                 {{ end }}
