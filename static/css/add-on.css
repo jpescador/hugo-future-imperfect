@@ -384,21 +384,21 @@ ul.pagination li {
         opacity: .5;
     }
 
-    .fancybox {
-      width: 85%;
-      padding: .5em;
-      background: #ddd;
-      margin: auto;
+.fancybox {
+  width: 85%;
+  padding: .5em;
+  background: #ddd;
+  margin: auto;
+}
+
+    .fancybox a {
+      border: 0;
     }
 
-        .fancybox a {
-          border: 0;
-        }
-
-        .fancybox .caption {
-          margin: 0;
-          line-height: .5em;
-          color: #777;
-          text-align: center;
-          font-style: italic;
-        }
+    .fancybox .caption {
+      margin: 0;
+      line-height: .5em;
+      color: #777;
+      text-align: center;
+      font-style: italic;
+    }
