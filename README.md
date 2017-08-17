@@ -4,6 +4,7 @@ Feel free to make pull requests at any time. The following is a list of things t
 
 - [ ] Clean up CSS per [Codacy Check](https://www.codacy.com/app/thepatrickcollins/hugo-future-imperfect/issues?&filters=W3siaWQiOiJMYW5ndWFnZSIsInZhbHVlcyI6WyJDU1MiXX0seyJpZCI6IkNhdGVnb3J5IiwidmFsdWVzIjpbbnVsbF19LHsiaWQiOiJMZXZlbCIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiUGF0dGVybiIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiQXV0aG9yIiwidmFsdWVzIjpbbnVsbF19LHsidmFsdWVzIjpbXX1d)
 - [ ] Clean up JavaScript per [Codacy Check](https://www.codacy.com/app/thepatrickcollins/hugo-future-imperfect/issues?&filters=W3siaWQiOiJMYW5ndWFnZSIsInZhbHVlcyI6WyJKYXZhc2NyaXB0Il19LHsiaWQiOiJDYXRlZ29yeSIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiTGV2ZWwiLCJ2YWx1ZXMiOltudWxsXX0seyJpZCI6IlBhdHRlcm4iLCJ2YWx1ZXMiOltudWxsXX0seyJpZCI6IkF1dGhvciIsInZhbHVlcyI6W251bGxdfV0=)
+- [ ] Hide email address via JS or CSS (prevent web crawlers)
 
 # Hugo Future Imperfect
 
