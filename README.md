@@ -1,11 +1,3 @@
-# Task List for pacollins/hugo-future-imperfect
-
-Feel free to make pull requests at any time. The following is a list of things that really need to be done to the template:
-
-- [ ] Clean up CSS per [Codacy Check](https://www.codacy.com/app/thepatrickcollins/hugo-future-imperfect/issues?&filters=W3siaWQiOiJMYW5ndWFnZSIsInZhbHVlcyI6WyJDU1MiXX0seyJpZCI6IkNhdGVnb3J5IiwidmFsdWVzIjpbbnVsbF19LHsiaWQiOiJMZXZlbCIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiUGF0dGVybiIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiQXV0aG9yIiwidmFsdWVzIjpbbnVsbF19LHsidmFsdWVzIjpbXX1d)
-- [ ] Clean up JavaScript per [Codacy Check](https://www.codacy.com/app/thepatrickcollins/hugo-future-imperfect/issues?&filters=W3siaWQiOiJMYW5ndWFnZSIsInZhbHVlcyI6WyJKYXZhc2NyaXB0Il19LHsiaWQiOiJDYXRlZ29yeSIsInZhbHVlcyI6W251bGxdfSx7ImlkIjoiTGV2ZWwiLCJ2YWx1ZXMiOltudWxsXX0seyJpZCI6IlBhdHRlcm4iLCJ2YWx1ZXMiOltudWxsXX0seyJpZCI6IkF1dGhvciIsInZhbHVlcyI6W251bGxdfV0=)
-- [ ] Hide email address via JS or CSS (prevent web crawlers)
-
 # Hugo Future Imperfect
 
 Future Imperfect is a responsive theme tailored for blogging. The name is no coincidence which is a port of [HTML5 UP's theme](http://html5up.net/future-imperfect). Some extra features have also been implemented to assist you.
@@ -52,7 +44,7 @@ Copy the config file from exampleSite to the root directory of your Hugo site.
 The file contains comments on the functionality for each param. Please see the file for more information.
 
 ## Shortcodes
-The theme also contains the following [shortcodes](https://gohugo.io/extras/shortcodes/) that I hope you find useful: img-post, img-fit, and url-link.  
+The theme also contains the following [shortcodes](https://gohugo.io/extras/shortcodes/) that I hope you find useful: img-post, img-fit, and url-link.
 
 ### Image post
 img-post: allows the user to add an image which can be placed in the center, to the left, or the right. The commands are shown below:
