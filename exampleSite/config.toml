@@ -13,6 +13,10 @@ pluralizeListTitles = false
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
     navbarTitle          = "Future Imperfect"
+    # set this to the section name if section is not post
+    viewMorePostLink     = "/blog/"
+
+# Optional Params
     # This will match the navbarTitle to the section of the website
     dynamicTitles        = true
     # RSS icon that appear on the sidebar, next to the social media buttons
@@ -21,10 +25,6 @@ pluralizeListTitles = false
     # Social media buttons that appear on the sidebar
     socialAppearAtTop    = true
     socialAppearAtBottom = true
-    # set this to the section name if section is not post
-    viewMorePostLink     = "/blog/"
-
-# Optional Params
     categoriesByCount    = true
     includeReadingTime   = true
     # The set of favicons used are based on the write-up from this link:
@@ -42,8 +42,15 @@ pluralizeListTitles = false
     # customCSS            = ["default", "/path/to/file"]
     # customJS             = ["default", "/path/to/file"]
 
-    customCSS            = [""]
-    customJS             = [""]
+    customCSS            = ["default"]
+    customJS             = ["default"]
+
+# Disqus will take priority over staticman due to its ease of use. Feel free to check out both and decide.
+[params.staticman]
+    staticman = false
+    username  = ""
+    repo      = ""
+    branch    = ""
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
