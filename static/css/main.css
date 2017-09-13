@@ -355,21 +355,6 @@
 			border-bottom-color: transparent;
 		}
 
-/* Blurb */
-
-	.blurb h2 {
-		font-size: 0.8em;
-		margin: 0 0 1.5em 0;
-	}
-
-	.blurb h3 {
-		font-size: 0.7em;
-	}
-
-	.blurb p {
-		font-size: 0.9em;
-	}
-
 /* Box */
 
 	.box {
@@ -1200,6 +1185,10 @@
 				transform: scale(1.05);
 			}
 
+			.mini-post .image.featured {
+					margin: 0;
+			}
+
 		.mini-post header {
 			padding: 1.25em 4.25em 0.1em 1.25em ;
 			min-height: 4em;
@@ -1236,7 +1225,7 @@
 
 		@media screen and (max-width: 1280px) {
 
-			.mini-posts {
+			.mini-posts .posts-container {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -1245,28 +1234,31 @@
 				-webkit-flex-wrap: wrap;
 				-ms-flex-wrap: wrap;
 				flex-wrap: wrap;
-				width: calc(100% + 2em);
+				justify-content: space-between;
+				width: 100%;
 			}
 
-				.mini-posts > * {
-					margin: 2em 2em 0 0;
-					width: calc(50% - 2em);
-				}
-
-				.mini-posts > :nth-child(-n + 2) {
+				.mini-posts .posts-container > * {
+					margin: 2em 0 0 0;
+					width: 24%;
 					margin-top: 0;
 				}
 
 		}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 800px) {
 
-			.mini-posts {
-				display: block;
-				width: 100%;
+
+			.mini-posts .posts-container > * {
+				margin: 0 0 2em 0;
+				width: 49%;
 			}
 
-				.mini-posts > * {
+		}
+
+		@media screen and (max-width: 480px) {
+
+				.mini-posts .posts-container > * {
 					margin: 0 0 2em 0;
 					width: 100%;
 				}
@@ -2395,6 +2387,14 @@
 				padding: 0 0.5em 0 0;
 			}
 
+		@media screen and (min-width: 1280px) {
+
+				#header .menu {
+					display: none;
+				}
+
+			}
+
 		@media screen and (max-width: 980px) {
 
 			#header .links {
@@ -2508,9 +2508,7 @@
 			padding-top: 0;
 		}
 
-		#sidebar #recent-posts ul.posts time,
-		#sidebar #categories ul.posts li header,
-		#sidebar .blurb p {
+		#sidebar #mini-bio p {
 				/* Theoretically for IE 8 & 9 (more valid) */
 				/* ...but not required as filter works too */
 				/* should come BEFORE filter */
@@ -2522,6 +2520,8 @@
 
 				/* Modern Browsers */
 				opacity: 0.65;
+				font-size: 0.9em;
+				padding: 1.25em 1.25em 0.1em 1.25em
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -2649,6 +2649,7 @@
 	}
 
 	#footer .copyright {
+		text-align: center;
 		color: #aaaaaa;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 0.5em;
