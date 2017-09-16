@@ -31,6 +31,7 @@
         </section>
 
     <!-- Posts List -->
+    {{ if ge .Site.Params.postAmount.sidebar 0 }}
         <section id="recent-posts">
             <ul class="posts">
                 <header>
@@ -73,6 +74,7 @@
                 {{ end }}
             </ul>
         </section>
+    {{ end }}
 
     <!-- This if statement only applies if someone goes to the /categories url -->
     <!-- Otherwise this section is shown for all other links -->

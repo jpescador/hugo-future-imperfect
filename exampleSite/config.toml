@@ -73,8 +73,9 @@ pluralizeListTitles = false
     width     = ""
     alt       = "Hugo Future Imperfect"
 
-# Adjust the amount of recent posts on the sidebar.
-# This is optional. The default value 5 will be used
+# Adjust the number of recent posts on the sidebar.
+# Set to -1 to disable recent posts.
+# This is optional. The default value 5 will be used.
 [params.postAmount]
     sidebar = 2
 

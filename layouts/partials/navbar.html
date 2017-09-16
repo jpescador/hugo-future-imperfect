@@ -69,6 +69,7 @@
         </section>
 
     <!-- Recent Posts -->
+    {{ if ge .Site.Params.postAmount.sidebar 0 }}
         <section>
             <ul class="links">
                 <header>
@@ -87,6 +88,7 @@
                 {{ end }}
             </ul>
         </section>
+    {{ end }}
 
     <!-- Actions -->
         <!--
