@@ -6,8 +6,10 @@ description = ""
 featured = ""
 featuredalt = ""
 featuredpath = ""
+link = ""
 linktitle = ""
+platform = ""
 title = ""
-type = "post"
+type = "itemized"
 
 +++

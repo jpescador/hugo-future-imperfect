@@ -23,12 +23,18 @@ There will be a folder in this theme called exampleSite. The structure of the fo
     exampleSite
     ├── config.toml
     ├── content
+        └── about
+        |   └── _index.md
         └── blog
         │   ├── creating-a-new-theme.md
         │   ├── goisforlovers.md
         │   ├── hugoisforlovers.md
         │   └── migrate-from-jekyll.md
-        └── about.md
+        └── contact
+        │   └── _index.md
+        └── itemized
+            └── item1.md
+            └── item2.md
     ...
 
 Copy the config file from exampleSite to the root directory of your Hugo site.
@@ -38,7 +44,7 @@ Copy the config file from exampleSite to the root directory of your Hugo site.
 The file contains comments on the functionality for each param. Please see the file for more information.
 
 ## Shortcodes
-The theme also contains the following [shortcodes](https://gohugo.io/extras/shortcodes/) that I hope you find useful: img-post, img-fit, and url-link.  
+The theme also contains the following [shortcodes](https://gohugo.io/extras/shortcodes/) that I hope you find useful: img-post, img-fit, and url-link.
 
 ### Image post
 img-post: allows the user to add an image which can be placed in the center, to the left, or the right. The commands are shown below:

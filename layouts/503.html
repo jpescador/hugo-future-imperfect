@@ -227,23 +227,24 @@
   <body class="plain error-page-wrapper background-color background-image">
     <div class="content-container">
 	<div class="head-line secondary-text-color">
-		404
+		503
 	</div>
 	<div class="subheader primary-text-color">
-		Oops, the page you're <br>
-		looking for does not exist.
+		Looks like we're having <br>
+		some server issues.
 	</div>
-	<hr>
-	<div class="clearfix"></div>
-	<div class="context primary-text-color">
-		<!-- doesn't use context_content because it's ALWAYS the same thing -->
+    <hr>
+    <div class="clearfix"></div>
+    <div class="context primary-text-color">
+
     <p>
-      You may want to head back to the homepage.<br />
+      Go back to the previous page and try again.
       If you think something is broken, report a problem.
     </p>
-	</div>
+
+
+    </div>
 	<div class="buttons-container">
-		<a class="border-button" href="{{ .Site.BaseURL }}">Go To Homepage</a>
 		<a class="border-button" href="mailto:{{ .Site.Social.email }}">Report A Problem</a>
 	</div>
 </div>
@@ -352,7 +353,7 @@
        });
 
      };
-     var ep = new ErrorPage('body', "404", "plain");
+     var ep = new ErrorPage('body', "503", "plain");
      ep.initialize();
 
      // hack to make sure content stays centered >_<

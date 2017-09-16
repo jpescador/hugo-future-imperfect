@@ -6,19 +6,25 @@ preserveTaxonomyNames = true
 paginate = 3
 disqusShortname = "shortname"
 googleAnalytics = ""
+pluralizeListTitles = false
 
 [params]
     # Sets the meta tag description, usually reserved for the main page
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
     navbarTitle          = "Future Imperfect"
-    # Social media buttons that appear on the sidebar
-    socialAppearAtTop    = true
-    socialAppearAtBottom = true
     # set this to the section name if section is not post
     viewMorePostLink     = "/blog/"
 
 # Optional Params
+    # This will match the navbarTitle to the section of the website
+    dynamicTitles        = true
+    # RSS icon that appear on the sidebar, next to the social media buttons
+    rssAppearAtTop       = true
+    rssAppearAtBottom    = true
+    # Social media buttons that appear on the sidebar
+    socialAppearAtTop    = true
+    socialAppearAtBottom = true
     categoriesByCount    = true
     includeReadingTime   = true
     # The set of favicons used are based on the write-up from this link:
@@ -27,16 +33,24 @@ googleAnalytics = ""
     loadFavicon          = false
     faviconVersion       = ""
 
-    # Load custom CSS or JavaScript files. This replaces the deprecated params
-    # minifiedFilesCSS and minifiedFilesJS. The variable is an array so that you
+    # Disable showing the social sharing links on blog posts
+    socialShareDisabled = false
+
+    # Load custom CSS or JavaScript files. The variable is an array so that you
     # can load multiple files if necessary. You can also load the standard theme
     # files by adding the value, "default".
     # customCSS            = ["default", "/path/to/file"]
     # customJS             = ["default", "/path/to/file"]
 
-    # Loading min files for exampleSite
-    customCSS            = ["/css/main.min.css"]
-    customJS             = ["/js/main.min.js"]
+    customCSS            = ["default"]
+    customJS             = ["default"]
+
+# Disqus will take priority over staticman due to its ease of use. Feel free to check out both and decide.
+[params.staticman]
+    staticman = false
+    username  = ""
+    repo      = ""
+    branch    = ""
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -66,21 +80,42 @@ googleAnalytics = ""
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
+
 [[menu.main]]
-    name = "Blog"
-    url = "/blog"
-    identifier = "fa fa-newspaper-o"
+    name = "Home"
+    url = "/"
+    identifier = "fa fa-home"
     weight = 1
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories"
+    name = "About"
+    url = "/about/"
+    identifier = "fa fa-id-card-o"
     weight = 2
 
 [[menu.main]]
-    name = "About"
-    url = "/about"
+    name = "Blog"
+    url = "/blog/"
+    identifier = "fa fa-newspaper-o"
     weight = 3
+
+[[menu.main]]
+    name = "Itemized"
+    url = "/itemized/"
+    identifier = "fa fa-list"
+    weight = 4
+
+[[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    identifier = "fa fa-sitemap"
+    weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    identifier = "fa fa-envelope-o"
+    weight = 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
