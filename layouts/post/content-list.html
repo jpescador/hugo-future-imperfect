@@ -1,7 +1,11 @@
 <article class="post">
     {{ .Render "header" }}
     {{ .Render "featured" }}
-    <p>{{ printf "%s" .Summary | markdownify }}</p>
+   <!-- <p>{{ printf "%s" .Summary | markdownify }}</p> -->
+
+{{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>.*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+
+    <p>{{ $.Scratch.Get "summary" }}</p>
 
     <footer>
         <ul class="actions">
