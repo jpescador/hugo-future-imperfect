@@ -14,7 +14,7 @@
         <ul>
             {{ range .Site.Menus.main }}
                 <li>
-                    <a href="{{ .URL }}">
+                    <a href="{{ .URL | relLangURL }}">
                             <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
                     </a>
                 </li>
