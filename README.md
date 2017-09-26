@@ -90,6 +90,12 @@ Hugo Future Imperfect was ported and it's extra features were implemented by [Ju
 
 Send me a [tweet](https://twitter.com/julio_pescador), @julio_pescador, if you like the theme and are using it for your own personal use.
 
+## Multilingual (i18n)
+
+You don't blog in English and you want to translate the theme into different language? No problem. Take a look in the `i18n` folder and you'll find a file `en.toml` that we've copied at the beginning. It contains all strings related to the theme. Copy this file, change the name so that it reflects the translation language (like `fr.toml`) and modify the strings needed.
+
+A language switcher is also available with multilingual website activated. You can add png images of flags named 'lang.png' in 'static/flags' folder, for new languages other than English and French.
+
 ## License
 
 This theme is released under the MIT license. Please read the [license](https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md) for more information.
