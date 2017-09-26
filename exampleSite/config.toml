@@ -78,6 +78,22 @@ pluralizeListTitles = false
 [params.postAmount]
     sidebar = 2
 
+# Set up multiple languages
+DefaultContentLanguage = "en"
+
+[Languages]
+[Languages.en]
+LanguageName = "English"
+title = "Hugo Future Imperfect"
+description = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+weight = 1
+
+[Languages.fr]
+LanguageName = "Français"
+title = "Hugo Future Imperfect in fr"
+description = "HTML5 UP theme, Future Imperfect avec quelques extra goodies, porté par Julio Pescador. Multilangues par StatnMap. Powered by Hugo"
+weight = 2
+
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
 

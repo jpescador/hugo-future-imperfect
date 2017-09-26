@@ -1,0 +1,22 @@
+{{ if .Site.IsMultiLingual }}
+<div class="widget-wrap">
+  <div class="widget">
+    <ul class="language">
+      <li>
+        <a class="active" href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">
+          <img src="/flags/{{ .Site.Language.Lang }}.png" alt="{{ .Site.Language.Lang }}" height="15px">
+        </a>
+      </li>
+      {{ if .IsTranslated -}}
+        <li>
+          {{ range .Translations }}
+              <a href="{{ .Permalink }}" lang="{{ .Lang }}">
+                <img src="/flags/{{ .Lang }}.png" alt="{{ .Lang }}" height="15px">
+              </a>
+          {{ end }}
+        </li>
+      {{ end }}  
+    </ul>
+  </div>
+</div>
+{{ end }}

@@ -28,6 +28,7 @@
                     {{ partial "social" . }}
                 {{ end }}
             </ul>
+            {{ partial "language_switcher" . }}
         </section>
 
     <!-- Posts List -->
@@ -65,7 +66,7 @@
                             {{ with .Site.Params.viewMorePostLink }}
                                 {{ . }}
                             {{ else }}
-                                "/post/"
+                                "/{{ $.Site.Language.Lang }}/post/"
                             {{ end }}
                             class="button">View more posts</a></li>
                         </ul>
@@ -81,7 +82,7 @@
         <section id="categories">
             <ul class="posts">
                 <header>
-                    <h3><a href="/categories/">Categories</a></h3>
+                    <h3><a href="/{{ .Site.Language.Lang }}/categories/">Categories</a></h3>
                 </header>
 
                 {{ if .Site.Params.categoriesByCount }}
@@ -94,7 +95,7 @@
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                                <a href="/{{ $.Site.Language.Lang }}/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             </header>
                         </article>
@@ -111,7 +112,7 @@
             <p>{{ . | safeHTML }}</p>
 
             <ul class="actions">
-                <li><a href="/about/" class="button">Learn More</a></li>
+                <li><a href="/{{ $.Site.Language.Lang }}/about/" class="button">Learn More</a></li>
             </ul>
         </section>
         {{ end }}
