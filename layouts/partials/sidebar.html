@@ -16,7 +16,7 @@
             {{ with .Site.Params.intro }}
                 <header>
                     <h2>{{ .header }}</h2>
-                    <p>{{ .paragraph | safeHTML }}</p>
+                    <p>{{ .paragraph }}</p>
                 </header>
             {{ end }}
             <ul class="icons">
@@ -35,7 +35,7 @@
         <section id="recent-posts">
             <ul class="posts">
                 <header>
-                    <h3>Recent Posts</h3>
+                    <h3>{{ i18n "recent_posts" }}</h3>
                 </header>
                 {{ $.Scratch.Set "recentPosts" .Site.Pages }}
 
@@ -50,10 +50,8 @@
                         <article>
                             <header>
                                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                                {{ $.Scratch.Set "dateType" .Date }}
-                                <time class="published" datetime=
-                                    '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                                    {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+                                <time class="published" datetime='{{ .Date }}'>
+                                  {{ default (i18n "date_format") | .Date.Format }}</time>
                             </header>
                         </article>
                     </li>
@@ -68,7 +66,7 @@
                             {{ else }}
                                 "/{{ $.Site.Language.Lang }}/post/"
                             {{ end }}
-                            class="button">View more posts</a></li>
+                            class="button">{{ i18n "see_more" }}</a></li>
                         </ul>
                     </li>
                 {{ end }}
@@ -82,7 +80,7 @@
         <section id="categories">
             <ul class="posts">
                 <header>
-                    <h3><a href="/{{ .Site.Language.Lang }}/categories/">Categories</a></h3>
+                    <h3><a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a></h3>
                 </header>
 
                 {{ if .Site.Params.categoriesByCount }}
@@ -108,11 +106,11 @@
     <!-- About -->
         {{ with .Site.Params.intro.about }}
         <section class="blurb">
-            <h2>About</h2>
+            <h2>{{ i18n "about" }}</h2>
             <p>{{ . | safeHTML }}</p>
 
             <ul class="actions">
-                <li><a href="/{{ $.Site.Language.Lang }}/about/" class="button">Learn More</a></li>
+                <li><a href="/{{ $.Site.Language.Lang }}/about/" class="button">{{ i18n "learn_more" }}</a></li>
             </ul>
         </section>
         {{ end }}
@@ -129,7 +127,7 @@
                 {{ end }}
             </ul>
 
-            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author}}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author}}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a> and <a href="//statnmap.com" target="_blank">StatnMap</a></p>
         </section>
 
 </section>
