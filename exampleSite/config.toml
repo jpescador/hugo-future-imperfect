@@ -96,38 +96,38 @@ weight = 2
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
-
-[[menu.main]]
-    name = "Home"
+# Menu different for each language
+[[Languages.fr.menu.main]]
+    name = "Accueil"
     url = "/"
     identifier = "fa fa-home"
     weight = 1
 
-[[menu.main]]
-    name = "About"
+[[Languages.en.menu.main]]
+    name = "À propos"
     url = "/about/"
     identifier = "fa fa-id-card-o"
     weight = 2
 
-[[menu.main]]
+[[Languages.fr.menu.main]]
     name = "Blog"
     url = "/blog/"
     identifier = "fa fa-newspaper-o"
     weight = 3
 
-[[menu.main]]
+[[Languages.fr.menu.main]]
     name = "Itemized"
     url = "/itemized/"
     identifier = "fa fa-list"
     weight = 4
 
-[[menu.main]]
-    name = "Categories"
+[[Languages.fr.menu.main]]
+    name = "Catégories"
     url = "/categories/"
     identifier = "fa fa-sitemap"
     weight = 5
 
-[[menu.main]]
+[[Languages.fr.menu.main]]
     name = "Contact"
     url = "/contact/"
     identifier = "fa fa-envelope-o"

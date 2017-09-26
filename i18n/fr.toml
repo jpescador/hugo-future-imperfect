@@ -1,6 +1,18 @@
-[translationsLabel]
-  other = "Autres : "
 [date_format]
   other = "02-01-2006"
-[languageSwitcherLabel]
-  other = "Autres traductions"
+[postreadingtime]
+  other = "minutes"
+[recent_posts]
+  other = "Posts récents"
+[see_more]
+  other = "Voir plus"
+[read_more]
+  other = "Lire la suite"
+[categories]
+  other = "Catégories"
+[category]
+  other = "Catégorie"
+[about]
+  other = "à propos"
+[learn_more]
+  other = "En savoir plus"

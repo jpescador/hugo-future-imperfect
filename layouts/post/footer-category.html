@@ -28,9 +28,9 @@
                     {{ $.Scratch.Set "categoryUrl" "/categories/" }}
 
                     {{ if gt $categoryCount 1 }}
-                        Categories
+                        {{ i18n "categories" }}
                     {{ else }}
-                        Category
+                        {{ i18n "category" }}
                     {{ end }}
                 {{ end }}
             </li>
