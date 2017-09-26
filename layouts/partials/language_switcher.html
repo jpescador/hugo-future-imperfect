@@ -1,27 +1,21 @@
 {{ if .Site.IsMultiLingual }}
 <div class="widget-wrap">
-  <h3 class="widget-title">{{i18n "languageSwitcherLabel"}}</h3>
   <div class="widget">
-    <ul id="language">
-        {{ if ge (len .Site.Languages) 3 }}
-          <li class="navlinks-container">
-            <div class="navlinks-children">
-              {{ range .Site.Languages }}
-                {{ if not (eq .Lang $.Site.Language.Lang) }}
-                  <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
-                {{ end }}
-              {{ end }}
-            </div>
-          </li>
-        {{ else }}
-          <li>
-            {{ range .Site.Languages }}
-              {{ if not (eq .Lang $.Site.Language.Lang) }}
-                <a href="/{{ .Lang }}" lang="{{ .Lang }}">{{ default .Lang .LanguageName }}</a>
-              {{ end }}
-            {{ end }}
-          </li>
-        {{ end }}
+    <ul class="language">
+      <li>
+        <a class="active" href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">
+          <img src="/flags/{{ .Site.Language.Lang }}.png" alt="{{ .Site.Language.Lang }}" height="15px">
+        </a>
+      </li>
+      {{ if .IsTranslated -}}
+        <li>
+          {{ range .Translations }}
+              <a href="{{ .Permalink }}" lang="{{ .Lang }}">
+                <img src="/flags/{{ .Lang }}.png" alt="{{ .Lang }}" height="15px">
+              </a>
+          {{ end }}
+        </li>
+      {{ end }}  
     </ul>
   </div>
 </div>
