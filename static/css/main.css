@@ -307,9 +307,9 @@
 		text-align: right;
 	}
 
-/* Author and Format */
+/* Author */
 
-	.author, .format {
+	.author {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -335,7 +335,7 @@
 		white-space: nowrap;
 	}
 
-		.author .name, .format .name {
+		.author .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
@@ -345,15 +345,30 @@
 			margin: 0 1.5em 0 0;
 		}
 
-		.author img, .format img {
+		.author img {
 			border-radius: 100%;
 			display: block;
 			width: 4em;
 		}
 
-		.author:hover .name, .format:hover .name {
+		.author:hover .name {
 			border-bottom-color: transparent;
 		}
+
+/* Blurb */
+
+	.blurb h2 {
+		font-size: 0.8em;
+		margin: 0 0 1.5em 0;
+	}
+
+	.blurb h3 {
+		font-size: 0.7em;
+	}
+
+	.blurb p {
+		font-size: 0.9em;
+	}
 
 /* Box */
 
@@ -1185,10 +1200,6 @@
 				transform: scale(1.05);
 			}
 
-			.mini-post .image.featured {
-					margin: 0;
-			}
-
 		.mini-post header {
 			padding: 1.25em 4.25em 0.1em 1.25em ;
 			min-height: 4em;
@@ -1213,7 +1224,7 @@
 				text-transform: uppercase;
 			}
 
-			.mini-post header .author, .mini-post header .format {
+			.mini-post header .author {
 				position: absolute;
 				right: 2em;
 				top: 2em;
@@ -1225,7 +1236,7 @@
 
 		@media screen and (max-width: 1280px) {
 
-			.mini-posts .posts-container {
+			.mini-posts {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -1234,31 +1245,28 @@
 				-webkit-flex-wrap: wrap;
 				-ms-flex-wrap: wrap;
 				flex-wrap: wrap;
-				justify-content: space-between;
-				width: 100%;
+				width: calc(100% + 2em);
 			}
 
-				.mini-posts .posts-container > * {
-					margin: 2em 0 0 0;
-					width: 24%;
+				.mini-posts > * {
+					margin: 2em 2em 0 0;
+					width: calc(50% - 2em);
+				}
+
+				.mini-posts > :nth-child(-n + 2) {
 					margin-top: 0;
 				}
 
 		}
 
-		@media screen and (max-width: 800px) {
-
-
-			.mini-posts .posts-container > * {
-				margin: 0 0 2em 0;
-				width: 49%;
-			}
-
-		}
-
 		@media screen and (max-width: 480px) {
 
-				.mini-posts .posts-container > * {
+			.mini-posts {
+				display: block;
+				width: 100%;
+			}
+
+				.mini-posts > * {
 					margin: 0 0 2em 0;
 					width: 100%;
 				}
@@ -1792,8 +1800,7 @@
 								margin-top: 0;
 							}
 
-							.itemized > header .meta .author,
-							.itemized > header .meta .format, {
+							.itemized > header .meta .author {
 								-moz-flex-direction: row-reverse;
 								-webkit-flex-direction: row-reverse;
 								-ms-flex-direction: row-reverse;
@@ -1801,14 +1808,12 @@
 								margin-bottom: 0;
 							}
 
-								.itemized > header .meta .author .name,
-								.itemized > header .meta .format .name {
+								.itemized > header .meta .author .name {
 									margin: 0 0 0 1.5em;
 
 								}
 
-								.itemized > header .meta .author img,
-								.itemized > header .meta .format img {
+								.itemized > header .meta .author img {
 									width: 3.5em;
 								}
 
@@ -1960,7 +1965,6 @@
 				table > thead > tr > td,
 				table > tbody > tr > td,
 				table > tfoot > tr > td {
-					vertical-align: middle;
 					padding: 0.5em;
 					-webkit-transition: all 0.3s ease;
 					-o-transition: all 0.3s ease;
@@ -2216,6 +2220,7 @@
 			line-height: inherit;
 			padding: 0 0 0 1.5em;
 			white-space: nowrap;
+			min-width: 12.4em;
 		}
 
 			#header h1 a {
@@ -2390,14 +2395,6 @@
 				padding: 0 0.5em 0 0;
 			}
 
-		@media screen and (min-width: 1280px) {
-
-				#header .menu {
-					display: none;
-				}
-
-			}
-
 		@media screen and (max-width: 980px) {
 
 			#header .links {
@@ -2511,7 +2508,9 @@
 			padding-top: 0;
 		}
 
-		#sidebar #mini-bio p {
+		#sidebar #recent-posts ul.posts time,
+		#sidebar #categories ul.posts li header,
+		#sidebar .blurb p {
 				/* Theoretically for IE 8 & 9 (more valid) */
 				/* ...but not required as filter works too */
 				/* should come BEFORE filter */
@@ -2523,8 +2522,6 @@
 
 				/* Modern Browsers */
 				opacity: 0.65;
-				font-size: 0.9em;
-				padding: 0;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -2652,7 +2649,6 @@
 	}
 
 	#footer .copyright {
-		text-align: center;
 		color: #aaaaaa;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 0.5em;
@@ -2839,16 +2835,14 @@
 	.share-btn.facebook    { background: #3B5998; }
 	.share-btn.linkedin    { background: #4875B4; }
 	.share-btn.stumbleupon { background: #EB4823; }
-	.share-btn.pinterest	 { background: #BD081C; }
 	.share-btn.reddit      { background: #ff5700; }
 	.share-btn.email       { background: #444444; }
 
-	  .share-btn.twitter:hover     { background: #4c9ad6; }
+	  .share-btn.twitter:hover     { background: #4c9ad6 }
 	  .share-btn.google-plus:hover { background: #c64333; }
 	  .share-btn.facebook:hover    { background: #2f4779; }
 	  .share-btn.linkedin:hover    { background: #4069a2; }
 	  .share-btn.stumbleupon:hover { background: #d3401f; }
-		.share-btn.pinterest:hover   { background: #AD0000; }
 	  .share-btn.reddit:hover      { background: #e54e00; }
 	  .share-btn.email:hover       { background: #363636; }
 

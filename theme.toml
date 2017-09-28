@@ -4,9 +4,9 @@
 name = "Hugo Future Imperfect"
 license = "MIT"
 licenselink = "https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md"
-description = "HTML5 UP's Future Imperfect ported to Hugo with some extra goodies."
+description = "Ported theme of HTML5 UP, future imperfect, with some extra goodies"
 homepage = "https://github.com/jpescador/hugo-future-imperfect"
-tags = ["blog", "responsive", "font awesome", "highlight.js", "fancybox 3", "staticman", "netlify", "disqus"]
+tags = ["blog", "responsive", "font awesome", "highlight.js", "fancybox 3", "staticman", "netlify"]
 features = ["html5", "css3", "responsive"]
 min_version = 0.15
 
