@@ -1,12 +1,12 @@
 <article class="post">
-    {{ .Render "header" }}
-    {{ .Render "featured" }}
-    <p>{{ printf "%s" .Summary | markdownify }}</p>
+  {{ .Render "header" }}
+  {{ .Render "featured" }}
+  <p>{{ printf "%s" .Summary | markdownify }}</p>
 
-    <footer>
-        <ul class="actions">
-            <li><a href="{{ .Permalink }}" class="button big">Continue Reading</a></li>
-        </ul>
-        {{ .Render "footer-category" }}
-    </footer>
+  <footer>
+    <ul class="actions">
+      <li><a href="{{ .Permalink }}" class="button big">Continue Reading</a></li>
+    </ul>
+    {{ .Render "footer-category" }}
+  </footer>
 </article>

@@ -5,68 +5,68 @@
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-    <head>
-        {{ with $.Scratch.Get "generalTitle" }}
-            <title>{{ . }}</title>
-        {{ else }}
-            {{ with .Title }}
-                <title>{{ . }}</title>
-            {{ else }}
-                <title>{{ .Site.Title }}</title>
-            {{ end }}
+  <head>
+    {{ with $.Scratch.Get "generalTitle" }}
+      <title>{{ . }}</title>
+    {{ else }}
+      {{ with .Title }}
+        <title>{{ . }}</title>
+      {{ else }}
+        <title>{{ .Site.Title }}</title>
+      {{ end }}
+    {{ end }}
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ .Hugo.Generator }}
+    {{ partial "favicon" . }}
+
+    {{ with .Params.author }}
+      <meta name="author" content="{{ . }}">
+    {{ end }}
+    {{ with .Description }}
+      <meta name="description" content="{{ . }}">
+    {{ else }}
+      {{ with .Site.Params.description }}
+        <meta name="description" content="{{ . }}">
+      {{ end }}
+    {{ end }}
+
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/google_news.html" . }}
+
+    {{ if isset .Site.Params "customcss" }}
+      {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
+    {{ else }}
+      {{ $.Scratch.Set "cssFiles" false }}
+    {{ end }}
+
+    <!-- If the value "default" is passed into the param then we will first
+         load the standard css files associated with the theme -->
+    {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+      <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+      <link rel="stylesheet" href="{{ "css/add-on.css" | absURL }}">
+    {{ end }}
+
+    {{ if ne ($.Scratch.Get "cssFiles") false }}
+      {{ range $.Scratch.Get "cssFiles" }}
+        {{ if ne . "default" }}
+          <link rel="stylesheet" href="{{ . | absURL }}">
         {{ end }}
+      {{ end }}
+    {{ end }}
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {{ .Hugo.Generator }}
-        {{ partial "favicon" . }}
+    {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+      {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
+  </head>
+  <body>
 
-        {{ with .Params.author }}
-            <meta name="author" content="{{ . }}">
-        {{ end }}
-        {{ with .Description }}
-            <meta name="description" content="{{ . }}">
-        {{ else }}
-            {{ with .Site.Params.description }}
-                <meta name="description" content="{{ . }}">
-            {{ end }}
-        {{ end }}
-
-        {{ template "_internal/twitter_cards.html" . }}
-        {{ template "_internal/opengraph.html" . }}
-        {{ template "_internal/schema.html" . }}
-        {{ template "_internal/google_news.html" . }}
-
-        {{ if isset .Site.Params "customCSS" }}
-            {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}
-        {{ else }}
-            {{ $.Scratch.Set "cssFiles" false }}
-        {{ end }}
-
-        <!-- If the value "default" is passed into the param then we will first
-             load the standard css files associated with the theme -->
-        {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
-            <link rel="stylesheet" href="/css/main.css">
-            <link rel="stylesheet" href="/css/add-on.css">
-        {{ end }}
-
-        {{ if ne ($.Scratch.Get "cssFiles") false }}
-            {{ range $.Scratch.Get "cssFiles" }}
-                {{ if ne . "default" }}
-                    <link rel="stylesheet" href="{{ . }}">
-                {{ end }}
-            {{ end }}
-        {{ end }}
-
-        {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-            {{ template "_internal/google_analytics.html" . }}
-        {{ end }}
-    </head>
-    <body>
-
-      <!-- Wrapper -->
-      <div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
