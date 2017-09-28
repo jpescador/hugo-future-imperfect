@@ -8,7 +8,7 @@ featuredalt = ""
 featuredpath = ""
 link = ""
 linktitle = ""
-platform = ""
+format = ""
 title = ""
 type = "itemized"
 
