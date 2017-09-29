@@ -2,7 +2,7 @@
 <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
 <!-- Scripts -->
 
-{{ if isset .Site.Params "customJS" }}
+{{ if isset .Site.Params "customjs" }}
   {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
 {{ else }}
   {{ $.Scratch.Set "jsFiles" false }}
@@ -21,9 +21,9 @@
 {{ end }}
 
 {{ if ne ($.Scratch.Get "jsFiles") false }}
-{{ range $.Scratch.Get "jsFiles" }}
-      {{ if ne . "default" }}
-          <script src="{{ "{{ . }}" | absURL }}"></script>
+  {{ range $.Scratch.Get "jsFiles" }}
+    {{ if ne . "default" }}
+      <script src="{{ "{{ . }}" | absURL }}"></script>
       {{ end }}
   {{ end }}
 {{ end }}
