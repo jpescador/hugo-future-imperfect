@@ -98,6 +98,18 @@
 <li><a href="//twitter.com/{{.}}" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
 {{ end }}
 
+{{ with .Site.Social.googlescholar }}
+<li><a href="//scholar.google.com/citations?user={{.}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a></li>
+{{ end }}
+
+{{ with .Site.Social.orcid }}
+<li><a href="//orcid.org/{{.}}" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a></li>
+{{ end }}
+
+{{ with .Site.Social.researchgate }}
+<li><a href="//www.researchgate.net/profile/{{.}}" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+{{ end }}
+
 {{ with .Site.Social.email }}
 <li><a href="mailto:{{.}}" title="Email" class="fa fa-envelope"></a></li>
 {{ end }}
