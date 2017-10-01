@@ -9,143 +9,156 @@ googleAnalytics = ""
 pluralizeListTitles = false
 
 [params]
-    # Sets the meta tag description, usually reserved for the main page
-    description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
-    # This will appear on the top left of the navigation bar
-    navbarTitle          = "Future Imperfect"
-    # set this to the section name if section is not post
-    viewMorePostLink     = "/blog/"
+  # Sets the meta tag description
+  description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+  # Sets the navbarTitle that appears in the top left of the navigation bar
+  navbarTitle          = "Future Imperfect"
+  # Sets where "View More Posts" links
+  viewMorePostLink     = "/blog/"
 
 # Optional Params
-    # This will match the navbarTitle to the section of the website
-    dynamicTitles        = true
-    # RSS icon that appear on the sidebar, next to the social media buttons
-    rssAppearAtTop       = true
-    rssAppearAtBottom    = true
-    # Social media buttons that appear on the sidebar
-    socialAppearAtTop    = true
-    socialAppearAtBottom = true
-    categoriesByCount    = true
-    includeReadingTime   = true
-    # The set of favicons used are based on the write-up from this link:
-    # https://github.com/audreyr/favicon-cheat-sheet
-    # Please see the favicon partial template for more information
-    loadFavicon          = false
-    faviconVersion       = ""
+  # Sets navbarTitle to match the section of the website
+  dynamicTitles        = true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
+  socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = false
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
+  socialShare          = true
+  # Load custom CSS or JavaScript files. The variable is an array so that you
+  # can load multiple files if necessary. You can also load the standard theme
+  # files by adding the value, "default".
+  # customCSS            = ["default", "/path/to/file"]
+  # customJS             = ["default", "/path/to/file"]
+  customCSS            = ["default"]
+  customJS             = ["default"]
 
-    # Disable showing the social sharing links on blog posts
-    socialShareDisabled = false
-
-    # Load custom CSS or JavaScript files. The variable is an array so that you
-    # can load multiple files if necessary. You can also load the standard theme
-    # files by adding the value, "default".
-    # customCSS            = ["default", "/path/to/file"]
-    # customJS             = ["default", "/path/to/file"]
-
-    customCSS            = ["default"]
-    customJS             = ["default"]
-
-# Disqus will take priority over staticman due to its ease of use. Feel free to check out both and decide.
+# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
+# due to its ease of use. Feel free to check out both and decide what you would
+# prefer to use. See Staticman.yml for additional settings.
 [params.staticman]
-    staticman = false
-    username  = ""
-    repo      = ""
-    branch    = ""
+  # Sets Statiman to be active
+  staticman = false
+  # Sets the location for Staticman to connect to
+  username  = ""
+  repo      = ""
+  branch    = ""
 
-# parms.intro will appear on the sidebar
-# This is optional, but it's suggested to use
+  # These are optional params related to the sidebar. They are recommended, but not
+  # required for proper functionality. HTML is supported within the params.
 [params.intro]
-    header    = "Hugo Future Imperfect"
+  header    = "Hugo Future Imperfect"
 
-    paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
 
-    about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+  about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
-# This will also appear on the sidebar.
-# A width of less than 100px is recommended
-# This is optional
-[params.intro.pic]
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
     src       = "/img/main/logo.jpg"
-    # modify your picture in the shape of a circle or
-    # future imperfect's hexagonal shape
+    # Sets Image to be a cirlce
     circle    = false
+    # Sets Image to be Future Imperfect's hexagon
     imperfect = true
     width     = ""
     alt       = "Hugo Future Imperfect"
 
-# Adjust the amount of recent posts on the sidebar.
-# This is optional. The default value 5 will be used
 [params.postAmount]
-    sidebar = 2
+# Sets the number of recent posts to show in the sidebar. The default value is 5.
+    sidebar = 5
 
-# Set up your menu items in the navigation bar
-# You can use identifier to prepend a font awesome icon to your text
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  identifier = "fa fa-home"
+  weight = 1
 
 [[menu.main]]
-    name = "Home"
-    url = "/"
-    identifier = "fa fa-home"
-    weight = 1
+  name = "About"
+  url = "/about/"
+  identifier = "fa fa-id-card-o"
+  weight = 2
 
 [[menu.main]]
-    name = "About"
-    url = "/about/"
-    identifier = "fa fa-id-card-o"
-    weight = 2
+  name = "Blog"
+  url = "/blog/"
+  identifier = "fa fa-newspaper-o"
+  weight = 3
 
 [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    identifier = "fa fa-newspaper-o"
-    weight = 3
+  name = "Itemized"
+  url = "/itemized/"
+  identifier = "fa fa-list"
+  weight = 4
 
 [[menu.main]]
-    name = "Itemized"
-    url = "/itemized/"
-    identifier = "fa fa-list"
-    weight = 4
+  name = "Categories"
+  url = "/categories/"
+  identifier = "fa fa-sitemap"
+  weight = 5
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    identifier = "fa fa-sitemap"
-    weight = 5
+  name = "Contact"
+  url = "/contact/"
+  identifier = "fa fa-envelope-o"
+  weight = 6
 
-[[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    identifier = "fa fa-envelope-o"
-    weight = 6
-
-# Insert your username and the icon will apear on the page as long as
-# socialAppearAtTop or socialAppearAtBottom is set to true in the params area
-# The social media icons will appear on the sidebar
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted. These are the icons affected by socialAppearAtTop
+# and socialAppearAtBottom.
 [social]
-    github          = "jpescador"
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = ""
-    googleplus      = ""
-    facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = "julio_pescador"
-    email           = ""
+  # Coding Communities
+  github          = "jpescador/hugo-future-imperfect"
+  gitlab          = ""
+  stackoverflow   = "" # User Number
+  bitbucket       = ""
+  jsfiddle        = ""
+  codepen         = ""
+  # Visual Art Communities
+  deviantart      = ""
+  flickr          = "example"
+  behance         = ""
+  dribbble        = ""
+  # Publishing Communities
+  wordpress       = ""
+  medium          = ""
+  # Professional/Business Oriented Communities
+  linkedin        = "example"
+  foursquare      = ""
+  xing            = ""
+  slideshare      = ""
+  # Social Networks
+  facebook        = "example"
+  googleplus      = ""
+  reddit          = "example"
+  youtube         = ""
+  vimeo           = ""
+  whatsapp        = "" # WhatsApp Number
+    # WeChat and QQ need testing.
+    wechat          = ""
+    qq              = "" # User ID Number
+  instagram       = "example"
+  tumblr          = ""
+  twitter         = "example"
+  skype           = ""
+  snapchat        = ""
+  pinterest       = "example"
+  telegram        = "example"
+  vine            = ""
+  # Email
+  email           = "example"
