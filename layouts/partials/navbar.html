@@ -1,41 +1,43 @@
 <!-- Header -->
 <header id="header">
-    {{ if .IsHome }}
-        <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
-    {{ else }}
-        <h1><a href="/">{{ .Section }}</a></h1>
-    {{ end }}
+  {{ if .IsHome }}
+    <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
+  {{ else if ne .Section "" }}
+    <h1><a href="/">{{ .Section }}</a></h1>
+  {{ else }}
+    <h1><a href="/">{{ .Title }}</a></h1>
+  {{ end }}
 
-    <nav class="links">
-        <ul>
-            {{ range .Site.Menus.main }}
-                <li>
-                    <a href="{{ .URL }}">
-                            <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
-                    </a>
-                </li>
-            {{ end }}
-        </ul>
-    </nav>
-    <nav class="main">
-        <ul>
-            {{ if $.Scratch.Get "shareNav" }}
-            <li id="share-nav" class="share-menu" style="display:none;">
-                <a class="fa-share-alt" href="#share-menu">Share</a>
-            </li>
-            {{ end }}
-            <li class="search">
-                <a class="fa-search" href="#search">Search</a>
-                <form id="search" method="get" action="//google.com/search">
-                    <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
-                </form>
-            </li>
-            <li class="menu">
-                <a class="fa-bars" href="#menu">Menu</a>
-            </li>
-        </ul>
-    </nav>
+  <nav class="links">
+    <ul>
+      {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}">
+            <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+  <nav class="main">
+    <ul>
+      {{ if $.Scratch.Get "shareNav" }}
+        <li id="share-nav" class="share-menu" style="display:none;">
+          <a class="fa-share-alt" href="#share-menu">Share</a>
+        </li>
+      {{ end }}
+      <li class="search">
+        <a class="fa-search" href="#search">Search</a>
+        <form id="search" method="get" action="//google.com/search">
+          <input type="text" name="q" placeholder="Search" />
+          <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
+        </form>
+      </li>
+      <li class="menu">
+        <a class="fa-bars" href="#menu">Menu</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <!-- Menu -->

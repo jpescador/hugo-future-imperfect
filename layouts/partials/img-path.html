@@ -1,5 +1,5 @@
 <!-- This partial is used by the img shortcodes and the template,
-     featured in the post type
+featured in the post type
 
      Set the path depending on the value passed through
 
@@ -13,19 +13,19 @@
 {{ $structType := $.Scratch.Get "structType" }}
 
 {{ if eq $path "title" }}
-    {{ $.Scratch.Set "path" "/img/" }}
-    {{ if eq $structType "shortcode" }}
-        {{ $.Scratch.Add "path" (lower (replace .Page.LinkTitle " " "-")) }}
-    {{ else }}
-        {{ $.Scratch.Add "path" (lower (replace .LinkTitle " " "-")) }}
-    {{ end }}
+  {{ $.Scratch.Set "path" "/img/" }}
+  {{ if eq $structType "shortcode" }}
+    {{ $.Scratch.Add "path" (lower (replace .Page.LinkTitle " " "-")) }}
+  {{ else }}
+    {{ $.Scratch.Add "path" (lower (replace .LinkTitle " " "-")) }}
+  {{ end }}
 {{ else if eq $path "date" }}
-    {{ $.Scratch.Set "path" "/img/" }}
-    {{ if eq $structType "shortcode" }}
-        {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
-    {{ else }}
-        {{ $.Scratch.Add "path" (.Date.Format "2006/01") }}
-    {{ end }}
+  {{ $.Scratch.Set "path" "/img/" }}
+  {{ if eq $structType "shortcode" }}
+    {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
+  {{ else }}
+    {{ $.Scratch.Add "path" (.Date.Format "2006/01") }}
+  {{ end }}
 {{ else }}
-    {{ $.Scratch.Set "path" $path }}
+  {{ $.Scratch.Set "path" $path }}
 {{ end }}
