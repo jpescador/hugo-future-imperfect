@@ -16,3 +16,9 @@
   other = "à propos"
 [learn_more]
   other = "En savoir plus"
+[repliestext]
+  other = "Réponse généralement en"
+[hours]
+  other = "heures"
+[submit]
+  other = "Envoyer"
