@@ -1090,8 +1090,8 @@
 
 			ul.posts li {
 				border-top: dotted 1px rgba(160, 160, 160, 0.3);
-				margin: 1.5em 0 0 0;
-				padding: 1.5em 0 0 0;
+				margin: 0.5em 0 0 0;
+				padding: 0.5em 0 0 0;
 			}
 
 				ul.posts li:first-child {
@@ -1410,7 +1410,12 @@
 				padding: 0;
 			}
 
-				.post > footer .stats li {
+        .post > footer .stats li,
+        .post > footer .stats li ul {
+          margin: 0;
+          padding-left: 0;
+        }
+				.post > footer .stats li ul li {
 					border-left: solid 1px rgba(160, 160, 160, 0.3);
 					display: inline-block;
 					font-family: "Raleway", Helvetica, sans-serif;
@@ -1418,22 +1423,22 @@
 					font-weight: 400;
 					letter-spacing: 0.25em;
 					line-height: 1;
-					margin: 0 0 0 2em;
-					padding: 0 0 0 2em;
+					margin: 0 0 0 1em;
+					padding: 0 0 0 1em;
 					text-transform: uppercase;
 				}
 
-					.post > footer .stats li:first-child {
+					.post > footer .stats li ul li:first-child {
 						border-left: 0;
 						margin-left: 0;
 						padding-left: 0;
 					}
 
-					.post > footer .stats li .icon {
+					.post > footer .stats li ul li .icon {
 						border-bottom: 0;
 					}
 
-						.post > footer .stats li .icon:before {
+						.post > footer .stats li ul li .icon:before {
 							color: rgba(160, 160, 160, 0.3);
 							margin-right: 0.75em;
 						}
@@ -1590,7 +1595,7 @@
 					text-align: center;
 				}
 
-					.post > footer .stats li {
+					.post > footer .stats li ul li {
 						margin: 0 0 0 1.25em;
 						padding: 0 0 0 1.25em;
 					}
