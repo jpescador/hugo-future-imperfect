@@ -19,17 +19,17 @@
             <p>{{ .ReadingTime }} {{ i18n "postreadingtime" }}</p>
         {{ end }}
         <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
-        {{ if .IsTranslated -}}
-          <span class="lang-translation">
-            <a class="active" href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">
-              <img src="/flags/{{ .Site.Language.Lang }}.png" alt="{{ .Site.Language.Lang }}" height="15px">
-            </a>
+        <span class="lang-translation">
+          <a class="active" href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">
+            <img src="/flags/{{ .Site.Language.Lang }}.png" alt="{{ .Site.Language.Lang }}" height="15px">
+          </a>
+          {{ if .IsTranslated -}}
             {{- $sortedTranslations := sort .Translations "Site.Language.Weight" -}}
             {{- $links := apply $sortedTranslations "partial" "translation_link.html" "." -}}
             {{- $cleanLinks := apply $links "chomp" "." -}}
             {{- $linksOutput := delimit $cleanLinks "&nbsp;" -}}
             {{ $linksOutput }}
-          </span>
-        {{- end }}
+          {{- end }}            
+        </span>
     </div>
 </header>
