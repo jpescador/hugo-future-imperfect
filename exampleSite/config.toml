@@ -45,6 +45,8 @@ pluralizeListTitles = false
     customCSS            = ["default"]
     customJS             = ["default"]
 
+    copyrightmore = 'Powered by <a href="//gohugo.io" target="_blank">Hugo</a>. Website by <a href="//statnmap.com" target="_blank">StatnMap</a>. Theme: <a href="//github.com/statnmap/hugo-future-imperfect">hugo-future-imperfect</a>.'
+    
 # Disqus will take priority over staticman due to its ease of use. Feel free to check out both and decide.
 [params.staticman]
     staticman = false

@@ -127,7 +127,7 @@
                 {{ end }}
             </ul>
 
-            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author}}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. Powered by <a href="//gohugo.io" target="_blank">Hugo</a> and <a href="//statnmap.com" target="_blank">StatnMap</a></p>
+            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author }}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. {{ with .Site.Params.copyrightmore | safeHTML}}{{ . }}{{ end }}</p>
         </section>
 
 </section>
