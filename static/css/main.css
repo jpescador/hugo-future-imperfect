@@ -307,9 +307,9 @@
 		text-align: right;
 	}
 
-/* Author */
+/* Author and Format */
 
-	.author {
+	.author, .format {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -335,7 +335,7 @@
 		white-space: nowrap;
 	}
 
-		.author .name {
+		.author .name, .format .name {
 			-moz-transition: border-bottom-color 0.2s ease;
 			-webkit-transition: border-bottom-color 0.2s ease;
 			-ms-transition: border-bottom-color 0.2s ease;
@@ -345,13 +345,13 @@
 			margin: 0 1.5em 0 0;
 		}
 
-		.author img {
+		.author img, .format img {
 			border-radius: 100%;
 			display: block;
 			width: 4em;
 		}
 
-		.author:hover .name {
+		.author:hover .name, .format:hover .name {
 			border-bottom-color: transparent;
 		}
 
@@ -1213,7 +1213,7 @@
 				text-transform: uppercase;
 			}
 
-			.mini-post header .author {
+			.mini-post header .author, .mini-post header .format {
 				position: absolute;
 				right: 2em;
 				top: 2em;
@@ -1792,7 +1792,8 @@
 								margin-top: 0;
 							}
 
-							.itemized > header .meta .author {
+							.itemized > header .meta .author,
+							.itemized > header .meta .format, {
 								-moz-flex-direction: row-reverse;
 								-webkit-flex-direction: row-reverse;
 								-ms-flex-direction: row-reverse;
@@ -1800,12 +1801,14 @@
 								margin-bottom: 0;
 							}
 
-								.itemized > header .meta .author .name {
+								.itemized > header .meta .author .name,
+								.itemized > header .meta .format .name {
 									margin: 0 0 0 1.5em;
 
 								}
 
-								.itemized > header .meta .author img {
+								.itemized > header .meta .author img,
+								.itemized > header .meta .format img {
 									width: 3.5em;
 								}
 
@@ -1957,6 +1960,7 @@
 				table > thead > tr > td,
 				table > tbody > tr > td,
 				table > tfoot > tr > td {
+					vertical-align: middle;
 					padding: 0.5em;
 					-webkit-transition: all 0.3s ease;
 					-o-transition: all 0.3s ease;
@@ -2212,7 +2216,6 @@
 			line-height: inherit;
 			padding: 0 0 0 1.5em;
 			white-space: nowrap;
-			min-width: 12.4em;
 		}
 
 			#header h1 a {
@@ -2521,7 +2524,7 @@
 				/* Modern Browsers */
 				opacity: 0.65;
 				font-size: 0.9em;
-				padding: 1.25em 1.25em 0.1em 1.25em
+				padding: 0;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -2836,14 +2839,16 @@
 	.share-btn.facebook    { background: #3B5998; }
 	.share-btn.linkedin    { background: #4875B4; }
 	.share-btn.stumbleupon { background: #EB4823; }
+	.share-btn.pinterest	 { background: #BD081C; }
 	.share-btn.reddit      { background: #ff5700; }
 	.share-btn.email       { background: #444444; }
 
-	  .share-btn.twitter:hover     { background: #4c9ad6 }
+	  .share-btn.twitter:hover     { background: #4c9ad6; }
 	  .share-btn.google-plus:hover { background: #c64333; }
 	  .share-btn.facebook:hover    { background: #2f4779; }
 	  .share-btn.linkedin:hover    { background: #4069a2; }
 	  .share-btn.stumbleupon:hover { background: #d3401f; }
+		.share-btn.pinterest:hover   { background: #AD0000; }
 	  .share-btn.reddit:hover      { background: #e54e00; }
 	  .share-btn.email:hover       { background: #363636; }
 
