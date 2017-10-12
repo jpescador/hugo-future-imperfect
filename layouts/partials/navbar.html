@@ -1,5 +1,6 @@
 <!-- Header -->
 <header id="header">
+
   {{ if .IsHome }}
     <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
   {{ else if ne .Section "" }}
