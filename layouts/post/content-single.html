@@ -1,23 +1,21 @@
 <article class="post">
-    {{ .Render "header" }}
+  {{ .Render "header" }}
 
-    {{ if not .Site.Params.socialShareDisabled }}
+  {{ if .Site.Params.socialShare }}
     <section id="social-share">
-        <ul class="icons">
-            {{ partial "share-links" . }}
-        </ul>
+      <ul class="icons">
+        {{ partial "share-links" . }}
+      </ul>
     </section>
-    {{ end }}
+  {{ end }}
 
-    {{ .Render "featured" }}
-    <div id="content">
-        {{ .Content }}
-    </div>
+  {{ .Render "featured" }}
+  <div id="content">
+    {{ .Content }}
+  </div>
 
-    <footer>
-        {{ .Render "footer-category" }}
-    </footer>
+  <footer>
+    {{ .Render "footer-category" }}
+  </footer>
 </article>
 {{ .Render "prev-next" }}
-
-{{ .Render "comments" }}
