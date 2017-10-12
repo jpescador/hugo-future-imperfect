@@ -636,7 +636,6 @@
 		height: 5em;
 	}
 
-	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -650,7 +649,6 @@
 		z-index: -1;
 	}
 
-		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
 			color: #646464;
@@ -663,7 +661,6 @@
 			position: relative;
 		}
 
-			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
@@ -684,7 +681,6 @@
 				width: 1.65em;
 			}
 
-			input[type="checkbox"]:checked + label:before,
 			input[type="radio"]:checked + label:before {
 				background: #3c3b3b;
 				border-color: #3c3b3b;
@@ -692,7 +688,6 @@
 				content: '\f00c';
 			}
 
-			input[type="checkbox"]:focus + label:before,
 			input[type="radio"]:focus + label:before {
 				border: solid 1px #2ebaae;
 			}
@@ -832,6 +827,15 @@
 			}
 
 /* List */
+
+	ul.task-list {
+		list-style: none;
+	}
+
+	.task-list-item {
+		position: relative;
+		top: -1px;
+	}
 
 	ol {
 		list-style: decimal;
