@@ -15,8 +15,7 @@
       <span class="author">{{ .Params.author }}</span>
       <span class="author">{{ .Params.platform }}</span>
       {{ if isset .Params "link" }}
-        <a href="{{ .Params.link }}">Link</a>
+        <a href="{{ .Params.link }}" target="_blank">{{ .Params.linktitle }}</a>
       {{ end }}
-        <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
     </div>
 </header>
