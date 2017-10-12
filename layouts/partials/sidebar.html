@@ -93,8 +93,13 @@
         {{ range $key, $value := $.Scratch.Get "categories" }}
           <article>
             <header>
-              <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-              <span style="float:right;">{{ $value.Count }}</span>
+              {{ if ne $value.Name "" }}
+                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <span style="float:right;">{{ $value.Count }}</span>
+              {{ else }}
+                Uncategorized
+                <span style="float:right;">{{ $value.Count }}</span>
+              {{ end }}
             </header>
           </article>
         {{ end }}
