@@ -2777,6 +2777,11 @@
 					border-bottom: 0;
 				}
 
+				#menu .links > li > ul {
+					text-decoration: none;
+					list-style: none;
+				}
+
 					#menu .links > li a h3 {
 						-moz-transition: color 0.2s ease;
 						-webkit-transition: color 0.2s ease;
