@@ -9,7 +9,7 @@ featuredpath = ""
 featuredalt = ""
 categories = [""]
 linktitle = ""
-platform = "Android"
+format = "Android"
 link = "#"
 +++
 
