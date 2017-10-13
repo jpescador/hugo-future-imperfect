@@ -5,9 +5,11 @@
         {{ $.Scratch.Set "structType" "page" }}
         {{ partial "img-path" . }}
         {{ $path := $.Scratch.Get "path" }}
+        {{ $alt := $.Scratch.Get "alt" }}
+        {{ $img := $.Scratch.Get "img" }}
 
         <a href="{{ .Permalink }}" class="image featured">
-            <img src="{{ $path }}/{{ .Params.featured }}" alt="{{ .Params.featuredalt }}" />
+            <img src="{{ $path }}/{{ .Params.featured }}" alt="{{ $alt }}">
         </a>
     {{ end }}
 {{ end }}
