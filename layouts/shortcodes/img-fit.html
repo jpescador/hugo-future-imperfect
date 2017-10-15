@@ -63,7 +63,7 @@
             {{ else }}
                 {{ if ne ($.Scratch.Get "imgFile") "" }}
                         <img src='{{ $path }}/{{ $.Scratch.Get "imgFile" }}'
-                            alt="{{ . }}" />
+                            alt="{{ . }}">
                     </span></div>
                 {{ end }}
                 {{ $.Scratch.Set "count" 0 }}
