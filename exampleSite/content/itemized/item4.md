@@ -9,7 +9,7 @@ featuredpath = ""
 featuredalt = ""
 categories = [""]
 linktitle = ""
-platform = "iOS"
+format = "iOS"
 link = "#"
 +++
 
