@@ -18,6 +18,7 @@
         {{ if .Site.Params.includeReadingTime }}
             <p>{{ .ReadingTime }} {{ i18n "postreadingtime" }}</p>
         {{ end }}
+        {{ if .Site.IsMultiLingual }}
         <span class="lang-translation">
           <a class="active" href="{{ .Permalink }}" lang="{{ .Site.Language.Lang }}">
             <img src="/flags/{{ .Site.Language.Lang }}.png" alt="{{ .Site.Language.Lang }}" height="15px">
@@ -30,5 +31,6 @@
             {{ $linksOutput }}
           {{- end }}            
         </span>
+        {{ end }}
     </div>
 </header>
