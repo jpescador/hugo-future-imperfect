@@ -1,0 +1,26 @@
+[date_format]
+  other = "02-01-2006"
+[postreadingtime]
+  other = "minutes"
+[recent_posts]
+  other = "Posts récents"
+[see_more]
+  other = "Voir plus"
+[read_more]
+  other = "Lire la suite"
+[categories]
+  other = "Catégories"
+[category]
+  other = "Catégorie"
+[uncategorized]
+  other = "Sans catégorie"
+[about]
+  other = "à propos"
+[learn_more]
+  other = "En savoir plus"
+[repliestext]
+  other = "Réponse généralement en"
+[hours]
+  other = "heures"
+[submit]
+  other = "Envoyer"
