@@ -10,6 +10,8 @@
      otherwise use the explicit path provided by the user
 -->
 {{ $path := $.Scratch.Get "path" }}
+{{ $alt := $.Scratch.Get "featuredalt" }}
+{{ $img := $.Scratch.Get "featured" }}
 {{ $structType := $.Scratch.Get "structType" }}
 
 {{ if eq $path "title" }}
