@@ -12,6 +12,8 @@
   other = "Catégories"
 [category]
   other = "Catégorie"
+[uncategorized]
+  other = "Sans catégorie"
 [about]
   other = "à propos"
 [learn_more]
