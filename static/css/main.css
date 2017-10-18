@@ -2690,18 +2690,55 @@
 	    }
 
 /* Multi-language */
-.lang-translation .active img, .language .active img {
-  opacity: 0.5;
+
+#header .main .lang-switcher {
+  position: relative ;
 }
-.lang-translation a, .language a {
-  border: none;
+
+@media screen and (max-width: 736px) {
+  #header .main .lang-switcher {
+    display: none ;
+  }
 }
-ul.language {
-  list-style: none;
-  padding: 0;
+
+#header .main .lang-switcher > a {
+  overflow: inherit;
+  opacity: 1;
+  display: block;
+  height: 100%;
 }
-ul.language li {
-  display: inline-block;
+#header .main .lang-switcher ul li > a {
+  overflow: inherit;
+  opacity: 1;
+  display: block;
+  height: 100%;
+}
+#header .main .lang-switcher .dropdown-menu {
+    background-color: white;
+    padding: 0;
+    position: absolute;
+    z-index: 99999;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    top: 100%;
+}
+#header .lang-switcher img {
+    display: block;
+    margin: auto;
+    padding: 30% 0;
+    height: 100%;
+}
+
+#header .main .lang-switcher:hover > ul, 
+#header .main .lang-switcher:hover > ul, 
+#header .main .lang-switcher:focus > ul, 
+#header .main .focus > ul {
+    clip: inherit;
+    overflow: inherit;
+    height: inherit;
+    width: inherit;
 }
 
 /* Menu */

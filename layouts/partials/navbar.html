@@ -26,6 +26,9 @@
                 <a class="fa-share-alt" href="#share-menu">Share</a>
             </li>
             {{ end }}
+            {{ if .Site.IsMultiLingual }}
+              {{ partial "language_switcher" . }}
+            {{ end }}
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
