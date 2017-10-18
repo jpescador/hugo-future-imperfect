@@ -2409,6 +2409,12 @@
 
 		@media screen and (max-width: 980px) {
 
+      #header .main {
+          position: absolute;
+          right: 0;
+          background-color: inherit;
+      }
+
 			#header .links {
 				display: none;
 			}
@@ -2694,13 +2700,6 @@
 #header .main .lang-switcher {
   position: relative ;
 }
-
-@media screen and (max-width: 736px) {
-  #header .main .lang-switcher {
-    display: none ;
-  }
-}
-
 #header .main .lang-switcher > a {
   overflow: inherit;
   opacity: 1;
@@ -2739,6 +2738,12 @@
     overflow: inherit;
     height: inherit;
     width: inherit;
+}
+
+@media screen and (max-width: 736px) {
+  #header .lang-switcher img {
+      padding: 25% 0;
+  }
 }
 
 /* Menu */
