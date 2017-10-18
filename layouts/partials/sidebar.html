@@ -16,118 +16,131 @@
             {{ with .Site.Params.intro }}
                 <header>
                     <h2>{{ .header }}</h2>
-                    <p>{{ .paragraph }}</p>
+                    <p>{{ .paragraph | safeHTML }}</p>
                 </header>
-            {{ end }}
-            <ul class="icons">
-                {{ if and (.RSSLink) (.Site.Params.rssAppearAtTop) }}
-                    <li><a href="{{ .RSSLink }}" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
-                {{ end }}
-                {{ if .Site.Params.socialAppearAtTop }}
-                    {{ partial "social" . }}
-                {{ end }}
-            </ul>
-            {{ partial "language_switcher" . }}
-        </section>
-
-    <!-- Posts List -->
-        <section id="recent-posts">
-            <ul class="posts">
-                <header>
-                    <h3>{{ i18n "recent_posts" }}</h3>
-                </header>
-                {{ $.Scratch.Set "recentPosts" .Site.Pages }}
-
-                {{ with .Site.Params.postAmount.sidebar }}
-                    {{ $.Scratch.Set "postLimit" . }}
-                {{ else }}
-                    {{ $.Scratch.Set "postLimit" 5 }}
-                {{ end }}
-
-                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
-                    <li>
-                        <article>
-                            <header>
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                                <time class="published" datetime='{{ .Date }}'>
-                                  {{ default (i18n "date_format") | .Date.Format }}</time>
-                            </header>
-                        </article>
-                    </li>
-                {{ end }}
-
-                {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
-                    <li>
-                        <ul class="actions">
-                            <li><a href=
-                            {{ with .Site.Params.viewMorePostLink }}
-                                {{ . }}
-                            {{ else }}
-                                "/{{ $.Site.Language.Lang }}/post/"
-                            {{ end }}
-                            class="button">{{ i18n "see_more" }}</a></li>
-                        </ul>
-                    </li>
-                {{ end }}
-            </ul>
-        </section>
-
-    <!-- This if statement only applies if someone goes to the /categories url -->
-    <!-- Otherwise this section is shown for all other links -->
-    {{ if ne ($.Scratch.Get "showCategories") false }}
-    <!-- Categories List -->
-        <section id="categories">
-            <ul class="posts">
-                <header>
-                    <h3><a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a></h3>
-                </header>
-
-                {{ if .Site.Params.categoriesByCount }}
-                    {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
-                {{ else }}
-                    {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
-                {{ end }}
-
-                {{ range $key, $value := $.Scratch.Get "categories" }}
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/{{ $.Site.Language.Lang }}/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-                                <span style="float:right;">{{ $value.Count }}</span>
-                            </header>
-                        </article>
-                    </li>
-                {{ end }}
-            </ul>
-        </section>
     {{ end }}
+    {{ if .Site.Params.socialAppearAtTop }}
+      <ul class="icons">
+        {{ if .RSSLink }}
+          <li>
+            <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        {{ end }}
+        {{ partial "social" . }}
+      </ul>
+    {{ end }}
+  </section>
 
-    <!-- About -->
-        {{ with .Site.Params.intro.about }}
-        <section class="blurb">
-            <h2>{{ i18n "about" }}</h2>
-            <p>{{ . | safeHTML }}</p>
+  <!-- Posts List -->
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>{{ i18n "recent_posts" }}</h3>
+      </header>
+      <div class="posts-container">
+        {{ $.Scratch.Set "recentPosts" .Site.Pages }}
 
-            <ul class="actions">
-                <li><a href="/{{ $.Site.Language.Lang }}/about/" class="button">{{ i18n "learn_more" }}</a></li>
-            </ul>
-        </section>
+        {{ with .Site.Params.postAmount.sidebar }}
+          {{ $.Scratch.Set "postLimit" . }}
+        {{ else }}
+          {{ $.Scratch.Set "postLimit" 5 }}
         {{ end }}
 
-    <!-- Footer -->
-        <section id="footer">
-            <ul class="icons">
-                {{ if and (.RSSLink) (.Site.Params.rssAppearAtBottom) }}
-                    <li><a href="{{ .RSSLink }}" type="application/rss+xml"
-                        target="_blank" title="RSS" class="fa fa-rss"></a></li>
-                {{ end }}
-                {{ if .Site.Params.socialAppearAtBottom }}
-                    {{ partial "social" . }}
-                {{ end }}
-            </ul>
+        {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+              {{ $.Scratch.Set "dateType" .Date }}
+              <time class="published" datetime='{{ .Date }}'>
+              {{ default (i18n "date_format") | .Date.Format }}</time>
+            </header>
+            {{ .Render "featured" }}
+          </article>
+        {{ end }}
+      </div>
 
-            <p class="copyright">{{ with .Site.Copyright | safeHTML }}{{ . }}{{ else }}&copy; {{ .Site.LastChange.Year }} {{if isset .Site.Params "author" }}{{ .Site.Params.author }}{{ else }}{{ .Site.Title }}{{ end }}{{end}}. {{ with .Site.Params.copyrightmore | safeHTML}}{{ . }}{{ end }}</p>
-        </section>
+      {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+        <a href=
+          {{ with .Site.Params.viewMorePostLink }}
+            {{ . }}
+          {{ else }}
+            "/{{ $.Site.Language.Lang }}/post/"
+          {{ end }}
+        class="button">{{ i18n "see_more" }}</a>
+      {{ end }}
+    </div>
+  </section>
 
+  <!-- This if statement only applies if someone goes to the /categories url -->
+  <!-- Otherwise this section is shown for all other links -->
+  {{ if ne ($.Scratch.Get "showCategories") false }}
+  <!-- Categories List -->
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a>
+        </h3>
+      </header>
+        {{ if .Site.Params.categoriesByCount }}
+          {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
+        {{ else }}
+          {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
+        {{ end }}
+
+        {{ range $key, $value := $.Scratch.Get "categories" }}
+        <p>
+          <article>
+            <header>
+              {{ if ne $value.Name "" }}
+                <a href="/{{ $.Site.Language.Lang }}/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <span style="float:right;">{{ $value.Count }}</span>
+              {{ else }}
+                {{ i18n "uncategorized" }}
+                <span style="float:right;">{{ $value.Count }}</span>
+              {{ end }}
+            </header>
+          </article>
+        </p>
+        {{ end }}
+    </section>
+  {{ end }}
+
+
+  <!-- About -->
+  {{ with .Site.Params.intro.about }}
+    <section id="mini-bio">
+      <h3>{{ i18n "about" }}</h1>
+      <p>{{ . | safeHTML }}</p>
+      <a href="/{{ $.Site.Language.Lang }}/about/" class="button">{{ i18n "learn_more" }}</a>
+    </section>
+  {{ end }}
+
+  <!-- Footer -->
+  <section id="footer">
+    {{ if .Site.Params.socialAppearAtBottom }}
+      <ul class="icons">
+        {{ if .RSSLink }}
+          <li>
+            <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        {{ end }}
+        {{ partial "social" . }}
+      </ul>
+    {{ end }}
+    <p class="copyright">
+      {{ with .Site.Copyright | safeHTML }}
+        {{ . }}
+      {{ else }}
+        &copy; {{ .Site.LastChange.Year }}
+        {{if isset .Site.Params "author" }}
+          {{ .Site.Params.author}}
+        {{ else }}
+          {{ .Site.Title }}
+        {{ end }}
+      {{end}}.
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
 </section>

@@ -1,13 +1,11 @@
 <!-- Header -->
 <header id="header">
-    {{ if .Site.Params.dynamicTitles }}
-      {{ if .IsHome }}
-          <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
-      {{ else }}
-          <h1><a href="/">{{ .Section }}</a></h1>
-      {{ end }}
+    {{ if .IsHome }}
+      <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
+    {{ else if ne .Section "" }}
+      <h1><a href="/">{{ .Section }}</a></h1>
     {{ else }}
-      <h1><a href="/">{{ .Site.Params.navbarTitle }}</i></a></h1>
+      <h1><a href="/">{{ .Title }}</a></h1>
     {{ end }}
 
     <nav class="links">
@@ -27,6 +25,9 @@
             <li id="share-nav" class="share-menu" style="display:none;">
                 <a class="fa-share-alt" href="#share-menu">Share</a>
             </li>
+            {{ end }}
+            {{ if .Site.IsMultiLingual }}
+              {{ partial "language_switcher" . }}
             {{ end }}
             <li class="search">
                 <a class="fa-search" href="#search">Search</a>
@@ -49,7 +50,7 @@
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="q" value="site:{{ .Site.BaseURL }}">
+                <input type="hidden" name="as_sitesearch" value="{{ .Site.BaseURL }}">
             </form>
         </section>
 
@@ -68,24 +69,43 @@
             </ul>
         </section>
 
-    <!-- Recent Posts -->
-        <section>
-            <ul class="links">
+    <!-- Posts List -->
+        <section id="recent-posts">
+            <div class="mini-posts">
                 <header>
                     <h3>Recent Posts</h3>
                 </header>
+                {{ $.Scratch.Set "recentPosts" .Site.Pages }}
+
                 {{ with .Site.Params.postAmount.sidebar }}
                     {{ $.Scratch.Set "postLimit" . }}
                 {{ else }}
                     {{ $.Scratch.Set "postLimit" 5 }}
                 {{ end }}
 
-                {{ range first ($.Scratch.Get "postLimit") (where .Site.Pages "Type" "post") }}
-                    <li>
-                        <a href="{{ .Permalink }}"><p>{{ .Title }}</p></a>
-                    </li>
+                {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                {{ $.Scratch.Set "dateType" .Date }}
+                                <time class="published" datetime=
+                                    '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+                                    {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+                            </header>
+                            {{ .Render "featured" }}
+                        </article>
                 {{ end }}
-            </ul>
+
+                {{ if ge (len (where .Site.Pages "Type" "post")) ($.Scratch.Get "postLimit") }}
+                    <a href=
+                        {{ with .Site.Params.viewMorePostLink }}
+                            {{ . }}
+                        {{ else }}
+                            "/post/"
+                        {{ end }}
+                        class="button">View more posts</a>
+                {{ end }}
+            </div>
         </section>
 
     <!-- Actions -->
