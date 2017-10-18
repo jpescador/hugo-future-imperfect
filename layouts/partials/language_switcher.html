@@ -11,7 +11,7 @@
       {{ end }}
     {{ else }}
       {{ range .Site.Languages }}
-        <li><a href="{{ $.Site.BaseURL }}" lang="{{ .Lang }}">
+        <li><a href="/{{ .Lang }}" lang="{{ .Lang }}">
             <img src="/flags/{{ .Lang }}.png" alt="{{ .Lang }}" height="20px">
         </a></li>
     {{ end }}

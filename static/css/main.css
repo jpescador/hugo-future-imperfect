@@ -2713,7 +2713,6 @@
   height: 100%;
 }
 #header .main .lang-switcher .dropdown-menu {
-    background-color: white;
     padding: 0;
     position: absolute;
     z-index: 99999;
@@ -2722,6 +2721,10 @@
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     top: 100%;
+    display: grid;
+}
+#header .main .lang-switcher .dropdown-menu li {
+    background-color: white;
 }
 #header .lang-switcher img {
     display: block;
