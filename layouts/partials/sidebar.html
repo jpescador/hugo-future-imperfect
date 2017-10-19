@@ -94,7 +94,7 @@
           <article>
             <header>
               {{ if ne $value.Name "" }}
-                <a href="/{{ $.Site.Language.Lang }}/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | absLangURL }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
                 {{ i18n "uncategorized" }}
