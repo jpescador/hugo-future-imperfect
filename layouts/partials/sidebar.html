@@ -113,7 +113,7 @@
     <section id="mini-bio">
       <h3>{{ i18n "about" }}</h3>
       <p>{{ . | safeHTML }}</p>
-      <a href="/{{ $.Site.Language.Lang }}/about/" class="button">{{ i18n "learn_more" }}</a>
+      <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
     </section>
   {{ end }}
 
