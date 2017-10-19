@@ -110,6 +110,12 @@ weight = 2
     weight = 2
     
 [[Languages.en.menu.main]]
+    name = "Itemized"
+    url = "/itemized/"
+    identifier = "fa fa-id-card-o"
+    weight = 2
+    
+[[Languages.en.menu.main]]
     name = "Categories"
     url = "/categories/"
     identifier = "fa fa-sitemap"
@@ -122,12 +128,6 @@ weight = 2
     weight = 1
 
 [[Languages.fr.menu.main]]
-    name = "À propos"
-    url = "/about/"
-    identifier = "fa fa-id-card-o"
-    weight = 2
-
-[[Languages.fr.menu.main]]
     name = "Blog"
     url = "/blog/"
     identifier = "fa fa-newspaper-o"
@@ -136,7 +136,7 @@ weight = 2
 [[Languages.fr.menu.main]]
     name = "Itemized"
     url = "/itemized/"
-    identifier = "fa fa-list"
+    identifier = "fa fa-id-card-o"
     weight = 4
 
 [[Languages.fr.menu.main]]
