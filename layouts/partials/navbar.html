@@ -59,7 +59,7 @@
             <ul class="links">
                 {{ range .Site.Menus.main }}
                     <li>
-                        <a href="{{ .URL }}">
+                        <a href="{{ .URL | relLangURL }}">
                             <h3>
                                 <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
                             </h3>
@@ -90,7 +90,7 @@
                                 {{ $.Scratch.Set "dateType" .Date }}
                                 <time class="published" datetime=
                                     '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                                    {{ default (i18n "date_format") | ($.Scratch.Get "dateType").Format }}</time>
+                                    {{ default (i18n "date_format") | .Date.Format }}</time>
                             </header>
                             {{ .Render "featured" }}
                         </article>
