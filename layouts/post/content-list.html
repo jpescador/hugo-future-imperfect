@@ -7,6 +7,6 @@
         <ul class="actions">
             <li><a href="{{ .Permalink }}" class="button big">{{ i18n "read_more" }}</a></li>
         </ul>
-        {{ .Render "footer-category" }}
+        {{ partial "footer-category" . }}
     </footer>
 </article>
