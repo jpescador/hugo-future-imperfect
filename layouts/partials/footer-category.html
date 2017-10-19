@@ -39,6 +39,6 @@
 
     <!-- Display the categories associated with this post -->
     {{ range .Params.categories }}
-        <li><a href='/{{ $.Lang }}{{ add ($.Scratch.Get "categoryUrl") . | urlize }}'>{{ . }}</a></li>
+        <li><a href='{{ add ($.Scratch.Get "categoryUrl") . | urlize | relLangURL }}' lang="{{ $.Lang }}">{{ . }}</a></li>
     {{ end }}
 </ul>
