@@ -146,6 +146,7 @@ pluralizeListTitles = false
   facebook        = "example"
   googleplus      = ""
   reddit          = "example"
+  quora           = ""
   youtube         = ""
   vimeo           = ""
   whatsapp        = "" # WhatsApp Number
