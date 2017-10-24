@@ -34,12 +34,12 @@ well as being an opportunity for people to learn how to use Git and GitHub.
 
 1. A [GitHub Account].
 2. Either [Git] (preferable) or [GitHub Desktop]
-3. The latest version of [Hugo].
-4. The latest version of [hugo-future-imperfect].
+3. The latest version of [Hugo][Hugo Release].
+4. The latest version of [hugo-future-imperfect][Head].
 
 ### Forking
 
-Navigate to the theme repository [jpescador/hugo-future-imperfect][hugo-future-imperfect],
+Navigate to the theme repository [jpescador/hugo-future-imperfect][head],
 and then click **Fork** in the top right. This will create your copy of the
 theme.
 
@@ -233,7 +233,7 @@ any questions you may have. We are here to help.
 [Network]: https://github.com/jpescador/hugo-future-imperfect/network
 [Next Release]: https://github.com/jpescador/hugo-future-imperfect/milestone/1
 [Projects]: https://github.com/jpescador/hugo-future-imperfect/projects
-[Theme Sync]: #Keeping-it-synced
+[Theme Sync]: #syncing
 
 <!--- External References -->
 
