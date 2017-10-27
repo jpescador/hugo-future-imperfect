@@ -24,3 +24,11 @@
   other = "heures"
 [submit]
   other = "Envoyer"
+[404_oops]
+  other = "Oops, la page que vous<br/>demandez n'existe pas."
+[404_backorreport]
+  other = "Vous pourriez vouloir revenir à la page d'accueil.<br/>Si vous pensez que quelque chose est cassé, merci d'envoyer un rapport."
+[404_gotohome]
+  other = "Go To Homepage"
+[404_report]
+  other = "Report A Problem"
