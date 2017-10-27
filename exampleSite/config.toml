@@ -45,6 +45,12 @@ pluralizeListTitles = false
   customCSS            = ["default"]
   customJS             = ["default"]
 
+  # Decide if blog articles have a toc
+  # Note: You can deactivate a toc for a single article via setting parameter tocActivated = "false" in article config
+  tocIfNecessary = true
+  # Min. number of words in article after which toc gets generated
+  tocWordCount = 500
+
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
 # prefer to use. See Staticman.yml for additional settings.

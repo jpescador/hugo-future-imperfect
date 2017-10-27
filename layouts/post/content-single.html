@@ -11,6 +11,7 @@
 
   {{ .Render "featured" }}
   <div id="content">
+    {{ partial "toc" . }}
     {{ .Content }}
   </div>
 
