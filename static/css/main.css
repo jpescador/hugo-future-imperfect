@@ -2749,6 +2749,17 @@
   }
 }
 
+#header .main .lang-switcher .fa {
+    height: 25px;
+    padding: 25px 0 14px;
+}
+/*
+#header .main .lang-switcher a.no-translation {
+    background: url(/flags/Flag_NoTr.png) no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+*/
 /* Menu */
 
 	#menu {
