@@ -1,11 +1,11 @@
 <!-- Header -->
 <header id="header">
     {{ if .IsHome }}
-      <h1><a href="/">{{ .Site.Params.navbarTitle }}</a></h1>
+      <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Params.navbarTitle }}</a></h1>
     {{ else if ne .Section "" }}
-      <h1><a href="/">{{ .Section }}</a></h1>
+      <h1><a href="{{ .Site.BaseURL }}">{{ .Section }}</a></h1>
     {{ else }}
-      <h1><a href="/">{{ .Title }}</a></h1>
+      <h1><a href="{{ .Site.BaseURL }}">{{ .Title }}</a></h1>
     {{ end }}
 
     <nav class="links">
