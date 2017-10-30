@@ -74,6 +74,10 @@
   <li><a href="//reddit.com/user/{{.}}" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
 {{ end }}
 
+{{ with .Site.Social.quora }}
+  <li><a href="//quora.com/profile/{{.}}" target="_blank" title="Quora" class="fa fa-quora"></a></li>
+{{ end }}
+
 {{ with .Site.Social.youtube }}
   <li><a href="//youtube.com/{{.}}" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
 {{ end }}
