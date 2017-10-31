@@ -90,15 +90,19 @@
         {{ end }}
 
         {{ range $key, $value := $.Scratch.Get "categories" }}
-          <p>
+        <p>
+          <article>
+            <header>
               {{ if ne $value.Name "" }}
-                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | absLangURL }}">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | absLangURL }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
                 {{ i18n "uncategorized" }}
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ end }}
-          </p>
+            </header>
+          </article>
+        </p>
         {{ end }}
     </section>
   {{ end }}
