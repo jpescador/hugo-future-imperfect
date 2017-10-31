@@ -1,34 +1,34 @@
-</div>
-<a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
-<!-- Scripts -->
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    <!-- Scripts -->
 
-{{ if isset .Site.Params "customjs" }}
-  {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
-{{ else }}
-  {{ $.Scratch.Set "jsFiles" false }}
-{{ end }}
+    {{ if isset .Site.Params "customjs" }}
+      {{ $.Scratch.Set "jsFiles" .Site.Params.customJS }}
+    {{ else }}
+      {{ $.Scratch.Set "jsFiles" false }}
+    {{ end }}
 
-<!-- If the value "default" is passed into the param then we will first
- load the standard js files associated with the theme -->
-{{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
-  <script src="{{ "js/util.js" | absURL }}"></script>
-  <script src="{{ "js/main.js" | absURL }}"></script>
-  <script src="{{ "js/backToTop.js" | absURL }}"></script>
-{{ end }}
+    <!-- If the value "default" is passed into the param then we will first
+     load the standard js files associated with the theme -->
+    {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="{{ "js/util.js" | absURL }}"></script>
+      <script src="{{ "js/main.js" | absURL }}"></script>
+      <script src="{{ "js/backToTop.js" | absURL }}"></script>
+    {{ end }}
 
-{{ if ne ($.Scratch.Get "jsFiles") false }}
-{{ range $.Scratch.Get "jsFiles" }}
-      {{ if ne . "default" }}
-          <script src="{{ "{{ . }}" | absURL }}"></script>
+    {{ if ne ($.Scratch.Get "jsFiles") false }}
+      {{ range $.Scratch.Get "jsFiles" }}
+        {{ if ne . "default" }}
+          <script src="{{ . | absURL }}"></script>
+        {{ end }}
       {{ end }}
-  {{ end }}
-{{ end }}
+    {{ end }}
 
-<!-- This is called by default since this theme uses highlight.js -->
-<script>hljs.initHighlightingOnLoad();</script>
-</body>
+    <!-- This is called by default since this theme uses highlight.js -->
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
 </html>
