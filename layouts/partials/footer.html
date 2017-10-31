@@ -23,7 +23,7 @@
 {{ if ne ($.Scratch.Get "jsFiles") false }}
 {{ range $.Scratch.Get "jsFiles" }}
       {{ if ne . "default" }}
-          <script src="{{ "{{ . }}" | absURL }}"></script>
+          <script src="{{ . | absURL }}"></script>
       {{ end }}
   {{ end }}
 {{ end }}
