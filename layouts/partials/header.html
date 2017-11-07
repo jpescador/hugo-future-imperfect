@@ -62,9 +62,7 @@
             {{ end }}
         {{ end }}
 
-        {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-            {{ template "_internal/google_analytics.html" . }}
-        {{ end }}
+      {{ template "_internal/google_analytics.html" . }}
     </head>
     <body>
 
