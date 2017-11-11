@@ -13,4 +13,7 @@
   <!--[if IE]><link rel="shortcut icon" href='/favicon{{ $favVer }}.ico'><![endif]-->
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-TileImage" content='{{ "favicon/mstile" | relURL }}{{ $favVer }}.png'>
+  <meta name="application-name" content="{{ .Site.Title }}">
+  <meta name="msapplication-tooltip" content="{{ .Site.Params.Description }}">
+  <meta name="msapplication-config" content='{{ "favicon/ieconfig.xml" | relURL }}'>
 {{ end }}
