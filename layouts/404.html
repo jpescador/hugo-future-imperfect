@@ -241,8 +241,8 @@
     </p>
 	</div>
 	<div class="buttons-container">
-		<a class="border-button" href="{{ .Site.BaseURL }}">{{ i18n "404_gotohome"}}</a>
-		<a class="border-button" href="mailto:{{ .Site.Social.email }}">{{ i18n "404_report"}}</a>
+		<a class="border-button" href="{{ "/" | relLangURL }}">Go To Homepage</a>
+		<a class="border-button" href="mailto:{{ .Site.Social.email }}">Report A Problem</a>
 	</div>
 </div>
 

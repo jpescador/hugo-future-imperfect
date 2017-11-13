@@ -2,7 +2,7 @@
 {{ with .Site.Params.staticman }}
   <form class="post-new-comment" method="POST" action="https://dev.staticman.net/v2/entry/{{ .username }}/{{ .repo }}/{{ .branch }}/comments">
 {{ end }}
-    <input type="hidden" name="options[redirect]" value="{{ .Permalink }}">
+    <input type="hidden" name="options[redirect]" value="{{ .RelPermalink }}">
     <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
     <input required name="fields[name]" type="text" placeholder="Your name (Required)">
     <input name="fields[website]" type="text" placeholder="Your website">
