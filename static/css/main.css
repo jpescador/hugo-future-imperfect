@@ -60,7 +60,7 @@
 		font-weight: 400;
 		letter-spacing: 0.25em;
 		line-height: 2.5;
-		margin-top: -1em;
+		margin: -1em 1em 0;
 		text-transform: uppercase;
 	}
 
@@ -2455,6 +2455,7 @@
 		opacity: 1;
 		padding: 4.5em;
 		width: 90em;
+		overflow: hidden;
 	}
 
 		body.is-menu-visible #wrapper {
