@@ -876,6 +876,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			margin-top: 1em;
 		}
 
 			ul.icons li {
@@ -2655,6 +2656,9 @@
 
 	#footer .icons {
 		color: #aaaaaa;
+		text-align: center;
+		margin-top: 0;
+		padding-top: 0
 	}
 
 	#footer .copyright {
