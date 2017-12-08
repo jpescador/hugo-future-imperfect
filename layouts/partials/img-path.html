@@ -22,15 +22,6 @@
   {{ else }}
     {{ $.Scratch.Add "path" (.Date.Format "2006/01") }}
   {{ end }}
-<!-- TODO: Fix or Remove
-{{ else if eq $src "title" }}
-  { $.Scratch.Set "path" "/img/" }}
-  {{ if eq $structType "shortcode" }}
-    {{ $.Scratch.Add "path" (lower (replace .Page.LinkTitle " " "-")) }}
-  {{ else }}
-    {{ $.Scratch.Add "path" (lower (replace .LinkTitle " " "-")) }}
-  {{ end }}
--->
 {{ else }}
   {{ $.Scratch.Set "path" $src }}
 {{ end }}
