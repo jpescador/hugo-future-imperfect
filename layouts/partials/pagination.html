@@ -2,15 +2,17 @@
 <ul class="actions pagination">
     {{ if .Paginator.HasPrev }}
         <li><a href="{{ .Paginator.Prev.URL }}"
-                class="button big previous">Previous Page</a></li>
+           class="button big previous">{{ i18n "previous_page" }}</a></li>
     {{ else }}
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
+        <li><a href="#" 
+           class="disabled button big previous">{{ i18n "previous_page"}}</a></li>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
         <li><a href="{{ .Paginator.Next.URL }}"
-                class="button big next">Next Page</a></li>
+           class="button big next">{{ i18n "next_page" }}</a></li>
     {{ else }}
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="#" 
+            class="disabled button big next">{{ i18n "next_page" }}</a></li>
     {{ end }}
 </ul>
