@@ -1,4 +1,4 @@
-baseurl = "http://hugo.spf13.com/"
+baseurl = "/"
 languageCode = "en-us"
 title = "Hugo Future Imperfect"
 theme = "hugo-future-imperfect"
@@ -55,6 +55,10 @@ pluralizeListTitles = false
   username  = ""
   repo      = ""
   branch    = ""
+
+  [params.staticman.recaptcha]
+    sitekey = "SITE_KEY"
+    secret  = "ENCRYPTED_SECRET"
 
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
@@ -146,6 +150,7 @@ pluralizeListTitles = false
   facebook        = "example"
   googleplus      = ""
   reddit          = "example"
+  quora           = ""
   youtube         = ""
   vimeo           = ""
   whatsapp        = "" # WhatsApp Number

@@ -1,9 +1,7 @@
 {{ if ne .Site.DisqusShortname "" }}
-    {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-        <article class="post">
-            {{ template "_internal/disqus.html" . }}
-        </article>
-    {{ end }}
+    <article class="post">
+        {{ template "_internal/disqus.html" . }}
+    </article>
 {{ else if .Site.Params.staticman.staticman }}
     <article class="post">
       {{ .Render "staticman" }}

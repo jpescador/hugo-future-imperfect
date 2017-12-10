@@ -33,7 +33,7 @@ interested in seeing a live example.
 
 Run the following commands in your Hugo site directory:
 
-```Shell Session
+```
 mkdir themes
 cd themes
 git clone https://github.com/jpescador/hugo-future-imperfect.git
@@ -52,37 +52,37 @@ exampleSite
 ├── config.toml
 ├── staticman.yml
 ├── content
-    └── about
-    |   └── _index.md
-    └── blog
-    │   ├── creating-a-new-theme.md
-    │   ├── goisforlovers.md
-    │   ├── hugoisforlovers.md
-    │   └── migrate-from-jekyll.md
-    └── contact
-    │   └── _index.md
-    └── itemized
-    │   ├── item1.md
-    │   ├── item2.md
-    │   ├── item3.md
-    │   └── item4.md
-    └── data
-    │   └── comments
-    │       └── .gitkeep
-    └── static
-        ├── css
-        │   └── add-on.css
-        ├── img
-        |   ├── 2014
-        |   |   ├── 04
-        |   |   |   ├── pic02.jpg
-        |   |   |   └── pic03.jpg
-        |   |   └── 09
-        |   |       └── pic01.jpg
-        |   └── main
-        |       └── logo.jpg
-        └── js
-            └── add-on.js
+|   ├── about
+|   |   └── _index.md
+|   ├── blog
+|   │   ├── creating-a-new-theme.md
+|   │   ├── goisforlovers.md
+|   │   ├── hugoisforlovers.md
+|   │   └── migrate-from-jekyll.md
+|   ├── contact
+|   │   └── _index.md
+|   └── itemized
+|       ├── item1.md
+|       ├── item2.md
+|       ├── item3.md
+|       └── item4.md
+├── data
+│   └── comments
+│       └── .gitkeep
+└── static
+    ├── css
+    │   └── add-on.css
+    ├── img
+    |   ├── 2014
+    |   |   ├── 04
+    |   |   |   ├── pic02.jpg
+    |   |   |   └── pic03.jpg
+    |   |   └── 09
+    |   |       └── pic01.jpg
+    |   └── main
+    |       └── logo.jpg
+    └── js
+        └── add-on.js
 ```
 
 Copy _config.toml_ from _exampleSite_ to the root directory of your Hugo site.
@@ -109,7 +109,7 @@ various social platforms.
 Run the following command to start a local server and to view a live version of
 the website:
 
-```Shell Session
+```
 hugo server
 ```
 
@@ -125,12 +125,12 @@ fancybox, img-post, img-fit, and url-link.
 enabled, responsive and fully customizable. The commands are shown below:
 
 **Named**
-```Markdown
+```
 {{< fancybox path="path" file="file" caption="caption" gallery="gallery" >}}
 ```
 
 **Positional**
-```Markdown
+```
 {{< fancybox "path" "file" "caption" "gallery" >}}
 ```
 
@@ -145,12 +145,12 @@ Add an image which can be aligned center, left, or right. The commands are shown
 below:
 
 **Named**
-```Markdown
+```
 {{< img-post path="date" file="filename.jpg" alt="Alt Text" type="left" >}}
 ```
 
 **Positional**
-```Markdown
+```
 {{< img-post "title" "filename.jpg" "Alt Text" "left" >}}
 ```
 
@@ -165,7 +165,7 @@ Insert multiple images with the ability to create a gallery if needed. The comma
 is shown below:
 
 **Positional Only**
-```Markdown
+```
     {{< img-fit
         "4u" "filename1.jpg" "Alt text 1"
         "4u" "filename2.jpg" "Alt text 2"
@@ -184,7 +184,7 @@ Create a hyperlink and set a target value for the link. The default value is
 `_blank`. The command is shown below:
 
 **Positional Only**
-```Markdown
+```
 {{< url-link "title" "www.link.com" "target">}}
 ```
 
