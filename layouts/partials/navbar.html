@@ -1,6 +1,6 @@
 <!-- Header -->
 <header id="header">
-    {{ if .IsHome }}
+    {{ if or .IsHome (not .Site.Params.DynamicTitles) }}
       <h1><a href="{{ "/" | relLangURL }}">{{ .Site.Params.navbarTitle }}</a></h1>
     {{ else if ne .Section "" }}
       <h1><a href="{{ "/" | relLangURL }}">{{ .Section }}</a></h1>
