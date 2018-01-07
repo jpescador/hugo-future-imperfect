@@ -20,7 +20,7 @@
                     <article>
                         <header>
                             {{ if ne $value.Name "" }}
-                                <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                                <a href="{{"/" | relURL}}{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             {{ else }}
                                 Uncategorized

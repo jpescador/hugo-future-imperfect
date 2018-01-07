@@ -60,7 +60,7 @@
 		font-weight: 400;
 		letter-spacing: 0.25em;
 		line-height: 2.5;
-		margin-top: -1em;
+		margin: -1em 1em 0;
 		text-transform: uppercase;
 	}
 
@@ -115,7 +115,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: #000000;
+		color: #333333;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 14pt;
 		font-weight: 400;
@@ -189,7 +189,7 @@
 			}
 
 	strong, b {
-		color: #000000;
+		color: #333333;
 		font-weight: 700;
 	}
 
@@ -876,6 +876,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			margin-top: 1em;
 		}
 
 			ul.icons li {
@@ -1919,7 +1920,7 @@
 	    article.post h2,
 	    article.post h3,
 	    article.post h4 {
-	        color: #000000;
+	        color: #333333;
 	        /* Theoretically for IE 8 & 9 (more valid) */
 	        /* ...but not required as filter works too */
 	        /* should come BEFORE filter */
@@ -2325,7 +2326,7 @@
 						position: relative;
 						text-indent: 4em;
 						width: 4em;
-						color: #000000;
+						color: #333333;
 						/* Theoretically for IE 8 & 9 (more valid) */
 						/* ...but not required as filter works too */
 						/* should come BEFORE filter */
@@ -2385,7 +2386,7 @@
 		}
 
 			#header #search input {
-				color: #000000;
+				color: #333333;
 				width: 12em;
 			}
 
@@ -2455,6 +2456,7 @@
 		opacity: 1;
 		padding: 4.5em;
 		width: 90em;
+		overflow: hidden;
 	}
 
 		body.is-menu-visible #wrapper {
@@ -2654,6 +2656,9 @@
 
 	#footer .icons {
 		color: #aaaaaa;
+		text-align: center;
+		margin-top: 0;
+		padding-top: 0
 	}
 
 	#footer .copyright {
