@@ -1,16 +1,16 @@
 <h2>Say something</h2>
 {{ with .Site.Params.staticman }}
-  <form class="post-new-comment" method="POST" action="https://dev.staticman.net/v2/entry/{{ .username }}/{{ .repo }}/{{ .branch }}/comments">
+  <form class="post-new-comment" method="POST" action="https://api.staticman.net/v2/entry/{{ .username }}/{{ .repo }}/{{ .branch }}/comments">
 {{ end }}
-    <input type="hidden" name="options[redirect]" value="{{ .Permalink }}">
+    <input type="hidden" name="options[redirect]" value="{{ .Site.BaseURL }}{{ .RelPermalink }}">
     <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
     <input required name="fields[name]" type="text" placeholder="Your name (Required)">
     <input name="fields[website]" type="text" placeholder="Your website">
     <input required name="fields[email]" type="email" placeholder="Your email address (Required for Gravatar)">
     <textarea required name="fields[body]" placeholder='Your message. Feel free to use Markdown (Google "Markdown Cheat Sheet").' rows="10"></textarea>
-    <input type="hidden" name="options[reCaptcha][siteKey]" value="6LeoGzAUAAAAAEQyc2O1okFJPFsYFgryXvpLkFJ1">
-    <input type="hidden" name="options[reCaptcha][secret]" value="A2bqZay+pf0qOpY/GARlzqV7Bq9U4JzQhipNYlh44Zd7+aGYFc+5hArV5zVXl1tVHtPPL/o1BCDhy6EKiBP8eupxN4o1ISpbk5bpREJTPVgA+zSDiPmfJ4U6JNjmp752gjLcv4JOvJYzNeRnu23ZjjbT497f5EIdWRGBJGa/OHA=">
-    <div class="g-recaptcha" data-sitekey="6LeoGzAUAAAAAEQyc2O1okFJPFsYFgryXvpLkFJ1"></div>
+    <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
+    <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.secret }}">
+    <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     <input type="submit" value="Submit">
   </form>
 <script src='https://www.google.com/recaptcha/api.js'></script>

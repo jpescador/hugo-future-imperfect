@@ -86,7 +86,7 @@
                 {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
                         <article class="mini-post">
                             <header>
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                                 {{ $.Scratch.Set "dateType" .Date }}
                                 <time class="published" datetime=
                                     '{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
