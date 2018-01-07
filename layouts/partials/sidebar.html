@@ -1,27 +1,27 @@
 <!-- Sidebar -->
 <section id="sidebar">
 
-  <!-- Intro -->
-  <section id="intro">
-    {{ $pic := .Site.Params.intro.pic }}
-    {{ with $pic.src }}
-      {{ if $pic.circle }}
-        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relLangURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
-      {{ else if $pic.imperfect }}
-        <a href='{{ .Site.BaseURL | relLangURL }}' class="logo"><img src="{{ . | relLangURL }}" alt="{{ $pic.alt }}" /></a>
-      {{ else }}
-        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relLangURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
-      {{ end }}
-    {{ end }}
-    {{ with .Site.Params.intro }}
-      <header>
-        <h2>{{ .header }}</h2>
-        <p>{{ .paragraph | safeHTML }}</p>
-      </header>
+    <!-- Intro -->
+        <section id="intro">
+            {{ $pic := .Site.Params.intro.pic }}
+            {{ with $pic.src }}
+                {{ if $pic.circle }}
+                    <img src="{{ . }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+                {{ else if $pic.imperfect }}
+                    <a href="/" class="logo"><img src="{{ . }}" alt="{{ $pic.alt }}" /></a>
+                {{ else }}
+                    <img src="{{ . }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" />
+                {{ end }}
+            {{ end }}
+            {{ with .Site.Params.intro }}
+                <header>
+                    <h2>{{ .header }}</h2>
+                    <p>{{ .paragraph | safeHTML }}</p>
+                </header>
     {{ end }}
     {{ if .Site.Params.socialAppearAtTop }}
       <ul class="icons">
-        {{ if .Site.Params.rssAppearAtTop }}
+        {{ if .RSSLink }}
           <li>
             <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
           </li>
@@ -50,7 +50,7 @@
           <article class="mini-post">
             <header>
               <h3>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
               </h3>
               {{ $.Scratch.Set "dateType" .Date }}
               <time class="published" datetime='{{ .Date }}'>
@@ -117,7 +117,7 @@
   <section id="footer">
     {{ if .Site.Params.socialAppearAtBottom }}
       <ul class="icons">
-        {{ if .Site.Params.rssAppearAtBottom }}
+        {{ if .RSSLink }}
           <li>
             <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
           </li>

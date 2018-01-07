@@ -20,7 +20,7 @@
                     <article>
                         <header>
                             {{ if ne $value.Name "" }}
-                                <a href="{{ .Site.BaseURL | relURL }}{{ printf "/%s/%s" $data.Plural $value.Name | urlize | relLangURL }}">{{ $value.Name }}</a>
+                                <a href="{{ printf "/%s/%s" $data.Plural $value.Name | urlize | relLangURL }}">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             {{ else }}
                                 {{ i18n "uncategorized" }}

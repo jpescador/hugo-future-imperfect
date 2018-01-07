@@ -50,20 +50,22 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
-            <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-            <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
-            <link rel="stylesheet" href="{{ "css/academicons.min.css" | relURL }}">
+            <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+            <link rel="stylesheet" href="{{ "css/add-on.css" | absURL }}">
+            <link rel="stylesheet" href="{{ "css/academicons.min.css" | absURL }}">
         {{ end }}
 
         {{ if ne ($.Scratch.Get "cssFiles") false }}
             {{ range $.Scratch.Get "cssFiles" }}
                 {{ if ne . "default" }}
-                    <link rel="stylesheet" href="{{ . | relURL }}">
+                    <link rel="stylesheet" href="{{ . | absURL }}">
                 {{ end }}
             {{ end }}
         {{ end }}
 
-      {{ template "_internal/google_analytics.html" . }}
+        {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+            {{ template "_internal/google_analytics.html" . }}
+        {{ end }}
     </head>
     <body>
 

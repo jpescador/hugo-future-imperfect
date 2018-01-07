@@ -1,12 +1,16 @@
 <article class="post">
-  {{ .Render "header" }}
-  {{ .Render "featured" }}
-  {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 1) "") | truncate (default 500 .Site.Params.summary_length) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-  {{ $.Scratch.Get "summary" }}
-  <footer>
-    <ul class="actions">
-      <li><a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a></li>
-    </ul>
-  {{ .Render "footer-category" }}
-  </footer>
+    {{ .Render "header" }}
+    {{ .Render "featured" }}
+   <!-- <p>{{ printf "%s" .Summary | markdownify }}</p> -->
+
+{{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>.*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+
+    <p>{{ $.Scratch.Get "summary" }}</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="{{ .Permalink }}" class="button big">{{ i18n "read_more" }}</a></li>
+        </ul>
+        {{ partial "footer-category" . }}
+    </footer>
 </article>
