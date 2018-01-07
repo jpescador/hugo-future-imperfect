@@ -48,7 +48,6 @@ pluralizeListTitles = false
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
 # prefer to use. See Staticman.yml for additional settings.
-
 [params.staticman]
   # Sets Statiman to be active
   staticman = false

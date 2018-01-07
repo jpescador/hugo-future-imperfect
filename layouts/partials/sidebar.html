@@ -6,11 +6,11 @@
     {{ $pic := .Site.Params.intro.pic }}
     {{ with $pic.src }}
       {{ if $pic.circle }}
-        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relLangURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else if $pic.imperfect }}
-        <a href='{{ .Site.BaseURL | relLangURL }}' class="logo"><img src="{{ . | relLangURL }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ .Site.BaseURL | relLangURL }}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
       {{ else }}
-        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relLangURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ .Site.BaseURL | relLangURL }}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ end }}
     {{ end }}
     {{ with .Site.Params.intro }}
@@ -90,15 +90,19 @@
         {{ end }}
 
         {{ range $key, $value := $.Scratch.Get "categories" }}
-          <p>
+        <p>
+          <article>
+            <header>
               {{ if ne $value.Name "" }}
-                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | absLangURL }}">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | absLangURL }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
                 {{ i18n "uncategorized" }}
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ end }}
-          </p>
+            </header>
+          </article>
+        </p>
         {{ end }}
     </section>
   {{ end }}

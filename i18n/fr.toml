@@ -14,6 +14,8 @@
   other = "Catégorie"
 [uncategorized]
   other = "Sans catégorie"
+[share_post]
+  other = "Partager ce post"
 [about]
   other = "à propos"
 [learn_more]
