@@ -165,5 +165,8 @@ pluralizeListTitles = false
   pinterest       = "example"
   telegram        = "example"
   vine            = ""
+  googlescholar   = ""
+  orcid           = ""
+  researchgate    = "example"    
   # Email
   email           = "example"
