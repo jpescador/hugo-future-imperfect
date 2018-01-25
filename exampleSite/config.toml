@@ -84,124 +84,90 @@ pluralizeListTitles = false
 # Sets the number of recent posts to show in the sidebar. The default value is 5.
     sidebar = 5
 
-# Sets the default language for multilanguage use.
-DefaultContentLanguage = "en"
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  identifier = "fa fa-home"
+  weight = 1
 
-[Languages]
-    [Languages.en]
-        LanguageName = "English"
-        title = "Hugo Future Imperfect"
-        description = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
-        weight = 1
-        
-            # Sets the menu items in the navigation bar
-            # Identifier prepends a Font Awesome icon to the menu item
-            # Each language has its own menu.
-            [[Languages.en.menu.main]]
-                name = "Home"
-                url = "/"
-                identifier = "fa fa-home"
-                weight = 1
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  identifier = "fa fa-id-card-o"
+  weight = 2
 
-            [[Languages.en.menu.main]]
-                name = "About"
-                url = "/about/"
-                identifier = "fa fa-id-card-o"
-                weight = 2
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  identifier = "fa fa-newspaper-o"
+  weight = 3
 
-            [[Languages.en.menu.main]]
-                name = "Itemized"
-                url = "/itemized/"
-                identifier = "fa fa-id-card-o"
-                weight = 2
+[[menu.main]]
+  name = "Itemized"
+  url = "/itemized/"
+  identifier = "fa fa-list"
+  weight = 4
 
-            [[Languages.en.menu.main]]
-                name = "Categories"
-                url = "/categories/"
-                identifier = "fa fa-sitemap"
-                weight = 5
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  identifier = "fa fa-sitemap"
+  weight = 5
 
-    [Languages.fr]
-        LanguageName = "Français"
-        title = "Hugo Future Imperfect in fr"
-        description = "HTML5 UP theme, Future Imperfect avec quelques extra goodies, porté par Julio Pescador. Multilangues par StatnMap. Powered by Hugo"
-        weight = 2
-    
-            [[Languages.fr.menu.main]]
-                name = "Accueil"
-                url = "/"
-                identifier = "fa fa-home"
-                weight = 1
-
-            [[Languages.fr.menu.main]]
-                name = "Blog"
-                url = "/blog/"
-                identifier = "fa fa-newspaper-o"
-                weight = 3
-
-            [[Languages.fr.menu.main]]
-                name = "Itemized"
-                url = "/itemized/"
-                identifier = "fa fa-id-card-o"
-                weight = 4
-
-            [[Languages.fr.menu.main]]
-                name = "Catégories"
-                url = "/categories/"
-                identifier = "fa fa-sitemap"
-                weight = 5
-
-            [[Languages.fr.menu.main]]
-                name = "Contact"
-                url = "/contact/"
-                identifier = "fa fa-envelope-o"
-                weight = 6
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  identifier = "fa fa-envelope-o"
+  weight = 6
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.
 [social]
   # Coding Communities
-  github          = "jpescador/hugo-future-imperfect"
-  gitlab          = ""
-  stackoverflow   = "" # User Number
-  bitbucket       = ""
-  jsfiddle        = ""
-  codepen         = ""
+  github           = "jpescador/hugo-future-imperfect"
+  gitlab           = ""
+  stackoverflow    = "" # User Number
+  bitbucket        = ""
+  jsfiddle         = ""
+  codepen          = ""
   # Visual Art Communities
-  deviantart      = ""
-  flickr          = "example"
-  behance         = ""
-  dribbble        = ""
+  deviantart       = ""
+  flickr           = "example"
+  behance          = ""
+  dribbble         = ""
   # Publishing Communities
-  wordpress       = ""
-  medium          = ""
+  wordpress        = ""
+  medium           = ""
   # Professional/Business Oriented Communities
-  linkedin        = "example"
-  foursquare      = ""
-  xing            = ""
-  slideshare      = ""
+  linkedin         = "example"
+  linkedin_company = "examplebusiness"
+  foursquare       = ""
+  xing             = ""
+  slideshare       = ""
   # Social Networks
-  facebook        = "example"
-  googleplus      = ""
-  reddit          = "example"
-  quora           = ""
-  youtube         = ""
-  vimeo           = ""
-  whatsapp        = "" # WhatsApp Number
+  facebook         = "example"
+  googleplus       = ""
+  reddit           = "example"
+  quora            = ""
+  youtube          = ""
+  vimeo            = ""
+  whatsapp         = "" # WhatsApp Number
     # WeChat and QQ need testing.
-    wechat          = ""
-    qq              = "" # User ID Number
-  instagram       = "example"
-  tumblr          = ""
-  twitter         = "example"
-  skype           = ""
-  snapchat        = ""
-  pinterest       = "example"
-  telegram        = "example"
-  vine            = ""
-  googlescholar   = ""
-  orcid           = ""
-  researchgate    = "example"    
+    wechat         = ""
+    qq             = "" # User ID Number
+  instagram        = "example"
+  tumblr           = ""
+  twitter          = "example"
+  skype            = ""
+  snapchat         = ""
+  pinterest        = "example"
+  telegram         = "example"
+  vine             = ""
+  googlescholar    = ""
+  orcid            = ""
+  researchgate     = "example"    
   # Email
-  email           = "example"
+  email            = "example"

@@ -50,6 +50,10 @@
   <li><a href="//linkedin.com/in/{{.}}" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
 {{ end }}
 
+{{ with .Site.Social.linkedin_company }}
+  <li><a href="//linkedin.com/company/{{.}}" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+{{ end }}
+
 {{ with .Site.Social.foursquare }}
   <li><a href="//foursquare.com/{{.}}" target="_blank" title="Foursquare" class="fa fa-foursquare"></a></li>
 {{ end  }}

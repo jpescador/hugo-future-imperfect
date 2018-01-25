@@ -133,12 +133,6 @@
 
 		}
 
-		@media screen and (max-width: 1280px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
 		}
 
 		@media screen and (max-width: 980px) {
@@ -970,7 +964,7 @@
 					content: '\f053';
 				}
 
-			@media screen and (max-width: 1280px) {
+			@media screen and (max-width: 980px) {
 
 				ul.actions.pagination {
 					text-align: center;
@@ -1231,7 +1225,7 @@
 		margin: 0 0 2em 0;
 	}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			.mini-posts .posts-container {
 				display: -moz-flex;
@@ -2405,7 +2399,7 @@
 				padding: 0 0.5em 0 0;
 			}
 
-		@media screen and (min-width: 1280px) {
+		@media screen and (min-width: 980px) {
 
 				#header .menu {
 					display: none;
@@ -2486,7 +2480,7 @@
 
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			#wrapper {
 				display: block;
@@ -2517,7 +2511,7 @@
 
 	#sidebar {
 		margin-right: 3em;
-		min-width: 22em;
+		min-width: 18em;
 		width: 22em;
 	}
 
@@ -2549,7 +2543,7 @@
 				padding: 0;
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			#sidebar {
 				border-top: solid 1px rgba(160, 160, 160, 0.3);
@@ -2625,7 +2619,7 @@
 			font-size: 0.8em;
 		}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 980px) {
 
 		#intro {
 			margin: 0 0 3em 0;
