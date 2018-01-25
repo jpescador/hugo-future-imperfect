@@ -133,12 +133,6 @@
 
 		}
 
-		@media screen and (max-width: 1280px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
 		}
 
 		@media screen and (max-width: 980px) {
@@ -970,7 +964,7 @@
 					content: '\f053';
 				}
 
-			@media screen and (max-width: 1280px) {
+			@media screen and (max-width: 980px) {
 
 				ul.actions.pagination {
 					text-align: center;
@@ -1080,8 +1074,8 @@
 
 			ul.posts li {
 				border-top: dotted 1px rgba(160, 160, 160, 0.3);
-				margin: 1.5em 0 0 0;
-				padding: 1.5em 0 0 0;
+				margin: 0.5em 0 0 0;
+				padding: 0.5em 0 0 0;
 			}
 
 				ul.posts li:first-child {
@@ -1231,7 +1225,7 @@
 		margin: 0 0 2em 0;
 	}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			.mini-posts .posts-container {
 				display: -moz-flex;
@@ -1407,7 +1401,12 @@
 				padding: 0;
 			}
 
-				.post > footer .stats li {
+        .post > footer .stats li,
+        .post > footer .stats li ul {
+          margin: 0;
+          padding-left: 0;
+        }
+				.post > footer .stats li ul li {
 					border-left: solid 1px rgba(160, 160, 160, 0.3);
 					display: inline-block;
 					font-family: "Raleway", Helvetica, sans-serif;
@@ -1415,22 +1414,22 @@
 					font-weight: 400;
 					letter-spacing: 0.25em;
 					line-height: 1;
-					margin: 0 0 0 2em;
-					padding: 0 0 0 2em;
+					margin: 0 0 0 1em;
+					padding: 0 0 0 1em;
 					text-transform: uppercase;
 				}
 
-					.post > footer .stats li:first-child {
+					.post > footer .stats li ul li:first-child {
 						border-left: 0;
 						margin-left: 0;
 						padding-left: 0;
 					}
 
-					.post > footer .stats li .icon {
+					.post > footer .stats li ul li .icon {
 						border-bottom: 0;
 					}
 
-						.post > footer .stats li .icon:before {
+						.post > footer .stats li ul li .icon:before {
 							color: rgba(160, 160, 160, 0.3);
 							margin-right: 0.75em;
 						}
@@ -1587,7 +1586,7 @@
 					text-align: center;
 				}
 
-					.post > footer .stats li {
+					.post > footer .stats li ul li {
 						margin: 0 0 0 1.25em;
 						padding: 0 0 0 1.25em;
 					}
@@ -2400,7 +2399,7 @@
 				padding: 0 0.5em 0 0;
 			}
 
-		@media screen and (min-width: 1280px) {
+		@media screen and (min-width: 980px) {
 
 				#header .menu {
 					display: none;
@@ -2481,7 +2480,7 @@
 
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			#wrapper {
 				display: block;
@@ -2512,7 +2511,7 @@
 
 	#sidebar {
 		margin-right: 3em;
-		min-width: 22em;
+		min-width: 18em;
 		width: 22em;
 	}
 
@@ -2544,7 +2543,7 @@
 				padding: 0;
 		}
 
-		@media screen and (max-width: 1280px) {
+		@media screen and (max-width: 980px) {
 
 			#sidebar {
 				border-top: solid 1px rgba(160, 160, 160, 0.3);
@@ -2620,7 +2619,7 @@
 			font-size: 0.8em;
 		}
 
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 980px) {
 
 		#intro {
 			margin: 0 0 3em 0;
