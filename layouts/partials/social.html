@@ -50,6 +50,10 @@
   <li><a href="//linkedin.com/in/{{.}}" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
 {{ end }}
 
+{{ with .Site.Social.linkedin_company }}
+  <li><a href="//linkedin.com/company/{{.}}" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+{{ end }}
+
 {{ with .Site.Social.foursquare }}
   <li><a href="//foursquare.com/{{.}}" target="_blank" title="Foursquare" class="fa fa-foursquare"></a></li>
 {{ end  }}
@@ -130,6 +134,18 @@
 
 {{ with .Site.Social.vine }}
   <li><a href="//vine.co/{{.}}" target="_blank" title="Vine" class="fa fa-vine"></a></li>
+{{ end }}
+
+{{ with .Site.Social.googlescholar }}
+<li><a href="//scholar.google.com/citations?user={{.}}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a></li>
+{{ end }}
+
+{{ with .Site.Social.orcid }}
+<li><a href="//orcid.org/{{.}}" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a></li>
+{{ end }}
+
+{{ with .Site.Social.researchgate }}
+<li><a href="//researchgate.net/profile/{{.}}" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
 {{ end }}
 
 {{ with .Site.Social.email }}
