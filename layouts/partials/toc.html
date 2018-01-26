@@ -1,0 +1,10 @@
+<!--
+Taken from Hugo manual: Show toc after site has word count larger than some value
+toc generation can be stopped by adding a parameter tocFalse to the content
+-->
+
+{{ if and (.Site.Params.tocIfNecessary) (gt .WordCount .Site.Params.tocWordCount) (ne .Params.tocActivated "false") }}
+<aside>
+  {{.TableOfContents}}
+</aside>
+{{ end }}
