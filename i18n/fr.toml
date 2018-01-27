@@ -12,6 +12,10 @@
   other = "Catégories"
 [category]
   other = "Catégorie"
+[tags]
+  other = "Tags"
+[tag]
+  other = "Tag"
 [uncategorized]
   other = "Sans catégorie"
 [share_post]
