@@ -8,6 +8,18 @@
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
 
+    {{ if (not .Params.disable_highlight) }}
+      {{ $highVer := .Site.Params.highlightjsVersion }}
+      {{ $highCDN := (.Site.Params.highlightjsCDN | default "//cdn.bootcss.com") }}
+      {{ if (not (eq $highVer "")) }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/highlight.min.js"></script>
+        {{ $.Scratch.Set "highLangs" .Site.Params.highlightjsLang }}
+        {{ range .Params.highlightjsLang }}{{ $.Scratch.Add "highLangs" . }}{{ end }}
+        {{ range ($.Scratch.Get "highLangs") }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/languages/{{ . }}.min.js"></script>{{ end }}
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      {{ end }}
+    {{ end }}
     <!-- If the value "default" is passed into the param then we will first
      load the standard js files associated with the theme -->
     {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
