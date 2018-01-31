@@ -1,0 +1,47 @@
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        <article class="post">
+          <header>
+              <div class="title">
+                  {{ if $.Scratch.Get "h1" }}
+                      <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+                      {{ $.Scratch.Set "h1" false }}
+                  {{ else }}
+                      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                  {{ end }}
+                  {{ with .Description }}
+                      <p>{{ . | markdownify }}</p>
+                  {{ end }}
+              </div>
+          </header>
+            <div id="content">
+                {{ .Content | markdownify }}
+                <div class="contact-container">
+                  <form name="subscribe" netlify-honeypot="backdoor" action="{{ .Params.formAction }}" netlify center width="300px">
+                  <h4>{{ .Params.subtitle }}</h4>
+                  <fieldset hidden=true>
+                    <input placholder="sp@c1l" type="text" name="backdoor">
+                   </fieldset>
+                  <fieldset>
+                   <input placeholder="{{ .Params.subscribeEmail }}" type="email" name="email" tabindex="1" required autofocus>
+                  </fieldset>
+                  <fieldset>
+                   <input placeholder="{{ .Params.subscribeFirstName }}" type="text" name="first_name" tabindex="2" required>
+                  </fieldset>
+                  <fieldset>
+                   <input placeholder="{{ .Params.subscribeLastName }}" type="text" name="last_name" tabindex="3" required>
+                  </fieldset>
+                  <fieldset>
+                   <button name="subscribe" class="button" type="subscribe" id="subscribe-submit" tabindex="4">Subscribe</button>
+                  </fieldset>
+              </form>
+            </div>
+            </div>
+        </article>
+    </div>
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}
