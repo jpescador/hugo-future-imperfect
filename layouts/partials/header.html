@@ -34,6 +34,10 @@
 
         {{ template "_internal/twitter_cards.html" . }}
         {{ template "_internal/opengraph.html" . }}
+        <meta property="og:image" content="{{ .Site.BaseURL }}/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
         {{ template "_internal/schema.html" . }}
         {{ template "_internal/google_news.html" . }}
 
