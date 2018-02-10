@@ -53,7 +53,7 @@ pluralizeListTitles = false
   highlightjsCDN = "//cdn.bootcss.com"
   highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
-  
+
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
 # prefer to use. See Staticman.yml for additional settings.
@@ -74,7 +74,7 @@ pluralizeListTitles = false
 [params.intro]
   header    = "Hugo Future Imperfect"
 
-  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+  paragraph = "Another fine responsive site template by <a href='http://html5up.net'>HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
 
   about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
@@ -98,11 +98,12 @@ DefaultContentLanguage = "en"
 
 [Languages]
     [Languages.en]
+        languageCode = "en"
         LanguageName = "English"
         title = "Hugo Future Imperfect"
-        description = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+        description = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Multilanguage by StatnMap. Powered by Hugo."
         weight = 1
-        
+
             # Sets the menu items in the navigation bar
             # Identifier prepends a Font Awesome icon to the menu item
             # Each language has its own menu.
@@ -119,10 +120,16 @@ DefaultContentLanguage = "en"
                 weight = 2
 
             [[Languages.en.menu.main]]
+                name = "Blog"
+                url = "/blog/"
+                identifier = "fa fa-newspaper-o"
+                weight = 3
+
+            [[Languages.en.menu.main]]
                 name = "Itemized"
                 url = "/itemized/"
                 identifier = "fa fa-id-card-o"
-                weight = 2
+                weight = 4
 
             [[Languages.en.menu.main]]
                 name = "Categories"
@@ -130,17 +137,30 @@ DefaultContentLanguage = "en"
                 identifier = "fa fa-sitemap"
                 weight = 5
 
+            [[Languages.en.menu.main]]
+                name = "Contact"
+                url = "/contact/"
+                identifier = "fa fa-envelope-o"
+                weight = 6
+
     [Languages.fr]
+        languageCode = "fr"
         LanguageName = "Français"
         title = "Hugo Future Imperfect in fr"
-        description = "HTML5 UP theme, Future Imperfect avec quelques extra goodies, porté par Julio Pescador. Multilangues par StatnMap. Powered by Hugo"
+        description = "HTML5 UP thème, Future Imperfect avec quelques goodies supplémentaires, porté par Julio Pescador. Multilingue par StatnMap. Propulsé par Hugo."
         weight = 2
-    
+
             [[Languages.fr.menu.main]]
                 name = "Accueil"
                 url = "/"
                 identifier = "fa fa-home"
                 weight = 1
+
+            [[Languages.fr.menu.main]]
+                name = "About"
+                url = "/about/"
+                identifier = "fa fa-newspaper-o"
+                weight = 2
 
             [[Languages.fr.menu.main]]
                 name = "Blog"
@@ -162,6 +182,43 @@ DefaultContentLanguage = "en"
 
             [[Languages.fr.menu.main]]
                 name = "Contact"
+                url = "/contact/"
+                identifier = "fa fa-envelope-o"
+                weight = 6
+
+    [Languages.pl]
+        languageCode = "pl"
+        LanguageName = "Polskie"
+        title = "Hugo przyszłość niedoskonała"
+        description = "Motyw HTML5 UP, Future Imperfect z dodatkowymi dodatkami, przeniesiony przez Julio Pescador. Wielojęzyczność według StatnMap. Zasilany przez Hugo."
+        weight = 2
+
+            [[Languages.pl.menu.main]]
+                name = "Home"
+                url = "/"
+                identifier = "fa fa-home"
+                weight = 1
+
+            [[Languages.pl.menu.main]]
+                name = "Blog"
+                url = "/blog/"
+                identifier = "fa fa-newspaper-o"
+                weight = 2
+
+            [[Languages.pl.menu.main]]
+                name = "O mnie"
+                url = "/about/"
+                identifier = "fa fa-id-card-o"
+                weight = 4
+
+            [[Languages.pl.menu.main]]
+                name = "Kategory"
+                url = "/categories/"
+                identifier = "fa fa-sitemap"
+                weight = 3
+
+            [[Languages.pl.menu.main]]
+                name = "Kontakt"
                 url = "/contact/"
                 identifier = "fa fa-envelope-o"
                 weight = 6
@@ -212,6 +269,6 @@ DefaultContentLanguage = "en"
   vine             = ""
   googlescholar    = ""
   orcid            = ""
-  researchgate     = "example"    
+  researchgate     = "example"
   # Email
   email            = "example"
