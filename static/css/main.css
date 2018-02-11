@@ -8,6 +8,9 @@
 
 	Modified/Cleaned for use with Hugo-Future-Imperfect Theme
 	gohugo.io | @pacollins
+	
+	Modified for Multiple languages
+	statnmap.com | @statnmap
 */
 
 /* Reset */
@@ -1481,6 +1484,7 @@
 							border-left: solid 1px rgba(160, 160, 160, 0.3);
 							margin-left: 2em;
 							padding-left: 2em;
+							margin: 0 0 0 0;
 						}
 
 						.post > header .meta > :first-child {
@@ -2405,6 +2409,12 @@
 
 		@media screen and (max-width: 980px) {
 
+      #header .main {
+          position: absolute;
+          right: 0;
+          background-color: inherit;
+      }
+
 			#header .links {
 				display: none;
 			}
@@ -2689,6 +2699,71 @@
 	        opacity: .5;
 	    }
 
+/* Multi-language */
+
+#header .main .lang-switcher {
+  position: relative ;
+}
+#header .main .lang-switcher > a {
+  overflow: inherit;
+  opacity: 1;
+  display: block;
+  height: 100%;
+}
+#header .main .lang-switcher ul li > a {
+  overflow: inherit;
+  opacity: 1;
+  display: block;
+  height: 100%;
+}
+#header .main .lang-switcher .dropdown-menu {
+    padding: 0;
+    position: absolute;
+    z-index: 99999;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    top: 100%;
+    display: grid;
+}
+#header .main .lang-switcher .dropdown-menu li {
+    background-color: white;
+}
+#header .lang-switcher img {
+    display: block;
+    margin: auto;
+    padding: 32% 0;
+    height: 100%;
+}
+
+#header .main .lang-switcher:hover > ul, 
+#header .main .lang-switcher:hover > ul, 
+#header .main .lang-switcher:focus > ul, 
+#header .main .focus > ul {
+    clip: inherit;
+    overflow: inherit;
+    height: inherit;
+    width: inherit;
+}
+
+@media screen and (max-width: 736px) {
+  #header .lang-switcher img {
+      padding: 25% 0;
+  }
+}
+
+#header .main .lang-switcher .fa {
+    height: 25px;
+    padding: 25px 0 14px;
+}
+/*
+#header .main .lang-switcher a.no-translation {
+    background: url(/flags/Flag_NoTr.png) no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+*/
 /* Menu */
 
 	#menu {

@@ -12,7 +12,7 @@
 
         <ul class="posts">
             <header>
-                <h1>{{ .Data.Plural }}</h1>
+                <h1>{{ i18n .Data.Plural }}</h1>
             </header>
             {{ $data := .Data }}
             {{ range $key, $value := $.Scratch.Get "categories" }}
@@ -20,10 +20,10 @@
                     <article>
                         <header>
                             {{ if ne $value.Name "" }}
-                                <a href="{{"/" | relURL}}{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                                <a href="{{ printf "/%s/%s" $data.Plural $value.Name | urlize | relLangURL }}">{{ $value.Name }}</a>
                                 <span style="float:right;">{{ $value.Count }}</span>
                             {{ else }}
-                                Uncategorized
+                                {{ i18n "uncategorized" }}
                                 <span style="float:right;">{{ $value.Count }}</span>
                             {{ end }}
                         </header>

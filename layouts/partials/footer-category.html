@@ -28,9 +28,9 @@
                     {{ $.Scratch.Set "categoryUrl" "/categories/" }}
 
                     {{ if gt $categoryCount 1 }}
-                        Categories
+                        {{ i18n "categories" }}
                     {{ else }}
-                        Category
+                        {{ i18n "category" }}
                     {{ end }}
                 {{ end }}
             </li>
@@ -39,6 +39,6 @@
 
     <!-- Display the categories associated with this post -->
     {{ range .Params.categories }}
-        <li><a href='{{ add ($.Scratch.Get "categoryUrl") . | urlize }}'>{{ . }}</a></li>
+        <li><a href='{{ add ($.Scratch.Get "categoryUrl") . | urlize | relLangURL }}' lang="{{ $.Lang }}">{{ . }}</a></li>
     {{ end }}
 </ul>
