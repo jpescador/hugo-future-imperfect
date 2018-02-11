@@ -7,6 +7,9 @@ paginate = 3
 disqusShortname = "shortname"
 googleAnalytics = ""
 pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
   # Sets the meta tag description
