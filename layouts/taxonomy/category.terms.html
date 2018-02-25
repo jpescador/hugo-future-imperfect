@@ -12,7 +12,7 @@
 
         <ul class="posts">
             <header>
-                <h1>{{ .Data.Plural }}</h1>
+                <h1>{{ i18n .Data.Plural }}</h1>
             </header>
             {{ $data := .Data }}
             {{ range $key, $value := $.Scratch.Get "categories" }}
