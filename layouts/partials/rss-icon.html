@@ -1,5 +1,5 @@
 {{ if .RSSLink }}
-    <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+    <li><a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 {{ else }}
-    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+    <li><a href="{{ .Site.RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
 {{ end }}

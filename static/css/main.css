@@ -133,8 +133,6 @@
 
 		}
 
-		}
-
 		@media screen and (max-width: 980px) {
 
 			body, input, select, textarea {
@@ -212,6 +210,10 @@
 			color: inherit;
 			border-bottom: 0;
 		}
+
+    h1 {
+        font-size: 1.3em;
+    }
 
 	h2 {
 		font-size: 1.1em;
@@ -572,7 +574,7 @@
 		select:hover,
 		textarea:hover {
 			-webkit-transition:border-color 0.3s ease-in-out;
-			moz-transition:border-color 0.3s ease-in-out;
+			-moz-transition:border-color 0.3s ease-in-out;
 			transition:border-color 0.3s ease-in-out;
 			border-color: #2ebaae;
 		}
