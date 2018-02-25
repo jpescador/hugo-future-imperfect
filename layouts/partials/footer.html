@@ -8,11 +8,22 @@
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
 
+    {{ if (not .Params.disable_highlight) }}
+      {{ $highVer := .Site.Params.highlightjsVersion }}
+      {{ $highCDN := (.Site.Params.highlightjsCDN | default "//cdn.bootcss.com") }}
+      {{ if (not (eq $highVer "")) }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/highlight.min.js"></script>
+        {{ $.Scratch.Set "highLangs" .Site.Params.highlightjsLang }}
+        {{ range .Params.highlightjsLang }}{{ $.Scratch.Add "highLangs" . }}{{ end }}
+        {{ range ($.Scratch.Get "highLangs") }}
+        <script src="{{ $highCDN }}/highlight.js/{{ $highVer }}/languages/{{ . }}.min.js"></script>{{ end }}
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      {{ end }}
+    {{ end }}
     <!-- If the value "default" is passed into the param then we will first
      load the standard js files associated with the theme -->
     {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
       <script src="{{ "js/util.js" | relURL }}"></script>
@@ -30,5 +41,6 @@
 
     <!-- This is called by default since this theme uses highlight.js -->
     <script>hljs.initHighlightingOnLoad();</script>
+      {{ partial "footer_mathjax" . }}
   </body>
 </html>

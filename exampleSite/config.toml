@@ -27,6 +27,8 @@ pluralizeListTitles = false
   socialAppearAtBottom = true
   # Sets Categories to sort by number of posts instead of alphabetical
   categoriesByCount    = true
+  # set to show or to hide categories in the sidebar
+  showSidebarCategories = true
   # Sets Estimated Reading Time to appear in post headers
   includeReadingTime   = true
   # Sets the Favicon and Version for the site. Default support is for
@@ -37,6 +39,16 @@ pluralizeListTitles = false
   faviconVersion       = ""
   # Sets Social Share links to appear on posts
   socialShare          = true
+  # Sets specific share to appear on posts (default behavior is to appear)
+  socialShareTwitter   = true
+  socialShareGoogleplus = true
+  socialShareFacebook  = true
+  socialShareReddit    = true
+  socialShareLinkedin  = true
+  socialShareStumbleupon = true
+  socialSharePinterest = true
+  socialShareEmail     = true
+
   # Load custom CSS or JavaScript files. The variable is an array so that you
   # can load multiple files if necessary. You can also load the standard theme
   # files by adding the value, "default".
@@ -44,6 +56,15 @@ pluralizeListTitles = false
   # customJS             = ["default", "/path/to/file"]
   customCSS            = ["default"]
   customJS             = ["default"]
+
+  # options for highlight.js (version, additional languages, and theme)
+  disable_highlight = false # set to true to disable Highlight
+  highlightjsVersion = "9.11.0"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["r", "yaml", "css"]
+  highlightjsTheme = "github"
+  MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxVersion = "2.7.1"
 
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
@@ -168,6 +189,6 @@ pluralizeListTitles = false
   vine             = ""
   googlescholar    = ""
   orcid            = ""
-  researchgate     = "example"    
+  researchgate     = "example"
   # Email
   email            = "example"
