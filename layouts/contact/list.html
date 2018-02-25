@@ -26,18 +26,24 @@
                 {{ else }}
                   <form id="contact" action="//{{ .Params.emailservice }}" method="post" center width="300px">
                 {{ end }}
-                  <h4>Replies Typically Within 24 Hours.</h4>
+                  <h4>{{ i18n "repliestext" }} {{ .Params.contactanswertime }} {{ i18n "hours" }}.</h4>
                   <fieldset>
                    <input placeholder="{{ .Params.contactname }}" type="text" name="name" tabindex="1" required autofocus>
                   </fieldset>
                   <fieldset>
-                   <input placeholder="{{ .Params.contactemail}}" type="email" name="email" tabindex="2" required>
+                   <input placeholder="{{ .Params.contactemail}}" type="email" name="_replyto" tabindex="2" required>
                   </fieldset>
                   <fieldset>
-                   <textarea placeholder="{{ .Params.contactmessage}}" name="message" tabindex="3" required></textarea>
+                  <input placeholder="{{ .Params.contactsubject}}" type="text" name="_subject" tabindex="3" required>
                   </fieldset>
                   <fieldset>
-                   <button name="submit" class="button" type="submit" id="contact-submit" tabindex="4">Submit</button>
+                   <textarea placeholder="{{ .Params.contactmessage}}" name="message" tabindex="4" required></textarea>
+                  </fieldset>
+                  <fieldset>
+                  <input type="hidden" name="_language" value="{{ .Params.contactlang}}">
+                  </fieldset>
+                  <fieldset>
+                   <button name="submit" class="button" type="submit" id="contact-submit" tabindex="5">{{ i18n "submit" }}</button>
                   </fieldset>
               </form>
             </div>

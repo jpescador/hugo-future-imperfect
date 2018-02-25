@@ -6,11 +6,11 @@
     {{ $pic := .Site.Params.intro.pic }}
     {{ with $pic.src }}
       {{ if $pic.circle }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL}}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else if $pic.imperfect }}
-        <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL }}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
       {{ else }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{ "/" | relLangURL }}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ end }}
     {{ end }}
     {{ with .Site.Params.intro }}
@@ -33,7 +33,7 @@
   <section class="recent-posts">
     <div class="mini-posts">
       <header>
-        <h3>Recent Posts</h3>
+        <h3>{{ i18n "recent_posts" }}</h3>
       </header>
       <div class="posts-container">
         {{ $.Scratch.Set "recentPosts" .Site.Pages }}
@@ -51,9 +51,8 @@
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </h3>
               {{ $.Scratch.Set "dateType" .Date }}
-              <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}
-              </time>
+              <time class="published" datetime='{{ .Date }}'>
+              {{ default (i18n "date_format") | .Date.Format }}</time>
             </header>
             {{ .Render "featured" }}
           </article>
@@ -65,9 +64,9 @@
           {{ with .Site.Params.viewMorePostLink }}
             {{ . }}
           {{ else }}
-            "/post/"
+            "/{{ $.Site.Language.Lang }}/post/"
           {{ end }}
-        class="button">View more posts</a>
+        class="button">{{ i18n "see_more" }}</a>
       {{ end }}
     </div>
   </section>
@@ -80,7 +79,7 @@
     <section id="categories">
       <header>
         <h3>
-          <a href="/categories/">Categories</a>
+          <a href="/{{ .Site.Language.Lang }}/categories/">{{ i18n "categories" }}</a>
         </h3>
       </header>
         {{ if .Site.Params.categoriesByCount }}
@@ -94,10 +93,10 @@
           <article>
             <header>
               {{ if ne $value.Name "" }}
-                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
-                Uncategorized
+                {{ i18n "uncategorized" }}
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ end }}
             </header>
@@ -108,12 +107,13 @@
   {{ end }}
   {{ end }}
 
+
   <!-- About -->
   {{ with .Site.Params.intro.about }}
     <section id="mini-bio">
-      <h3>About</h3>
+      <h3>{{ i18n "about" }}</h3>
       <p>{{ . | safeHTML }}</p>
-      <a href="/about/" class="button">Learn More</a>
+      <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
     </section>
   {{ end }}
 

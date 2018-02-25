@@ -230,21 +230,19 @@
 		404
 	</div>
 	<div class="subheader primary-text-color">
-		Oops, the page you're <br>
-		looking for does not exist.
+		{{ i18n "404_oops" | safeHTML }}
 	</div>
 	<hr>
 	<div class="clearfix"></div>
 	<div class="context primary-text-color">
 		<!-- doesn't use context_content because it's ALWAYS the same thing -->
     <p>
-      You may want to head back to the homepage.<br />
-      If you think something is broken, report a problem.
+      {{ i18n "404_backorreport" | safeHTML }}
     </p>
 	</div>
 	<div class="buttons-container">
-		<a class="border-button" href="{{ "/" | relURL }}">Go To Homepage</a>
-		<a class="border-button" href="mailto:{{ .Site.Social.email }}">Report A Problem</a>
+		<a class="border-button" href="{{ "/" | relLangURL }}">{{ i18n "404_gotohome"}}</a>
+		<a class="border-button" href="mailto:{{ .Site.Social.email }}">{{ i18n "404_report"}}</a>
 	</div>
 </div>
 
