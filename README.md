@@ -19,6 +19,7 @@ interested in seeing a live example.
 	- [exampleSite](#examplesite)
 	- [config.toml](#configtoml)
 	- [Hugo's Built-In Server](#hugos-built-in-server)
+    - [Hugo's website SEO](#hugos-website-seo)
 - [Shortcodes](#shortcodes)
 	- [fancybox](#fancybox)
 	- [img-post](#img-post)
@@ -114,6 +115,37 @@ hugo server
 ```
 
 You will then be able to view your live website at [localhost:1313](http://localhost:1313).
+
+### Hugo's website SEO
+
+This theme support SEO elements for your website.
+It was adapted and integrated thanks to the following guide:  
+[https://keithpblog.org/post/hugo-website-seo/](https://keithpblog.org/post/hugo-website-seo/)
+
+If you wish to enable SEO on this theme, follow these instructions:
+1. To include the following parameters in your _config.toml_
+```
+# .config.toml
+...
+enableRobotsTXT = true
+canonifyURLs = true
+# and if you think your md file names or locations might change:
+[permalinks]
+    post = "/blog/:title/"
+...
+```
+
+2. Add your website to Google Search Console:
+    - Login to the [Google Search Console](https://www.google.com/webmasters/tools/home)
+    - Add your website as property
+    - Add the html page as required by google to verify ownership
+    - Submit the sitemap (/sitemap.xml) for indexing
+    - Wait
+
+3. Add your website to Bing 
+    - Login to the [Bing Webmaster Console](https://www.bing.com/toolbox/webmaster/)
+    - Add your site, details and verify
+    - From the 3 option, we recommend adding the xml file to you website
 
 ## Shortcodes
 In addition to the native [Hugo shortcodes](https://gohugo.io/extras/shortcodes/),
