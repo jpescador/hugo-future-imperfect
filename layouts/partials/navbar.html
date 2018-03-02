@@ -11,10 +11,22 @@
     <nav class="links">
         <ul>
             {{ range .Site.Menus.main }}
-                <li>
+                <!-- <li>
                     <a href="{{ .URL }}">
                             <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
                     </a>
+                </li> -->
+                <li>
+                  {{ if .HasChildren }}
+                      <a class="dropdown" href="#">{{ .Name }}</a>
+                      <ul class="dropdown-content">
+                        {{ range .Children }}
+                          <li><a href="{{ .URL }}"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a></li>
+                        {{ end }}
+                      </ul>
+                  {{ else }}
+                    <a href="{{ .URL }}"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
+                  {{ end  }}
                 </li>
             {{ end }}
         </ul>
@@ -55,13 +67,18 @@
         <section>
             <ul class="links">
                 {{ range .Site.Menus.main }}
-                    <li>
-                        <a href="{{ .URL }}">
-                            <h3>
-                                <i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}
-                            </h3>
-                        </a>
-                    </li>
+                <li>
+                  {{ if .HasChildren }}
+                      <a class="dropdown" href="#">{{ .Name }}</a>
+                      <ul class="dropdown-content">
+                        {{ range .Children }}
+                          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                      </ul>
+                  {{ else }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                  {{ end  }}
+                </li>
                 {{ end }}
             </ul>
         </section>

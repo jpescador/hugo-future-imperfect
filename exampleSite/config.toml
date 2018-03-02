@@ -146,6 +146,27 @@ canonifyURLs = true
   identifier = "fa fa-envelope-o"
   weight = 6
 
+[[menu.main]]
+  name = "Dropdown"
+  url = "/Dropdown/"
+  identifier = "dropdown"
+  weight = 7
+  hasChildren = true
+
+  [[menu.main]]
+    name = "Item 1"
+    url = "/Dropdown/item1"
+    identifier = "fa fa-code"
+    parent = "dropdown"
+    weight = 7
+
+  [[menu.main]]
+    name = "Item 2"
+    url = "/Dropdown/item2"
+    identifier = "fa fa-chip"
+    parent = "dropdown"
+    weight = 7
+
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
 # and socialAppearAtBottom.
