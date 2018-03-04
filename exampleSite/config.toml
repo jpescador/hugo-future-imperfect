@@ -7,6 +7,9 @@ paginate = 3
 disqusShortname = "shortname"
 googleAnalytics = ""
 pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
   # Sets the meta tag description
@@ -63,7 +66,9 @@ pluralizeListTitles = false
   highlightjsCDN = "//cdn.bootcss.com"
   highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
-  
+  MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxVersion = "2.7.1"
+
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
 # prefer to use. See Staticman.yml for additional settings.
@@ -187,6 +192,6 @@ pluralizeListTitles = false
   vine             = ""
   googlescholar    = ""
   orcid            = ""
-  researchgate     = "example"    
+  researchgate     = "example"
   # Email
   email            = "example"
