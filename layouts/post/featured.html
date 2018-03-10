@@ -1,7 +1,7 @@
 {{ if and (isset .Params "featuredpath") (ne .Params.featuredpath "") }}
     {{ $.Scratch.Set "path" .Params.featuredpath }}
 
-    {{ if and (isset .Params "featured") (ne .Params.featuredpath "") }}
+    {{ if and (isset .Params "featured") (ne .Params.featured "") }}
         {{ $.Scratch.Set "structType" "page" }}
         {{ partial "img-path" . }}
         {{ $path := $.Scratch.Get "path" }}
