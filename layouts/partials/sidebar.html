@@ -5,12 +5,18 @@
   <section id="intro">
     {{ $pic := .Site.Params.intro.pic }}
     {{ with $pic.src }}
+      {{ $.Scratch.Set "picURL" (. | relURL )}}
+    {{ end }}
+    {{ with $pic.gravatar }}
+      {{ $.Scratch.Set "picURL" (printf "https://www.gravatar.com/avatar/%s?s=100&d=identicon" (. | md5) )}}
+    {{ end }}
+    {{ with $.Scratch.Get "picURL" }}
       {{ if $pic.circle }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{"/" | relURL}}'><img src="{{ $.Scratch.Get "picURL" }}" class="intro-circle" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ else if $pic.imperfect }}
-        <a href='{{"/" | relURL}}' class="logo"><img src="{{ . | relURL }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{"/" | relURL}}' class="logo"><img src="{{ $.Scratch.Get "picURL" }}" alt="{{ $pic.alt }}" /></a>
       {{ else }}
-        <a href='{{"/" | relURL}}'><img src="{{ . | relURL }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
+        <a href='{{"/" | relURL}}'><img src="{{ $.Scratch.Get "picURL" }}" width="{{ $pic.width }}" alt="{{ $pic.alt }}" /></a>
       {{ end }}
     {{ end }}
     {{ with .Site.Params.intro }}
