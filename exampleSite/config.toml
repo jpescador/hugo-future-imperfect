@@ -96,6 +96,9 @@ canonifyURLs = true
   # This appears at the top of the sidebar above params.intro.header.
   # A width of less than 100px is recommended from a design perspective.
   [params.intro.pic]
+    # Gravatar email to use to fetch the picture. This will override the `src`
+    # field if set.
+    gravatar  = ""
     src       = "/img/main/logo.jpg"
     # Sets Image to be a cirlce
     circle    = false
