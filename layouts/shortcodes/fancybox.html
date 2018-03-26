@@ -42,18 +42,19 @@
     {{ else }}
       {{ $.Scratch.Set "gallery" ""}}
     {{ end }}
-
-    {{ $.Scratch.Set "structType" "shortcode" }}
-    {{ partial "img-path" . }}
-
-    {{ $path := $.Scratch.Get "path" }}
-    {{ $file := $.Scratch.Get "file" }}
-    {{ $caption  := $.Scratch.Get "caption" }}
-    {{ $gallery := $.Scratch.Get "gallery" }}
-
-    <div class="fancybox">
-      <a data-fancybox="{{ $gallery }}" href="{{ $path }}/{{ $file }}" data-caption="{{ $caption }}"><img src="{{ $path }}/{{ $file }}"></a>
-      <!--<div class="caption">{{ $caption }}</div>-->
-    </div>
   {{ end }}
+
+  {{ $.Scratch.Set "structType" "shortcode" }}
+  {{ partial "img-path" . }}
+
+  {{ $path := $.Scratch.Get "path" }}
+  {{ $file := $.Scratch.Get "file" }}
+  {{ $caption  := $.Scratch.Get "caption" }}
+  {{ $gallery := $.Scratch.Get "gallery" }}
+
+  <div class="fancybox">
+    <a data-fancybox="{{ $gallery }}" href="{{ $path }}/{{ $file }}" data-caption="{{ $caption }}"><img src="{{ $path }}/{{ $file }}"></a>
+    <!--<div class="caption">{{ $caption }}</div>-->
+  </div>
+
 {{ end }}
