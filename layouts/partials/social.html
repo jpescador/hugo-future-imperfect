@@ -42,6 +42,10 @@
   <li><a href="//{{.}}.wordpress.com" target="_blank" title="WordPress" class="fa fa-wordpress"></a></li>
 {{ end }}
 
+{{ with .Site.Social.keybase }}
+  <li><a href="//keybase.io/{{.}}" target="_blank" title="Keybase" class="fa fa-key"></a></li>
+{{ end }}
+
 {{ with .Site.Social.medium}}
   <li><a href="//medium.com/@{{.}}" target="_blank" title="Medium" class="fa fa-medium"></a></li>
 {{ end }}

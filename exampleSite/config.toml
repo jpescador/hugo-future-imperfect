@@ -193,5 +193,6 @@ canonifyURLs = true
   googlescholar    = ""
   orcid            = ""
   researchgate     = "example"
+  keybase          = ""
   # Email
   email            = "example"
