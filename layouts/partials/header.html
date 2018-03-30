@@ -51,7 +51,6 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
@@ -68,12 +67,12 @@
             {{ end }}
         {{ end }}
 
-{{ if (not .Params.disable_highlight) }}
-  {{ $highTheme := .Site.Params.highlightjsTheme }}
-    {{ with .Site.Params.highlightjsVersion }}
-    <link href='{{ $.Site.Params.highlightjsCDN | default "//cdn.bootcss.com" }}/highlight.js/{{ . }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
-  {{ end }}
-{{ end }}
+        {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
+            {{ $highTheme := .Site.Params.highlightjsTheme | default "github" }}
+            {{ $highVersion := .Site.Params.highlightjsVersion | default "9.12.0" }}
+            {{ $highCDN := .Site.Params.highlightjsVersion | default "//cdn.bootcss.com" }}
+            <link href='{{ $highCDN }}/highlight.js/{{ $highVersion }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
+        {{ end }}
 
       {{ template "_internal/google_analytics.html" . }}
     </head>
