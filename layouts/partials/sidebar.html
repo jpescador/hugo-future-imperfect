@@ -15,7 +15,7 @@
     {{ end }}
     {{ with .Site.Params.intro }}
       <header>
-        <h2>{{ .header }}</h2>
+        <h2>{{ .header | safeHTML }}</h2>
         <p>{{ .paragraph | safeHTML }}</p>
       </header>
     {{ end }}
