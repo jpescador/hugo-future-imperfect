@@ -63,7 +63,7 @@ canonifyURLs = true
   # options for highlight.js (version, additional languages, and theme)
   disable_highlight = false # set to true to disable Highlight
   highlightjsVersion = "9.12.0"
-  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
   highlightjsLang = ["r", "yaml", "css"]
   highlightjsTheme = "github"
   MathJaxCDN = "//cdn.bootcss.com"

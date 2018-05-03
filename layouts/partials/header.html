@@ -70,7 +70,7 @@
         {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
             {{ $highTheme := .Site.Params.highlightjsTheme | default "github" }}
             {{ $highVersion := .Site.Params.highlightjsVersion | default "9.12.0" }}
-            {{ $highCDN := .Site.Params.highlightjsVersion | default "//cdn.bootcss.com" }}
+            {{ $highCDN := .Site.Params.highlightjsCDN | default "//cdnjs.cloudflare.com/ajax/libs" }}
             <link href='{{ $highCDN }}/highlight.js/{{ $highVersion }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
         {{ end }}
 
