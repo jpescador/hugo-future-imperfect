@@ -233,7 +233,13 @@ alignment and theme using named parameters below. The default value for align is
 
 **Named Only**
 ```
-{{< mermaid align="center" theme="dark" >}}
+{{<mermaid align="left" theme="forest">}}
+graph LR;
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /mermaid >}}
 ```
 
 Please refer to _layouts/shortcodes/mermaid.html_ for more details on the function.
