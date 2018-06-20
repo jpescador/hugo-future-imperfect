@@ -224,6 +224,23 @@ Please refer to _layouts/shortcodes/url-link.html_ for more details on the funct
 
 Credit: [jpescador]
 
+---
+
+### mermaid
+Generate diagrams and flowcharts from a simple markdown-like script language. Set
+alignment and theme using named parameters below. The default value for align is
+`center`. The default value for theme is `dark`. The command is shown below:
+
+**Named Only**
+```
+{{< mermaid align="center" theme="dark" >}}
+```
+
+Please refer to _layouts/shortcodes/mermaid.html_ for more details on the function.
+
+Credit: [liveaverage]
+
+
 ## About the Author
 
 Hugo Future Imperfect was ported by [Julio Pescador](https://jpescador.com). Extra
