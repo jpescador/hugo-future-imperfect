@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+<script>
+	 mermaid.initialize({ 
+		theme: '{{ if .Get "theme" }}{{ .Get "theme" }}{{ else }}dark{{ end }}',
+		themeCSS: '',
+		cloneCssStyles: false,
+		useMaxWidth: true,
+		htmlLabels: false,
+		flowchart: { 
+   			curve: 'basis' 
+		}		
+	});
+</script> 
+<div class="mermaid" align="{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}" >{{ safeHTML .Inner  }}</div>
+
