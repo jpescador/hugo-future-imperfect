@@ -6,7 +6,7 @@
             {{ if gt $categoriesLen 0 }}
                 <i class="fa fa-folder"></i>
                 {{ range $k, $v := .Params.categories }}
-                {{ $url := printf "categories/%s" (. | urlize | lower) }}
+                {{ $url := printf "categories/%s/" (. | urlize | lower) }}
                 <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
                 {{ end }}
             {{ end }}
