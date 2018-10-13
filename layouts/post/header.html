@@ -11,15 +11,12 @@
         {{ end }}
     </div>
     <div class="meta">
-        {{ $.Scratch.Set "dateType" .Date }}
-
         <time class="published"
-            datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-            {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}</time>
+            datetime='{{ .Date }}'>
+            {{ default (i18n "date_format") | .Date.Format }}</time>
         <span class="author">{{ .Params.author }}</span>
         {{ if .Site.Params.includeReadingTime }}
-            <p>{{ .ReadingTime }} minute read</p>
+            <p>{{ .ReadingTime }} {{ i18n "postreadingtime" }}</p>
         {{ end }}
-        <!--<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>-->
     </div>
 </header>

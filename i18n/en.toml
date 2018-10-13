@@ -1,0 +1,48 @@
+[date_format]
+  other = "January 2, 2006"
+[postreadingtime]
+  other = "minutes read"
+[recent_posts]
+  other = "Recent posts"
+[see_more]
+  other = "See more"
+[read_more]
+  other = "Read more"
+[categories]
+  other = "Categories"
+[category]
+  other = "Category"
+[tags]
+  other = "Tags"
+[tag]
+  other = "Tag"  
+[uncategorized]
+  other = "Uncategorized"
+[share_post]
+  other = "Share this post"
+[about]
+  other = "about"
+[learn_more]
+  other = "learn more"
+[repliestext]
+  other = "Replies typically within"
+[hours]
+  other = "hours"
+[submit]
+  other = "Submit"
+[404_oops]
+  other = "Oops, the page you're<br/>looking for does not exist."
+[404_backorreport]
+  other = "You may want to head back to the homepage.<br/>If you think something is broken, report a problem."
+[404_gotohome]
+  other = "Go To Homepage"
+[404_report]
+  other = "Report A Problem"
+[blog]
+  other = "Blog"
+[contact]
+  other = "Contact"
+[next_page]
+  other = "Next Page"
+[previous_page]
+  other = "Previous Page"
