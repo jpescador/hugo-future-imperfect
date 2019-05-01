@@ -151,3 +151,7 @@
 {{ with .Site.Social.email }}
   <li><a href="mailto:{{.}}" title="Email" class="fa fa-envelope"></a></li>
 {{ end }}
+
+{{ with .Site.Social.keybase }}
+<li><a href="//keybase.io/{{.}}" target="_blank" title="Keybase" class="fa fa-keybase"></a></li>
+{{ end }}
