@@ -3,7 +3,6 @@
 
      Set the path depending on the value passed through
 
-     if path is title then it will use the LinkTitle from the Page variable
      if path is date then it will format the directory to year/date i.e. 2006/01
      Note: path will be concatenated to the root directory, img
 
@@ -11,8 +10,6 @@
 -->
 
 {{ $src := $.Scratch.Get "path" }}
-{{ $alt := $.Scratch.Get "featuredalt" }}
-{{ $img := $.Scratch.Get "featured" }}
 {{ $structType := $.Scratch.Get "structType" }}
 
 {{ if eq $src "date" }}
