@@ -8,7 +8,7 @@
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
 
-    {{ if (not .Params.disable_highlight) }}
+    {{ if (not .Site.Params.disable_highlight) }}
       {{ $highVer := .Site.Params.highlightjsVersion }}
       {{ $highCDN := (.Site.Params.highlightjsCDN | default "//cdn.bootcss.com") }}
       {{ if (not (eq $highVer "")) }}
@@ -39,8 +39,10 @@
       {{ end }}
     {{ end }}
 
-    <!-- This is called by default since this theme uses highlight.js -->
-    <script>hljs.initHighlightingOnLoad();</script>
-      {{ partial "footer_mathjax" . }}
+    {{ if (not .Site.Params.disable_highlight) }}
+      <!-- This is called by default since this theme uses highlight.js -->
+      <script>hljs.initHighlightingOnLoad();</script>
+    {{ end }}
+    {{ partial "footer_mathjax" . }}
   </body>
 </html>
